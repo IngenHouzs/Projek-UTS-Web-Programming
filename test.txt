@@ -1,0 +1,95 @@
+USER 
+
+    - Sign Up
+    - Log In 
+    - Forget Password 
+
+
+    GA PERLU AUTH 
+    (GUEST)
+    - Dashboard DONE
+        ISI : 
+        -> Postingan (SORT PAKE ALGORITMA BERDASARKAN TREND)
+            -> Waktu
+            -> Informasi Singkat (Username Pembuat)
+            -> Jumlah Like & Comment
+        -> Kategori Postingan (Min 5 Bhs Pmrograman) (plg navbar)
+    - Detail Postingan (Username, Komentar, Like, Tanggal, Tag, Isi, dll) DONE
+    - View Other User DONE
+
+
+    PERLU AUTH 
+    - Comment Post DONE
+    - Like Post DONE
+    - Like Comment DONE
+    - Edit Profil (Foto, Email, Username, Nama User) DONE
+    - View My Own Profile (Foto, Email, Username, Nama Lengkap) DONE
+    - Delete My Own Profile
+    - Bikin Postingan (Kategori, Konten) DONE
+
+
+
+
+ADMIN 
+    PUNYA SEMUA FITUR USER 
+    FITUR TAMBAHAN ADMIN : 
+    - Monitor & Manajemen Postingan User 
+        -> Delete Post 
+        -> Delete Comment 
+        -> Export Laporan Dengan data dari Setiap Postingan (Nama Lengkap User, Email, Username, Jumlah Like, Jumlah Comment, Konten Post);
+        -> Ban User (Temporary / Permanen)
+        -> Unban User 
+        -> Delete User 
+
+
+________________________________________________________________
+Routes yang mungkin diperluin : 
+    1. User : 
+        -   / 
+        -   /signup 
+        -   /dashboard 
+        -   /dashboard?category={nama_kategori}
+        -   /post -> (lgsung redirect ke dashboard)
+        -   /post/{id_post}
+        -   /{nama_user} 
+        -   /account/edit 
+        -   (bikin postingan)
+
+    2. Admmin : 
+        * ALL USER ROUTES *
+    
+
+
+
+
+- TAMBAHAN 
+    Floating Login Notification (kalo belom login)
+
+
+?????????
+    - Admin perlu login jg ga?
+    - Ni Postingan Gambarnya sistematika kyk Instagram apa quora 
+    - Ini responsive sidebar nya mw gimana (bawah apa ttp samping tapi ilangin kata2?);
+    - Change Password Perlu gasi (soalnya yg adaa mlh forget psword klo di soal)
+
+
+
+
+TO DO :
+    - Database 
+    - UI 
+
+________________________________________________________________
+SIDEBAR 
+    -   Home (NO AUTH)
+    - Search User
+    -   Kategori (NO AUTH)
+    -   Profile  (AUTH)
+    -   Log Out (AUTH)
+    -   LOG IN FLOATING (NO AUTH)
+DIATAS POSTINGAN (SEJAJAR HOME ADA PILIHAN Newest & Trending UNTUK POSTINGAN);]
+
+
+RESPONSIVE 
+    SIDEBAR -> COLLAPSE
+
