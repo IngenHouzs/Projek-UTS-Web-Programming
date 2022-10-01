@@ -69,7 +69,7 @@ Routes yang mungkin diperluin :
 ?????????
     - Admin perlu login jg ga?
     - Ni Postingan Gambarnya sistematika kyk Instagram apa quora 
-    - Ini responsive sidebar nya mw gimana (bawah apa ttp samping tapi ilangin kata2?);
+    - Ini responsive sidebar nya mw gimana (bawah apa ttp samping tapi ilangin kata2?) (JAWAB : KESAMPING , KL MAKIN KECIL JD KBWH)
     - Change Password Perlu gasi (soalnya yg adaa mlh forget psword klo di soal)
 
 
@@ -93,3 +93,38 @@ DIATAS POSTINGAN (SEJAJAR HOME ADA PILIHAN Newest & Trending UNTUK POSTINGAN);]
 RESPONSIVE 
     SIDEBAR -> COLLAPSE
 
+
+
+
+DATABASE ENTITIES 
+    ADMIN 
+    USER 
+    POST 
+    COMMENT
+    LIKE COMMENT 
+    LIKE POST 
+    GAMBAR POSTINGAN
+
+
+
+DATABASE RELATIONS 
+
+    ADMIN
+
+    USER - POST
+       1    N 
+
+    POST - LIKE POST 
+       1    N 
+
+    POST - COMMENT POST 
+       1    N 
+    
+    POST - GAMBAR POST
+       1    N 
+    
+    COMMENT - LIKE COMMENT 
+        1     N
+    
+
+    
