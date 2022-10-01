@@ -10,6 +10,7 @@ CREATE TABLE User (
     username VARCHAR(50) UNIQUE NOT NULL, 
     email VARCHAR(50) UNIQUE NOT NULL, 
     password VARCHAR(100) NOT NULL
+    konfirmasi_password VARCHAR(100) NOT NULL
 );
 
 
