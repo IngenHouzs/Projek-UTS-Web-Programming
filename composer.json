@@ -1,0 +1,19 @@
+{
+    "name": "packages/projek_uts",
+    "description": "packages",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Farrel Dinarta",
+            "email": "farreldinarta12@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "5.4.x-dev"
+    }
+}
