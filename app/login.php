@@ -1,7 +1,8 @@
 <?php 
 
-    session_start();
-
+    session_start();    
+    require_once('../src/includes/prevent_login_auth.php');    
+    
 ?>
 
 <!DOCTYPE html>
