@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+small {
+  font-size: 0.8rem;
+}
+
+/* Login */
+#logo-main-login {
+  width: 3rem;
+  height: 3rem;
+}
+
+#login-form-username,
+#login-form-password {
+  background: url(../assets/instagram.svg) no-repeat;
+  padding-left: 30px;
+  border: none;
+}
+
+#login-form-username:focus,
+#login-form-password:focus {
+  outline: none;
+}
+
+#button-login {
+  line-height: 0 !important;
+  padding: 0 !important;
+  height: 120%;
+  font-size: 0.85rem !important;
+}
