@@ -38,12 +38,11 @@
             <div class="row">
                 <div class="col text-center">
                     <svg
-                    id="logo-main-login"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-instagram"
+                    class="bi bi-instagram logo"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -72,12 +71,12 @@
                     <form action="../src/includes/login_process.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="login-form-username" type="text" name="identity" placeholder="Username / Email">
+                                <input class="input-login-and-register" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="login-form-password" type="password" name="password" placeholder="Password">
+                                <input class="input-login-and-register" id="login-form-password" type="password" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="row">
@@ -87,7 +86,7 @@
                                         <small id="forgot-password-login"><a href="#">Forgot Password</a></small>
                                     </div>
                                     <div class="col my-2">
-                                        <button id="button-login" class="btn btn-primary w-100">Log In</button>
+                                        <button id="button-login" class="btn btn-primary w-100 button-login-and-register">Log In</button>
                                     </div>    
                                 </div>
                             </div>

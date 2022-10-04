@@ -38,12 +38,11 @@
             <div class="row">
                 <div class="col text-center">
                     <svg
-                    id="logo-main-register"
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
-                    class="bi bi-instagram"
+                    class="bi bi-instagram logo"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -72,32 +71,32 @@
                     <form action="../src/includes/register_process.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="register-form-username" type="text" name="identity" placeholder="Username" required>
+                                <input class="input-login-and-register" id="register-form-username" type="text" name="identity" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="register-form-fullname" type="text" name="fullname" placeholder="Full Name" required>
+                                <input class="input-login-and-register" id="register-form-fullname" type="text" name="fullname" placeholder="Full Name" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="register-form-email" type="email" name="email" placeholder="E-Mail" required>
+                                <input class="input-login-and-register" id="register-form-email" type="email" name="email" placeholder="E-Mail" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="register-form-password" type="password" name="password" placeholder="Password" required>
+                                <input class="input-login-and-register" id="register-form-password" type="password" name="password" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-2">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input id="register-form-password" type="password" name="password" placeholder="Konfirmasi Password" required>
+                                <input class="input-login-and-register" id="register-form-password" type="password" name="password" placeholder="Konfirmasi Password" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-sm-3 col-3 m-auto">
-                                <button id="button-register" class="btn btn-primary w-100">Sign Up</button>
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Sign Up</button>
                             </div>
                         </div>                        
                     </form>
