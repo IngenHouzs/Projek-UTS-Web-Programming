@@ -82,10 +82,7 @@
                                 <input id="login-form-password" type="password" name="password" placeholder="Password">
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
+                        <div class="row">
                 <div class="col-lg-3 col-sm-6 col-8 m-auto">
                     <div class="row">
                         <div class="col">
@@ -96,7 +93,11 @@
                         </div>    
                     </div>
                 </div>
+            </div>                        
+                    </form>
+                </div>
             </div>
+   
         </div>
     </main>
     
