@@ -35,13 +35,14 @@
 <body>
 
 
-    <section id="main-frame">
-        <?php require('../src/includes/views/sideNavbar.php')?>
-        
-        <div class="main-content">
-            hehe
-        </div>
-        <?php require('../src/includes/views/friendRecommendation.php')?>
-</section>
+        <section id="main-frame">
+            <?php require('../src/includes/views/sideNavbar.php')?>
+            
+            <div class="main-content">
+                hehe
+            </div>
+            <?php require('../src/includes/views/friendRecommendation.php')?>
+        </section>
+        <script src="../src/js/script.js"></script>
 </body>
 </html>
