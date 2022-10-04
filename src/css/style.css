@@ -39,3 +39,19 @@ small {
   padding: 0 !important;
   font-size: 0.85rem !important;
 }
+
+
+
+#main-frame{
+  display:flex;
+  flex-direction: row;
+}
+
+.side-navbar{
+  height:100vh;
+  width:27%;
+  max-width:300px;
+  min-width:200px;
+  border-right:1px solid #bdbdbd;
+}
+
