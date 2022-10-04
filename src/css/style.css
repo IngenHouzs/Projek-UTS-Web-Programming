@@ -19,54 +19,23 @@ small {
   font-size: 0.8rem;
 }
 
-/* Login */
-#logo-main-login {
+/* Global Class */
+.logo {
   width: 3rem;
   height: 3rem;
 }
 
-#login-form-username,
-#login-form-password {
+.input-login-and-register {
   background: url(../assets/instagram.svg) no-repeat;
   padding-left: 30px;
   border: none;
 }
 
-#login-form-username:focus,
-#login-form-password:focus {
+.input-login-and-register:focus {
   outline: none;
 }
 
-#button-login {
-  line-height: 0 !important;
-  padding: 0 !important;
-  height: 120%;
-  font-size: 0.85rem !important;
-}
-
-/* Register */
-#logo-main-register {
-  width: 3rem;
-  height: 3rem;
-}
-
-#register-form-username,
-#register-form-fullname,
-#register-form-email,
-#register-form-password {
-  background: url(../assets/instagram.svg) no-repeat;
-  padding-left: 30px;
-  border: none;
-}
-
-#register-form-username:focus,
-#register-form-fullname:focus,
-#register-form-email:focus,
-#register-form-password:focus {
-  outline: none;
-}
-
-#button-register {
+.button-login-and-register {
   padding: 0 !important;
   font-size: 0.85rem !important;
 }
