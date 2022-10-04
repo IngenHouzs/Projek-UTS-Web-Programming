@@ -81,17 +81,17 @@
                             </div>
                         </div>
                         <div class="row">
-                <div class="col-lg-3 col-sm-6 col-8 m-auto">
-                    <div class="row">
-                        <div class="col">
-                            <small id="forgot-password-login"><a href="#">Forgot Password</a></small>
-                        </div>
-                        <div class="col my-2">
-                            <button id="button-login" class="btn btn-primary w-100">Log In</button>
-                        </div>    
-                    </div>
-                </div>
-            </div>                        
+                            <div class="col-lg-3 col-sm-6 col-8 m-auto">
+                                <div class="row">
+                                    <div class="col">
+                                        <small id="forgot-password-login"><a href="#">Forgot Password</a></small>
+                                    </div>
+                                    <div class="col my-2">
+                                        <button id="button-login" class="btn btn-primary w-100">Log In</button>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>                        
                     </form>
                 </div>
             </div>
