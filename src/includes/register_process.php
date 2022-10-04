@@ -35,7 +35,6 @@
         }
         
         // Cek duplikat email
-
         $checkDuplicateEmailExecution = $db->query($checkDuplicateEmail);
         $fetchEmaiQuery = $checkDuplicateEmailExecution->fetch(PDO::FETCH_ASSOC);        
 
