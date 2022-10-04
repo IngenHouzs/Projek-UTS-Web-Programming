@@ -1,3 +1,9 @@
+<?php 
+
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +14,22 @@
 
     <title>Prolangram | Log In</title>
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+
+    <?php 
+
+        if (isset($_GET['err'])){
+            if ($_GET['err'] = 'true'){
+                echo "<h1>Credentials & Password doesn't match</h1>";          
+            }
+        }
+
+    ?>
+
+    <a href="register.php">Register</a>
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="../src/css/style.css">
