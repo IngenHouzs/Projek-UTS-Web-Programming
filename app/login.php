@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prolangram | Log In</title>
 </head>
 <body>
 
 
     <form action="../src/includes/login_process.php" method="POST">
-        <button type="submit"></button>
+        <input type="text" name="identity" placeholder="Username / Email">
+        <input type="password" name="password" placeholder="password">
+        <button type="submit">Log In</button>
     </form>
     
 </body>
