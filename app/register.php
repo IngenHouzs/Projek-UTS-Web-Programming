@@ -24,6 +24,8 @@
         }
     ?>
 
+<a href="login.php">Login</a>    
+
 <form action="../src/includes/register_process.php" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="text" name="fullname" placeholder="Full Name" required>

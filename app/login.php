@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <a href="register.php">Register</a>
 
     <form action="../src/includes/login_process.php" method="POST">
         <input type="text" name="identity" placeholder="Username / Email">
