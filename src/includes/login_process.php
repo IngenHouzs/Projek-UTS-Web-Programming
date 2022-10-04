@@ -23,7 +23,7 @@
             $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
             $_SESSION['username'] = $result['username'];
             header('location: ../../app/index.php'); 
-            
+            die();
         } else {    
             header('location: ../../app/login.php?err=true');
         }

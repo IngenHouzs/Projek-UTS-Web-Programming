@@ -28,8 +28,6 @@
 
     ?>
 
-    <a href="register.php">Register</a>
-
 
     <!-- CSS -->
     <link rel="stylesheet" href="../src/css/style.css">
