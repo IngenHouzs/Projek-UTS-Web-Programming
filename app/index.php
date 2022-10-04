@@ -3,6 +3,7 @@
     require_once('../src/includes/auth.php');
 
 
+
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
@@ -15,6 +16,7 @@
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
+
 
 ?>
 
@@ -36,12 +38,10 @@
     <section id="main-frame">
         <?php require('../src/includes/views/sideNavbar.php')?>
         
-        <div>
+        <div class="main-content">
             hehe
         </div>
-        <div>
-            huhu
-        </div>
+        <?php require('../src/includes/views/friendRecommendation.php')?>
 </section>
 </body>
 </html>
