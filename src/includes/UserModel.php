@@ -13,6 +13,9 @@
     
         return $queryResult;
     } 
+
+
+    
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
         $q = $_REQUEST['query'];
