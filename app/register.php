@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,26 @@
 </head>
 <body>
 
+    <?php 
+
+        if (isset($_GET['err'])){
+            if ($_GET['err'] == '1'){
+                echo "<h1>Your username is unavailable.</h1>";
+            }
+            if ($_GET['err'] == '2'){
+                echo "<h1>Your Email is already registered.</h1>";
+            }
+            if ($_GET['err'] == '3'){
+                echo "<h1>Failed to insert data</h1>";
+            }                        
+        }
+    ?>
+
 <form action="../src/includes/register_process.php" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="text" name="fullname" placeholder="Full Name">
-        <input type="email" name="email" placeholder="Email">                
-        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="fullname" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>                
+        <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Sign Up</button>
     </form>    
 </body>

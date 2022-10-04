@@ -12,6 +12,6 @@
     $db_pass = $_ENV['DB_PASS'];
 
     $dsn = "mysql:host=$db_host;dbname=$db_name";
-    $db = new PDO($dsn, $db_user, $db_pass);
+    $db = new PDO($dsn, $db_user, $db_pass, [PDO::MYSQL_ATTR_FOUND_ROWS => true]);
     
 ?>
