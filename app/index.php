@@ -14,6 +14,8 @@
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
+
+
 ?>
 
 
@@ -29,19 +31,13 @@
     <title>Prolangram | Dashboard</title>
 </head>
 <body>
-        <section id="main-frame">
-            <?php require('../src/includes/views/sideNavbar.php')?>
-            
-            <div class="main-content">
+    <main id="main-frame">
+        <?php require('../src/includes/views/sideNavbar.php')?>
+        <div class="main-content">hehe</div>
+        <?php require('../src/includes/views/friendRecommendation.php')?>
+    </main>
 
-                <section class="main-content-wrapper dashboard-header">
-                    <h1 class="dashboard-page-title">Home</h1>
-                </section>
-
-        
-            </div>
-            <?php require('../src/includes/views/friendRecommendation.php')?>
-        </section>
-        <script src="../src/js/script.js"></script>
+    <script src="../src/bootstrap/js/bootstra.min.js"></script>
+    <script src="../src/js/script.js"></script>
 </body>
 </html>
