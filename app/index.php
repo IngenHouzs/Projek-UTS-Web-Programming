@@ -33,8 +33,6 @@
     <title>Prolangram | Dashboard</title>
 </head>
 <body>
-
-
         <section id="main-frame">
             <?php require('../src/includes/views/sideNavbar.php')?>
             
