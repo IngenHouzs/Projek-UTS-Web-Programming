@@ -70,7 +70,14 @@
         } 
         
         $imageQueryExecution = $db->prepare($insertPostImagesQuery);
-        $imageQueryExecution->execute($statements);
+        try{
+            $imageQueryExecution->execute($statements); 
+            header('location: ../../app/index.php');                            
+        } catch(Exception $e){
+            header('location: ../../app/create.php?err=1');            
+            die();            
+        }
+
     }
 
 
