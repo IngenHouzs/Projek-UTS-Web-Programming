@@ -217,8 +217,21 @@ small {
   gap:.5rem;
 }
 
-#preview-image img{
+#preview-image img, .empty-image{
   height:100px;
   width:150px;
   border-radius:10px;
+}
+
+
+.empty-image{
+  background-color: rgb(159, 159, 159);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-image img{
+  height:2rem !important;
+  width:2rem !important;
 }

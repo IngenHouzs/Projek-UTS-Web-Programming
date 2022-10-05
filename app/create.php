@@ -35,7 +35,7 @@
                     <h1 class="dashboard-page-title">Create Post</h1>
                 </section>         
 
-                <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form">
+                <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form" enctype="multipart/form-data">
                 </form>     
 
                 <button class="dropdown-button" onclick="showPostTagsOnCreate()">
@@ -46,7 +46,9 @@
                 <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
 
                 <div id="preview-image">
-
+                    <div class="empty-image">
+                        <img src="../src/assets/instagram.svg"/>
+                    </div>
                 </div>
 
                 <div class="image-post">
