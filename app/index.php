@@ -2,8 +2,6 @@
 <?php
     require_once('../src/includes/auth.php');
 
-
-
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
