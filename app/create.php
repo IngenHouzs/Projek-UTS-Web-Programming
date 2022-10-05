@@ -35,27 +35,28 @@
                     <h1 class="dashboard-page-title">Create Post</h1>
                 </section>         
 
+                <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form">
+                </form>     
+
                 <button class="dropdown-button" onclick="showPostTagsOnCreate()">
                         <img src="../src/assets/instagram.svg"/>
                         Add Post Tag
                 </button>                
 
-                <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form">
-                  
-                </form>
+                <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
 
-                <textarea class="caption-write" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
-            
-  
+                <div class="image-post">
+                    <label  for="pictures">
+                        <button >Add Photo</button>
+                    </label>
+                    <input type="file" id="pictures" form="post_upload_form" hidden></input>
+                    <button type="submit" form="post_upload_form">Post</button>
+                </div>
+                
 
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
         </section>
-
-
-
-
         <script src="../src/js/script.js"></script>
-
 </body>
 </html>
