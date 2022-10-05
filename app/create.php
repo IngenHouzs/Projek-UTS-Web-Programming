@@ -38,12 +38,21 @@
                 <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form" enctype="multipart/form-data">
                 </form>     
 
-                <button class="dropdown-button" onclick="showPostTagsOnCreate()">
+                <button class="dropdown-button">
                         <img src="../src/assets/instagram.svg"/>
                         Add Post Tag
-                </button>                
+                </button>
 
-                <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
+                <div id="post-tag" style="display:none;">
+                    <input type="radio" name="tag" value="JavaScript" id="tag-list" form="post_upload_form" required><label for="tag-list">JavaScript</label></input>
+                    <input type="radio" name="tag" value="Python" id="tag-list" form="post_upload_form" required><label for="tag-list">Python</label></input>                                                   
+                    <input type="radio" name="tag" value="C++" id="tag-list" form="post_upload_form" required><label for="tag-list">C++</label></input>                         
+                    <input type="radio" name="tag" value="TypeScript" id="tag-list" form="post_upload_form" required><label for="tag-list">TypeScript</label></input>                         
+                    <input type="radio" name="tag" value="PHP" id="tag-list" form="post_upload_form" required><label for="tag-list">PHP</label></input>                         
+                    <input type="radio" name="tag" value="Node.js" id="tag-list" form="post_upload_form" required><label for="tag-list">Node.js</label></input>                         
+                </div>
+
+                <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..." required></textarea>
 
                 <div id="preview-image">
                     <div class="empty-image">
@@ -56,7 +65,7 @@
                         <img src="../src/assets/instagram.svg"/>
                         <p>Add Photo</p>
                     </label>
-                    <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' name="" multiple hidden></input>
+                    <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' name="foto[]" accept="image/png, image/gif, image/jpeg, image/svg, image/webp, image/bmp, image/gif" multiple hidden></input>
                     <button class="submit-button" type="submit" form="post_upload_form">Post</button>
                 </div>
                 
@@ -64,6 +73,6 @@
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
         </section>
-        <script src="../src/js/script.js"></script>
+        <script language="JavaScript" type="text/javascript" src="../src/js/script.js"></script>
 </body>
 </html>

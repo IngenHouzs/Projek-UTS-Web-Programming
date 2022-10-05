@@ -27,8 +27,18 @@ const getRandomUser = () => {
     }
     XMLHttp.open('GET', '../src/includes/UserModel.php?query=randomuser', true);
     XMLHttp.send();
-}
+};
 
+
+
+const showPostTagsOnCreate = () => {
+    const tagList = document.getElementById("post-tag");
+    if(tagList.style.display === "none"){
+        tagList.style.display = "block";
+    }else{
+        tagList.style.display = "none";
+     }
+};
 
 const showImagePreview = () => {
     const inpFile = document.getElementById('pictures');
@@ -44,11 +54,16 @@ const showImagePreview = () => {
             image.setAttribute("src", encodedImage);
             container.append(image);            
         }
-
     }
-}
+};
 
 
+
+const init = () =>{
+    document.getElementsByClassName('dropdown-button')[0].addEventListener('click', showPostTagsOnCreate);
+}   
+
+init();
 
 
 
