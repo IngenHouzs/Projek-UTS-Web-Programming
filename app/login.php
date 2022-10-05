@@ -1,7 +1,20 @@
 <?php 
 
     session_start();    
-    require_once('../src/includes/prevent_login_auth.php');    
+    require_once('../src/includes/prevent_login_auth.php');   
+    
+    $success_register = $error_login = "";
+    if(isset($_SESSION['success-register'])){
+        $success_register = "<div class='alert alert-success' role='alert'>
+        Selamat! Akun telah berhasil dibuat.
+      </div>";
+    }
+
+    if (isset($_SESSION['error'])){
+        $error_login = "<div class='alert alert-danger' role='alert'>
+        Credentials and Password does not match!
+      </div>"; 
+    }
     
 ?>
 
@@ -21,11 +34,7 @@
 
     <?php 
 
-        if (isset($_GET['err'])){
-            if ($_GET['err'] = 'true'){
-                echo "<h1>Credentials & Password doesn't match</h1>";          
-            }
-        }
+        
 
     ?>
 
@@ -36,6 +45,18 @@
 <body>
     <main id="main-login">
         <div id="container-login" class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <?php
+                    echo $success_register ;
+                    unset($_SESSION['success-register']);
+                    ?>
+                    <?php
+                    echo $error_login ;
+                    unset($_SESSION['error']);
+                    ?>
+                </div>
+            </div>
             <div class="row">
                 <div class="col text-center">
                     <svg
