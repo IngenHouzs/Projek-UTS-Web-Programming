@@ -54,7 +54,7 @@
                         <img src="../src/assets/instagram.svg"/>
                         <p>Add Photo</p>
                     </label>
-                    <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' multiple hidden></input>
+                    <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' name="" multiple hidden></input>
                     <button class="submit-button" type="submit" form="post_upload_form">Post</button>
                 </div>
                 
