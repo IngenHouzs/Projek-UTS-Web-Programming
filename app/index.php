@@ -16,8 +16,6 @@
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
-
-
 ?>
 
 
@@ -37,7 +35,12 @@
             <?php require('../src/includes/views/sideNavbar.php')?>
             
             <div class="main-content">
-                hehe
+
+                <section class="main-content-wrapper dashboard-header">
+                    <h1 class="dashboard-page-title">Home</h1>
+                </section>
+
+        
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>
         </section>

@@ -1,4 +1,4 @@
-function getRandomUser(){
+const getRandomUser = () => {
     var XMLHttp = new XMLHttpRequest();
     XMLHttp.onload = () => {
         const response = JSON.parse(XMLHttp.responseText);
@@ -28,6 +28,13 @@ function getRandomUser(){
     XMLHttp.open('GET', '../src/includes/UserModel.php?query=randomuser', true);
     XMLHttp.send();
 }
+
+
+const showPostTagsOnCreate = (e) => {
+    e.preventDefault();
+}
+
+
 
 
 
