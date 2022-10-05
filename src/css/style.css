@@ -99,10 +99,10 @@ small {
   text-decoration: none;
 }
 
-.navbar-button img,
+.navbar-button svg,
 .random-friend-popup-wrapper img {
-  width: 3rem;
-  height: 3rem;
+  width: 1rem;
+  height: 1rem;
   /* border-radius:50%; */
 }
 
@@ -157,22 +157,18 @@ small {
   color: white;
 }
 
-
-
-.dropdown-button img{
-  height:2rem;
-  width:2rem;
-  margin-right:1rem;
-}
-
-.caption-write {
-    width:100%;
-}
-
-=======
 .dropdown-button img {
   height: 2rem;
   width: 2rem;
   margin-right: 1rem;
 }
 
+.caption-write {
+  width: 100%;
+}
+
+.dropdown-button img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
