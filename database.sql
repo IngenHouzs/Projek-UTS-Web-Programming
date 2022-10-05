@@ -64,13 +64,12 @@ CREATE TABLE Like_Comment(
 
 CREATE TABLE Gambar_Postingan(
         -- PAKE PREFIX G-, PAKE uniqid('L-', true) -> generate 23, tambah 2 dari prefix = 25 -- 
-    ID_Gambar CHAR(25) PRIMARY KEY,
     ID_Post CHAR(25), 
     nama_gambar VARCHAR(100), 
     Urutan INTEGER, 
+    PRIMARY KEY (ID_Post, nama_gambar),
     FOREIGN KEY (ID_Post) REFERENCES Post(ID_Post) ON DELETE CASCADE
 );
-
 
 
 

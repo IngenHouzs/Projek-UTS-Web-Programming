@@ -31,14 +31,14 @@
 
     // BUAT ROW BARU DI TABLE POST
 
-    
+    $post_id = uniqid('P-', true);      
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     )  {
-        $post_id = uniqid('P-', true);        
+      
         $user_id = $_SESSION['ID_User'];
         $date = date('Y-m-d H:i:s');        
         $createPostQuery = "INSERT INTO Post VALUES (?, ?, ?, ?, ?)";
@@ -57,13 +57,21 @@
     }
 
     // BUAT ROW BARU DI TABEL GAMBAR_POSTINGAN
-    
 
-
-
-
-
-
+    $statements = [];
+    if ($fileAmount > 0){
+        $insertPostImagesQuery = "INSERT INTO Gambar_Postingan VALUES";
+        for ($index = 0; $index < $fileAmount;$index++){
+            if ($index != $fileAmount-1) $insertPostImagesQuery .= "(?, ?, ?),";
+            else $insertPostImagesQuery .= "(?, ?, ?);";
+            array_push($statements, 
+                $post_id, $encryptedImageNames[$index], $index+1
+            );
+        } 
+        
+        $imageQueryExecution = $db->prepare($insertPostImagesQuery);
+        $imageQueryExecution->execute($statements);
+    }
 
 
 
