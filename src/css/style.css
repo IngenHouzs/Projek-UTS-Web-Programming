@@ -120,3 +120,34 @@ small {
   justify-content: flex-start;
   padding: 0.8rem;
 }
+
+
+.main-content-wrapper{
+  width:100%; 
+}
+
+.dashboard-header{
+  height:60px;
+  border-bottom:1px solid #bdbdbd;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:0 1rem;
+}
+
+.dashboard-page-title{
+  font-size:1.4rem;
+  font-weight:bold;
+  margin:0;
+}
+
+
+.main-content form .dropdown-button{
+  width:100%;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  height:4rem;
+  padding-left:1.5rem;
+
+}
