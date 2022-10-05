@@ -33,6 +33,7 @@
             die();
         }
     } else{
+        $_SESSION['error'] = 'error';
         header('location: ../../app/login.php?err=true');
     }
     

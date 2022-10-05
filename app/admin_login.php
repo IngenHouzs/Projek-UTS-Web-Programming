@@ -1,3 +1,12 @@
+<?php
+$error_login = "";
+if (isset($_SESSION['error'])){
+    $error_login = "<div class='alert alert-danger' role='alert'>
+    Credentials and Password does not match!
+  </div>"; 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +28,14 @@
 <body>
     <main id="main-admin-login">
         <div id="container-admin-login" class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <?php
+                    $error_login;
+                    unset($_SESSION['error']);
+                    ?>
+                </div>
+            </div>
             <div class="row">
                 <div class="col text-center">
                     <svg

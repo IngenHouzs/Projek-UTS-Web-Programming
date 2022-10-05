@@ -26,6 +26,7 @@
             die();
         }        
         $queryExecution->execute($data);
+        $_SESSION['success-register'] = 'success-register';
         header('location: ../../app/login.php');
     } catch (Exception $e){
         $checkDuplicateUsername = "SELECT COUNT(*) AS 'Count' FROM User WHERE username = '$username'";        
@@ -49,7 +50,7 @@
             header('location: ../../app/register.php?err=2');            
             die();
         }
-        
+        $_SESSION['error'] = 'error';
         header('location: ../../app/register.php?err=3');
     }
 
