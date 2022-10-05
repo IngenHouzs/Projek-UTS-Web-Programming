@@ -250,6 +250,7 @@ small {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap:1rem !important;
 }
 
 .post-wrapper{
@@ -321,3 +322,23 @@ small {
   height:200px;
   background-color: blue;
 }
+
+.post-reaction{
+  width:100%;
+  height:60px;
+  background-color: orange;
+  display:flex;
+  justify-content: flex-start;
+  gap:3rem;
+}
+
+.post-reaction img{
+  height:2rem;
+  width:2rem;
+}
+
+.post-reaction div{
+  display:flex;
+}
+
+

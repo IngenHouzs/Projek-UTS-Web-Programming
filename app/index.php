@@ -19,8 +19,16 @@
 
 <?php 
 
+    require_once("../vendor/autoload.php");
+    $dotenv = Dotenv\Dotenv::createImmutable('../');
+    $dotenv->load();    
 
+    require_once('../src/includes/db_external.php');    
 
+    // QUERY SORT BY RECENT POST
+
+    $getAllPostQuery = "SELECT * FROM Post ORDER BY waktu_post DESC";
+    $queryExecution = $db->query($getAllPostQuery);
 ?>
 
 
@@ -46,24 +54,37 @@
                 <section id="dashboard-post-list">
 
                     <!-- FORMAT POST-->
-                    <div class="post-wrapper">
-                        <div class="post-info">
-                            <img src="../src/user_pfp/goblinlaugh.png"/>
-                            <div class="post-info-header">
-                                <h1>farreldinarta <span style="font-weight:300"> 3 minutes ago</span></h1>
-                                <div class="post-tag">
-                                    <h1>#JavaScript</h1>
+
+                    <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
+
+                        <div class="post-wrapper">
+                            <div class="post-info">
+                                <img src="../src/user_pfp/goblinlaugh.png"/>
+                                <div class="post-info-header">
+                                    <h1>farreldinarta <span style="font-weight:300"> 3 minutes ago</span></h1>
+                                    <div class="post-tag">
+                                        <h1>#JavaScript</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-description">
+                                <!-- ini nanti jd carouselanny -->
+                                <div class="post-image"></div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta earum quae corrupti, eum ea at nemo incidunt quas natus praesentium. Sequi aut adipisci excepturi corrupti, est placeat pariatur eos officia?</p>
+                                <div class="post-reaction">
+                                    <div class="post-like">
+                                        <button><img src="../src/user_pfp/goblinlaugh.png"/></button>
+                                        <p>2000</p>
+                                    </div>
+                                    <div class="post-comment">
+                                        <button><img src="../src/user_pfp/goblinlaugh.png"/></button>
+                                        <p>2000</p>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>
-                        <div class="post-description">
-                            <!-- ini nanti jd carouselanny -->
-                            <div class="post-image"></div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta earum quae corrupti, eum ea at nemo incidunt quas natus praesentium. Sequi aut adipisci excepturi corrupti, est placeat pariatur eos officia?</p>
 
-            
-                        </div>
-                    </div>
+                    <?php }?>
 
                 </section>
         </div>
