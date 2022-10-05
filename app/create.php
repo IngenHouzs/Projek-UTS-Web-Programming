@@ -40,9 +40,17 @@
                         Add Post Tag
                 </button>                
 
-                <form action="../src/includes/create_post_process.php">
-      
+                <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form">
+                  
                 </form>
+
+                <div class="row justify-content-center mb-3 caption-write">
+                    <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2 caption-write">
+                        <textarea class="caption-write" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
+                    </div>
+                </div>                  
+  
+
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
         </section>
