@@ -141,13 +141,26 @@ small {
   margin:0;
 }
 
-
-.main-content form .dropdown-button{
+.dropdown-button{
   width:100%;
   display:flex;
   justify-content: flex-start;
   align-items: center;
   height:4rem;
   padding-left:1.5rem;
+  background-color: white;
+  border:1px solid #bdbdbd;
+}
 
+.dropdown-button:hover{
+  background-color:#0b5ed7;
+  border-color:#0a58ca;
+  color:white;
+}
+
+
+.dropdown-button img{
+  height:2rem;
+  width:2rem;
+  margin-right:1rem;
 }

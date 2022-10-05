@@ -35,11 +35,13 @@
                     <h1 class="dashboard-page-title">Create Post</h1>
                 </section>         
 
-                <form action="../src/includes/create_post_process.php">
-                    <button class="dropdown-button" onclick="showPostTagsOnCreate()">
-                        <img src="../src/assets/instagram"/>
+                <button class="dropdown-button" onclick="showPostTagsOnCreate()">
+                        <img src="../src/assets/instagram.svg"/>
                         Add Post Tag
-                    </button>
+                </button>                
+
+                <form action="../src/includes/create_post_process.php">
+      
                 </form>
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
