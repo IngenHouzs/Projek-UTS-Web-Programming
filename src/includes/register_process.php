@@ -5,20 +5,26 @@
     require_once('db.php');
 
 
-    $username = strtolower($_POST['username']);
+    $username = $_POST['username'];
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
 
+
+
     $id = uniqid('U-', true);
     $encrypted_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?)";
+    $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?,?)";
 
-    $data = [$id, $fullname, $username, $email, $encrypted_password];
+    $data = [$id, $fullname, $username, $email, NULL,$encrypted_password];
 
     $queryExecution = $db->prepare($query);
 
 
     try{
+        if ($_POST['password'] != $_POST['password_check']){
+            header('location: ../../app/register.php?err=4');
+            die();
+        }        
         $queryExecution->execute($data);
         header('location: ../../app/login.php');
     } catch (Exception $e){
