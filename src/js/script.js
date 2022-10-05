@@ -35,10 +35,9 @@ const showImagePreview = () => {
     const container = document.getElementById('preview-image');
 
     const fileReader = new FileReader();
-
-   
+    document.getElementById("preview-image").innerHTML = '';
+    
     for (let file of inpFile.files){
-        console.log(file.name);
         if (file){
             const encodedImage = URL.createObjectURL(file);
             const image = document.createElement('img');
