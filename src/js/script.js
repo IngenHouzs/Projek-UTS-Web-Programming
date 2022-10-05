@@ -30,10 +30,23 @@ const getRandomUser = () => {
 }
 
 
-const showPostTagsOnCreate = (e) => {
-    e.preventDefault();
-}
+const showImagePreview = () => {
+    const inpFile = document.getElementById('pictures');
+    const container = document.getElementById('preview-image');
 
+    const fileReader = new FileReader();
+
+    for (let file of inpFile.files){
+
+
+
+        const image = document.createElement('img');
+        image.setAttribute("src", file.name);
+
+        container.append(image);
+
+    }
+}
 
 
 

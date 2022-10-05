@@ -45,12 +45,17 @@
 
                 <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
 
+                <div id="preview-image">
+
+                </div>
+
                 <div class="image-post">
-                    <label  for="pictures">
-                        <button >Add Photo</button>
+                    <label class="addfile" for="pictures">
+                        <img src="../src/assets/instagram.svg"/>
+                        <p>Add Photo</p>
                     </label>
-                    <input type="file" id="pictures" form="post_upload_form" hidden></input>
-                    <button type="submit" form="post_upload_form">Post</button>
+                    <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' multiple hidden></input>
+                    <button class="submit-button" type="submit" form="post_upload_form">Post</button>
                 </div>
                 
 
