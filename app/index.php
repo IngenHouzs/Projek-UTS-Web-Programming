@@ -14,6 +14,11 @@
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
+?>
+
+
+<?php 
+
 
 
 ?>
@@ -33,7 +38,35 @@
 <body>
     <main id="main-frame">
         <?php require('../src/includes/views/sideNavbar.php')?>
-        <div class="main-content">hehe</div>
+        <div class="main-content">
+                <section class="main-content-wrapper dashboard-header">
+                    <h1 class="dashboard-page-title">Home</h1>
+                </section>      
+
+                <section id="dashboard-post-list">
+
+                    <!-- FORMAT POST-->
+                    <div class="post-wrapper">
+                        <div class="post-info">
+                            <img src="../src/user_pfp/goblinlaugh.png"/>
+                            <div class="post-info-header">
+                                <h1>farreldinarta <span style="font-weight:300"> 3 minutes ago</span></h1>
+                                <div class="post-tag">
+                                    <h1>#JavaScript</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-description">
+                            <!-- ini nanti jd carouselanny -->
+                            <div class="post-image"></div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta earum quae corrupti, eum ea at nemo incidunt quas natus praesentium. Sequi aut adipisci excepturi corrupti, est placeat pariatur eos officia?</p>
+
+            
+                        </div>
+                    </div>
+
+                </section>
+        </div>
         <?php require('../src/includes/views/friendRecommendation.php')?>
     </main>
 
