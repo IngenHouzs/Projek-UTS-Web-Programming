@@ -1,5 +1,5 @@
 <?php
-
+    // GATAU NI KEPAKE ATO GA
     require_once('db.php');
 
     function getRandomUser(){
@@ -14,18 +14,12 @@
         return $queryResult;
     } 
 
-
-    
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
         $q = $_REQUEST['query'];
-
         if ($q = 'randomuser'){
             $data = getRandomUser();
             echo json_encode($data);
         }
     }
-
-
-
 ?>

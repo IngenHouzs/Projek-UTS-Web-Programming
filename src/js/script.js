@@ -10,6 +10,7 @@ function getRandomUser(){
         //     <a href="index.php">Nama</a>        
         // </div>    
 
+
             for (let user of response){
                 const div = document.createElement('div');
                 div.classList.add("random-friend-popup-wrapper");
@@ -23,14 +24,13 @@ function getRandomUser(){
                 div.append(link);
                 container.append(div);
             }
-
     }
     XMLHttp.open('GET', '../src/includes/UserModel.php?query=randomuser', true);
     XMLHttp.send();
 }
 
 
-getRandomUser();
+
 
 
 
