@@ -44,11 +44,8 @@
                   
                 </form>
 
-                <div class="row justify-content-center mb-3 caption-write">
-                    <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2 caption-write">
-                        <textarea class="caption-write" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
-                    </div>
-                </div>                  
+                <textarea class="caption-write" name="caption" form="post_upload_form" placeholder="Write your caption..."></textarea>
+            
   
 
             </div>
