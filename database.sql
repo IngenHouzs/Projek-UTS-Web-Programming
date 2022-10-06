@@ -25,7 +25,7 @@ CREATE TABLE Post (
     ID_Post CHAR(25) PRIMARY KEY,
     ID_User CHAR(25), 
     waktu_post DATETIME, 
-    KATEGORI ENUM('JavaScript', 'Python', 'C++', 'TypeScript', 'PHP', 'Node.js'),
+    KATEGORI ENUM('JavaScript', 'Python', 'C++', 'TypeScript', 'PHP', 'C', 'Java', 'Ruby', 'Dart', 'Kotlin'),
     Isi LONG VARCHAR, 
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE
 );
@@ -44,9 +44,10 @@ CREATE TABLE Comment_Post (
 
 CREATE TABLE Like_Post(
     -- PAKE PREFIX L-, PAKE uniqid('L-', true) -> generate 23, tambah 2 dari prefix = 25 --       
-    ID_Like CHAR(25) PRIMARY KEY, 
+    ID_Like CHAR(25), 
     ID_Post CHAR(25), 
     ID_User CHAR (25),
+    PRIMARY KEY (ID_Like, ID_Post, ID_User),
     FOREIGN KEY (ID_Post) REFERENCES Post(ID_Post) ON DELETE CASCADE,
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE   
     

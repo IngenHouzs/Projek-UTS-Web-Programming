@@ -1,0 +1,40 @@
+<?php 
+
+    require_once('db.php');    
+
+    function likePost(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));        
+        $user_id = $data->user_id;
+        $post_id = $data->post_id; 
+
+        // QUERY TO POST LIKE
+
+        $like_id = uniqid('L-', true);
+        $postLikeQuery = "INSERT INTO Like_Post VALUES (?, ?, ?)";
+
+        $preparedData = [$like_id, $post_id, $user_id];
+        $queryExecution = $db->prepare($postLikeQuery);
+        try{
+            $queryExecution->execute($preparedData);
+        } catch(Exception $e){
+            header('location: ../../app/index.php?err=1');            
+            die();
+        }
+
+    }
+
+
+    // REQUEST CHECKER    
+    if (isset($_REQUEST['query'])){
+        $q = $_REQUEST['query'];
+        if ($q = 'likepost'){
+            $data = likePost();
+        }
+    }    
+
+
+
+?>
+
+
