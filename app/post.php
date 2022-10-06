@@ -28,8 +28,30 @@
     $dotenv->load();    
 
     require_once('../src/includes/db_external.php');   
-    // Get all comments
 
+    // Get specific information of current post
+
+    $currentPostID = $_GET['p'];
+
+    $getCurrentPostDataQuery = "SELECT User.username AS 'username', 
+    Post.waktu_post as 'post_date', 
+    Post.KATEGORI as 'kategori', 
+    Post.Isi as 'isi', 
+    Post.ID_Post as 'id',
+    Post.waktu_post as 'waktu_post',
+    Post.KATEGORI as 'tag',
+    Post.Isi as 'caption',
+    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post) AS 'like'  
+    FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
+
+    $executeQuery = $db->prepare($getCurrentPostDataQuery);
+
+    $executeQuery->execute([$currentPostID]);
+    $postInfo = $executeQuery->fetch(PDO::FETCH_ASSOC);
+
+
+
+    // Get all comments
     $getAllCommentsQuery = "SELECT Post.ID_Post as 'post',
         User.username AS 'username', 
         Comment_Post.Isi AS 'comment',
@@ -38,7 +60,11 @@
         WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User
     ";
     
-    $queryExecution = $db->query($getAllCommentsQuery);
+    try{
+        $queryExecution = $db->query($getAllCommentsQuery);
+    } catch(Exception $e){
+
+    }
 
 ?>
 
@@ -67,20 +93,20 @@
                             <div class="post-info">
                                 <img src="../src/user_pfp/goblinlaugh.png"/>
                                 <div class="post-info-header">
-                                    <h1>wkwk <span style="font-weight:300">wkwk</span></h1>
+                                    <h1><?=$postInfo['username']?> <span style="font-weight:300"><?=$postInfo['waktu_post']?></span></h1>
                                     <div class="post-tag">
-                                        <h1>wkwk</h1>
+                                        <h1><?=$postInfo['tag']?></h1>
                                     </div>
                                 </div>
                             </div>
                             <div class="post-description mc-post-desc">
                                 <!-- ini nanti jd carouselanny -->
-                                <p>AKOWK</p>
+                                <p><?=$postInfo['caption']?></p>
                                 
                                 <div class="post-reaction">
                                     <div class="post-like">
-                                        <button onclick=""><img src="../src/assets/like.png" /></button>
-                                        <p>wkwkwk</p>
+                                        <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$postInfo['id']?>')"><img src="../src/assets/like.png" /></button>
+                                        <p><?=$postInfo['like']?></p>
                                     </div>
                                     <div class="post-comment">
                                         <button><a href=""><img src="../src/assets/comment.png"/></a></button>
