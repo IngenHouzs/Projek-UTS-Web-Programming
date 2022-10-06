@@ -15,20 +15,18 @@
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
-        if ($exists){
+        if (count($exists)){
             $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
             $unlikeQueryParams = [$post_id, $user_id];
             $executeUnlikeQuery = $db->prepare($unlikeQuery);
             try{
                 $executeUnlikeQuery->execute($unlikeQueryParams);
+                die();
             }catch(Exception $e){
                 header('location: ../../app/index.php?err=1');   
                 die();
             }
-
         }
-
-
 
 
         $like_id = uniqid('L-', true);

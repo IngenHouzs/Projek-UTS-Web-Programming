@@ -59,7 +59,7 @@
                 <section id="dashboard-post-list">
 
                     <!-- FORMAT POST-->
-
+     
                     <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
 
                         <div class="post-wrapper">
@@ -90,6 +90,7 @@
                         </div>
 
                     <?php }?>
+                 
 
                 </section>
         </div>
