@@ -32,7 +32,7 @@
                                 Post.KATEGORI as 'kategori',
                                 Post.Isi as 'isi', 
                                 Post.ID_Post as 'id'                                 
-                                FROM Post, User ORDER BY Post.waktu_post DESC";
+                                FROM Post, User WHERE Post.ID_User = User.ID_User ORDER BY Post.waktu_post DESC";
     $queryExecution = $db->query($getAllPostQuery);
 ?>
 
