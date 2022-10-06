@@ -21,6 +21,27 @@
     }
 ?>
 
+<?php 
+
+    require_once("../vendor/autoload.php");
+    $dotenv = Dotenv\Dotenv::createImmutable('../');
+    $dotenv->load();    
+
+    require_once('../src/includes/db_external.php');   
+    // Get all comments
+
+    $getAllCommentsQuery = "SELECT Post.ID_Post as 'post',
+        User.username AS 'username', 
+        Comment_Post.Isi AS 'comment',
+        User.foto AS 'foto'
+        FROM Post, User, Comment_Post
+        WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User
+    ";
+    
+    $queryExecution = $db->query($getAllCommentsQuery);
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +56,7 @@
 <body>
 
 <main id="main-frame">
-        <?php require('../src/includes/views/sideNavbar.php')?>
-
+        <?php require('../src/includes/views/sideNavbar.php')?>  
         <div class="main-content mc-post">
             <div class="user-post-image-wrapper">
                 <div class="image-frame">
@@ -56,6 +76,7 @@
                             <div class="post-description mc-post-desc">
                                 <!-- ini nanti jd carouselanny -->
                                 <p>AKOWK</p>
+                                
                                 <div class="post-reaction">
                                     <div class="post-like">
                                         <button onclick=""><img src="../src/assets/like.png" /></button>
@@ -66,18 +87,31 @@
                                         <p>2000</p>
                                     </div>                                
                                 </div>
+
                                 <section class="post-comments-wrapper">
                                     <h1>Comments</h1>
                                     <div class="comment-box">
                                         
                                         <!-- ini buat comment per user -->
+
+                                        <?php while($comment = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                                         <div class="user-comment-box">
-                                            <img src="../src/user_pfp/goblinlaugh.png"/>  
+                                            <img src="../src/user_pfp/<?=$comment['foto']?>"/>  
                                             <div class="user-comment-text">
-                                                <p><span style="font-weight:bold;">Farrel</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ipsa rem sint voluptatem officiis et ad delectus suscipit dolorem laborum, illo, numquam alias harum culpa sit sequi odio quod. Voluptas.</p>
-                                            </div>
+                                                <p><span style="font-weight:bold;"><?=$comment['username']?></span><?=$comment['comment']?></p>
+                                            </div> 
+                                            <button><img src="../src/assets/like.png"/></button>
                                         </div>
+                                        <?php }?>
+                    
+                                
                                     </div>
+                                    <form id="add-comment" action="../src/includes/process_comment.php" method="post"></form>
+                                    <div class="add-comment-section">
+                                        <input name="post_id" value="<?=$_GET['p']?>" hidden form="add-comment"/>
+                                        <textarea type="text" name="comment" placeholder="Add comment" form="add-comment" required></textarea>
+                                        <button type="submit" form="add-comment">Post</button> 
+                                    </div>                                   
                                 </section>
                             </div>
                         </div>               
