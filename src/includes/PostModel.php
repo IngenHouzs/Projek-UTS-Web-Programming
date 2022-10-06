@@ -10,13 +10,13 @@
 
         // QUERY TO POST LIKE 
 
-        $checkIfLikedQuery = "SELECT * FROM Like_Post WHERE ID_Post = ? AND ID_Like = ?";
+        $checkIfLikedQuery = "SELECT * FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
         $checkIfLikedQueryParams = [$post_id, $user_id];
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
         if ($exists){
-            $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_Like = ?";
+            $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
             $unlikeQueryParams = [$post_id, $user_id];
             $executeUnlikeQuery = $db->prepare($unlikeQuery);
             try{
