@@ -38,21 +38,70 @@
                 <form action="../src/includes/create_post_process.php" method="POST" id="post_upload_form" enctype="multipart/form-data">
                 </form>     
 
-                <button class="dropdown-button">
-                        <img src="../src/assets/instagram.svg"/>
-                        Add Post Tag
+                <button class="dropdown-button">    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                    <p>Add Post Tag</p>
                 </button>
 
                 <div id="post-tag" style="display:none;">
-                    <input type="radio" name="tag" value="JavaScript" id="tag-list" form="post_upload_form" required><label for="tag-list">JavaScript</label></input>
-                    <input type="radio" name="tag" value="Python" id="tag-list" form="post_upload_form" required><label for="tag-list">Python</label></input>                                                   
-                    <input type="radio" name="tag" value="C++" id="tag-list" form="post_upload_form" required><label for="tag-list">C++</label></input>                         
-                    <input type="radio" name="tag" value="TypeScript" id="tag-list" form="post_upload_form" required><label for="tag-list">TypeScript</label></input>                         
-                    <input type="radio" name="tag" value="PHP" id="tag-list" form="post_upload_form" required><label for="tag-list">PHP</label></input>                         
-                    <input type="radio" name="tag" value="Node.js" id="tag-list" form="post_upload_form" required><label for="tag-list">Node.js</label></input>                         
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col post-tag-col">
+                                <fieldset class="post-tag-col">
+                                    <input type="radio" name="tag" value="JavaScript" id="tag-list" form="post_upload_form" required> <label for="tag-list">JavaScript</label></input>
+                                </fieldset>
+
+                                <fieldset>
+                                    <input type="radio" name="tag" value="Python" id="tag-list" form="post_upload_form" required> <label for="tag-list">Python</label></input>       
+                                </fieldset>
+                            </div>
+
+                            <div class="col post-tag-col">
+                                <fieldset class="post-tag-col">
+                                    <input type="radio" name="tag" value="C++" id="tag-list" form="post_upload_form" required> <label for="tag-list">C++</label></input>  
+                                </fieldset>
+
+                                <fieldset>
+                                    <input type="radio" name="tag" value="TypeScript" id="tag-list" form="post_upload_form" required> <label for="tag-list">TypeScript</label></input> 
+                                </fieldset>
+                            </div>
+                            
+                            <div class="col post-tag-col">
+                                <fieldset class="post-tag-col">
+                                    <input type="radio" name="tag" value="PHP" id="tag-list" form="post_upload_form" required> <label for="tag-list">PHP</label></input>  
+                                </fieldset>
+
+                                <fieldset>
+                                    <input type="radio" name="tag" value="C" id="tag-list" form="post_upload_form" required> <label for="tag-list">C</label></input>  
+                                </fieldset>  
+                            </div>
+
+                            <div class="col post-tag-col">
+                                <fieldset class="post-tag-col">
+                                    <input type="radio" name="tag" value="Java" id="tag-list" form="post_upload_form" required> <label for="tag-list">Java</label></input>  
+                                </fieldset>        
+
+                                <fieldset>
+                                    <input type="radio" name="tag" value="Ruby" id="tag-list" form="post_upload_form" required> <label for="tag-list">Ruby</label></input>  
+                                </fieldset>  
+                            </div>
+
+                            <div class="col">
+                                <fieldset class="post-tag-col">
+                                    <input type="radio" name="tag" value="Dart" id="tag-list" form="post_upload_form" required> <label for="tag-list">Dart</label></input>  
+                                </fieldset>           
+                                        
+                                <fieldset>
+                                    <input type="radio" name="tag" value="Kotlin" id="tag-list" form="post_upload_form" required> <label for="tag-list">Kotlin</label></input>  
+                                </fieldset>     
+                            </div>
+                        </div>
+                    </div>                       
                 </div>
 
-                <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..." required></textarea>
+                <div id="textarea-create" class="p-2">
+                    <textarea class="caption-write t_area" name="caption" form="post_upload_form" placeholder="Write your caption..." required></textarea>
+                </div>
 
                 <div id="preview-image">
                     <div class="empty-image">
@@ -62,11 +111,11 @@
 
                 <div class="image-post">
                     <label class="addfile" for="pictures">
-                        <img src="../src/assets/instagram.svg"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                         <p>Add Photo</p>
                     </label>
                     <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' name="foto[]" accept="image/png, image/gif, image/jpeg, image/svg, image/webp, image/bmp, image/gif" multiple hidden></input>
-                    <button class="submit-button" type="submit" form="post_upload_form">Post</button>
+                    <button class="btn btn-primary submit-button" type="submit" form="post_upload_form">Post</button>
                 </div>
                 
 
