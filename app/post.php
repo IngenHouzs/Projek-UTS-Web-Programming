@@ -41,7 +41,8 @@
     Post.waktu_post as 'waktu_post',
     Post.KATEGORI as 'tag',
     Post.Isi as 'caption',
-    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post) AS 'like'  
+    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post) AS 'like',
+    (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost) AS 'comments'    
     FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
 
     $executeQuery = $db->prepare($getCurrentPostDataQuery);
@@ -110,7 +111,7 @@
                                     </div>
                                     <div class="post-comment">
                                         <button><a href=""><img src="../src/assets/comment.png"/></a></button>
-                                        <p>2000</p>
+                                        <p><?= $postInfo['comments']?></p>
                                     </div>                                
                                 </div>
 
