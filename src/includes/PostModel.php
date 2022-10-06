@@ -10,6 +10,8 @@
 
         // QUERY TO POST LIKE
 
+        
+
         $like_id = uniqid('L-', true);
         $postLikeQuery = "INSERT INTO Like_Post VALUES (?, ?, ?)";
 

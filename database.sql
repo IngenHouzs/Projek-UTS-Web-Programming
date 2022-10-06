@@ -47,7 +47,7 @@ CREATE TABLE Like_Post(
     ID_Like CHAR(25), 
     ID_Post CHAR(25), 
     ID_User CHAR (25),
-    PRIMARY KEY (ID_Like, ID_Post, ID_User),
+    PRIMARY KEY (ID_Post, ID_User),
     FOREIGN KEY (ID_Post) REFERENCES Post(ID_Post) ON DELETE CASCADE,
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE   
     
