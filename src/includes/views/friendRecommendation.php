@@ -21,7 +21,7 @@
 <!-- ini dibuang pas 900px -->
 <div class="friend-recommendation-section">
 
-    <h1 class="highlight-text">See posts from people around you</h1>
+    <h5 class="highlight-text">See posts from people around you</h5>
 
     <?php foreach($queryResult as $user): ?>
 
