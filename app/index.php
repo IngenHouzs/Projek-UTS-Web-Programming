@@ -33,7 +33,8 @@
             Post.Isi as 'isi', 
             Post.ID_Post as 'id', 
             (SELECT COUNT(ID_Post) FROM Like_Post 
-            WHERE ID_Post = Like_Post.ID_Post) AS 'like' 
+            WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+            (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
             FROM Post, User WHERE Post.ID_User = User.ID_User 
             ORDER BY Post.waktu_post DESC";
     $queryExecution = $db->query($getAllPostQuery);
@@ -86,7 +87,7 @@
                                     </div>
                                     <div class="post-comment">
                                         <button><a href="post.php?p=<?=$post['id']?>"><img src="../src/assets/comment.png"/></a></button>
-                                        <p>2000</p>
+                                        <p><?=$post['comments']?></p>
                                     </div>                                
                                 </div>
                             </div>

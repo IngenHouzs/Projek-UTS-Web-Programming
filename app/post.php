@@ -41,13 +41,13 @@
     Post.waktu_post as 'waktu_post',
     Post.KATEGORI as 'tag',
     Post.Isi as 'caption',
-    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post) AS 'like',
-    (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost) AS 'comments'    
+    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
+    (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
     FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
 
     $executeQuery = $db->prepare($getCurrentPostDataQuery);
 
-    $executeQuery->execute([$currentPostID]);
+    $executeQuery->execute([$currentPostID,$currentPostID, $currentPostID]);
     $postInfo = $executeQuery->fetch(PDO::FETCH_ASSOC);
 
 
@@ -58,11 +58,15 @@
         Comment_Post.Isi AS 'comment',
         User.foto AS 'foto'
         FROM Post, User, Comment_Post
-        WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User
+        WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User AND Comment_Post.ID_Post = ?
     ";
     
+    $params = [$currentPostID,$currentPostID, $currentPostID];
+
     try{
-        $queryExecution = $db->query($getAllCommentsQuery);
+        $queryExecution = $db->prepare($getAllCommentsQuery);
+        $queryExecution->execute($params);
+        
     } catch(Exception $e){
 
     }
