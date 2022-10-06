@@ -8,8 +8,7 @@
         $user_id = $data->user_id;
         $post_id = $data->post_id; 
 
-        // QUERY TO POST LIKE
-
+        // QUERY TO POST LIKE 
         
 
         $like_id = uniqid('L-', true);
@@ -18,7 +17,12 @@
         $preparedData = [$like_id, $post_id, $user_id];
         $queryExecution = $db->prepare($postLikeQuery);
         try{
-            $queryExecution->execute($preparedData);
+            $exec = $queryExecution->execute($preparedData);
+            if (!$exec){
+                header('location: ../../app/index.php?err=0');            
+                die();               
+            }   
+            
         } catch(Exception $e){
             header('location: ../../app/index.php?err=1');            
             die();
