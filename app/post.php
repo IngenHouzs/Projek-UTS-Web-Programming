@@ -61,12 +61,12 @@
         WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User AND Comment_Post.ID_Post = ?
     ";
     
-    $params = [$currentPostID,$currentPostID, $currentPostID];
+    $params = [$currentPostID];
 
     try{
         $queryExecution = $db->prepare($getAllCommentsQuery);
         $queryExecution->execute($params);
-        
+
     } catch(Exception $e){
 
     }
