@@ -15,7 +15,7 @@
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
-        if (count($exists)){
+        if (isset($exists['ID_Post'])){
             $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
             $unlikeQueryParams = [$post_id, $user_id];
             $executeUnlikeQuery = $db->prepare($unlikeQuery);

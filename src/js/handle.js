@@ -2,7 +2,7 @@
 const likePost = (user_id, post_id) => {
     const XMLHttp = new XMLHttpRequest();
     XMLHttp.onload = () => {
-        const response = JSON.parse(XMLHttp.responseText);
+        const response = XMLHttp.responseText;
         console.log(response);
     }
     XMLHttp.open('POST', '../src/includes/PostModel.php?query=likepost', true);
