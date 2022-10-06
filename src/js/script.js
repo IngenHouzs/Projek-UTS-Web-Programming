@@ -59,7 +59,9 @@ const showImagePreview = () => {
 
 
 
-const init = () =>{
+// init
+
+const init = () =>{ 
     document.getElementsByClassName('dropdown-button')[0].addEventListener('click', showPostTagsOnCreate);
 }   
 

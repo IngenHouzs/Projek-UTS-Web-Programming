@@ -30,7 +30,8 @@
     $getAllPostQuery = "SELECT User.username AS 'username', 
                                 Post.waktu_post as 'post_date',
                                 Post.KATEGORI as 'kategori',
-                                Post.Isi as 'isi'                                 
+                                Post.Isi as 'isi', 
+                                Post.ID_Post as 'id'                                 
                                 FROM Post, User ORDER BY Post.waktu_post DESC";
     $queryExecution = $db->query($getAllPostQuery);
 ?>
@@ -77,11 +78,11 @@
                                 <p><?=$post['isi']?></p>
                                 <div class="post-reaction">
                                     <div class="post-like">
-                                        <button><img src="../src/user_pfp/goblinlaugh.png"/></button>
+                                        <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/like.png" /></button>
                                         <p>2000</p>
                                     </div>
                                     <div class="post-comment">
-                                        <button><img src="../src/user_pfp/goblinlaugh.png"/></button>
+                                        <button onclick="commentPost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/comment.png"/></button>
                                         <p>2000</p>
                                     </div>                                
                                 </div>
@@ -95,7 +96,8 @@
         <?php require('../src/includes/views/friendRecommendation.php')?>
     </main>
 
-    <script src="../src/bootstrap/js/bootstra.min.js"></script>
+    <script src="../src/bootstrap/js/bootstrap.min.js"></script>
     <script src="../src/js/script.js"></script>
+    <script src="../src/js/handle.js"></script>    
 </body>
 </html>

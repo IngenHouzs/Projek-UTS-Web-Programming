@@ -336,6 +336,7 @@ body {
   background-color: orange;
   display:flex;
   justify-content: flex-start;
+  align-items: center !important;
   gap:3rem;
 }
 
