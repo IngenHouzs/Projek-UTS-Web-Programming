@@ -27,7 +27,11 @@
 
     // QUERY SORT BY RECENT POST
 
-    $getAllPostQuery = "SELECT * FROM Post ORDER BY waktu_post DESC";
+    $getAllPostQuery = "SELECT User.username AS 'username', 
+                                Post.waktu_post as 'post_date',
+                                Post.KATEGORI as 'kategori',
+                                Post.Isi as 'isi'                                 
+                                FROM Post, User ORDER BY Post.waktu_post DESC";
     $queryExecution = $db->query($getAllPostQuery);
 ?>
 
@@ -61,16 +65,16 @@
                             <div class="post-info">
                                 <img src="../src/user_pfp/goblinlaugh.png"/>
                                 <div class="post-info-header">
-                                    <h1>farreldinarta <span style="font-weight:300"> 3 minutes ago</span></h1>
+                                    <h1><?=$post['username']?> <span style="font-weight:300"> <?=$post['post_date']?></span></h1>
                                     <div class="post-tag">
-                                        <h1>#JavaScript</h1>
+                                        <h1><?=$post['kategori']?></h1>
                                     </div>
                                 </div>
                             </div>
                             <div class="post-description">
                                 <!-- ini nanti jd carouselanny -->
                                 <div class="post-image"></div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta earum quae corrupti, eum ea at nemo incidunt quas natus praesentium. Sequi aut adipisci excepturi corrupti, est placeat pariatur eos officia?</p>
+                                <p><?=$post['isi']?></p>
                                 <div class="post-reaction">
                                     <div class="post-like">
                                         <button><img src="../src/user_pfp/goblinlaugh.png"/></button>
