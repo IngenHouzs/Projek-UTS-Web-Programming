@@ -9,7 +9,27 @@
         $post_id = $data->post_id; 
 
         // QUERY TO POST LIKE 
-        
+
+        $checkIfLikedQuery = "SELECT * FROM Like_Post WHERE ID_Post = ? AND ID_Like = ?";
+        $checkIfLikedQueryParams = [$post_id, $user_id];
+        $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
+        $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
+        $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
+        if ($exists){
+            $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_Like = ?";
+            $unlikeQueryParams = [$post_id, $user_id];
+            $executeUnlikeQuery = $db->prepare($unlikeQuery);
+            try{
+                $executeUnlikeQuery->execute($unlikeQueryParams);
+            }catch(Exception $e){
+                header('location: ../../app/index.php?err=1');   
+                die();
+            }
+
+        }
+
+
+
 
         $like_id = uniqid('L-', true);
         $postLikeQuery = "INSERT INTO Like_Post VALUES (?, ?, ?)";
