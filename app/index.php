@@ -85,7 +85,7 @@
                                         <p><?= $post['like']?></p>
                                     </div>
                                     <div class="post-comment">
-                                        <button onclick="commentPost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/comment.png"/></button>
+                                        <button><a href="post.php?p=<?=$post['id']?>"><img src="../src/assets/comment.png"/></a></button>
                                         <p>2000</p>
                                     </div>                                
                                 </div>
