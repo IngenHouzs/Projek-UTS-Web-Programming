@@ -19,9 +19,9 @@
         try{
             $exec = $queryExecution->execute($preparedData);
             if (!$exec){
-                header('location: ../../app/index.php?err=0');            
+                header('location: ../../app/index.php?err=2');            
                 die();               
-            }   
+            } 
             
         } catch(Exception $e){
             header('location: ../../app/index.php?err=1');            
