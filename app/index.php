@@ -28,11 +28,14 @@
     // QUERY SORT BY RECENT POST
 
     $getAllPostQuery = "SELECT User.username AS 'username', 
-                                Post.waktu_post as 'post_date',
-                                Post.KATEGORI as 'kategori',
-                                Post.Isi as 'isi', 
-                                Post.ID_Post as 'id'                                 
-                                FROM Post, User WHERE Post.ID_User = User.ID_User ORDER BY Post.waktu_post DESC";
+            Post.waktu_post as 'post_date', 
+            Post.KATEGORI as 'kategori', 
+            Post.Isi as 'isi', 
+            Post.ID_Post as 'id', 
+            (SELECT COUNT(ID_Post) FROM Like_Post 
+            WHERE ID_Post = Like_Post.ID_Post) AS 'like' 
+            FROM Post, User WHERE Post.ID_User = User.ID_User 
+            ORDER BY Post.waktu_post DESC";
     $queryExecution = $db->query($getAllPostQuery);
 ?>
 
@@ -79,7 +82,7 @@
                                 <div class="post-reaction">
                                     <div class="post-like">
                                         <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/like.png" /></button>
-                                        <p>2000</p>
+                                        <p><?= $post['like']?></p>
                                     </div>
                                     <div class="post-comment">
                                         <button onclick="commentPost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/comment.png"/></button>
