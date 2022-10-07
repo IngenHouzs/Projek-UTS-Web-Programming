@@ -55,9 +55,10 @@ CREATE TABLE Like_Post(
 
 CREATE TABLE Like_Comment(
     -- PAKE PREFIX A-, PAKE uniqid('L-', true) -> generate 23, tambah 2 dari prefix = 25 --     
-    ID_Like CHAR(25) PRIMARY KEY,
+    ID_Like CHAR(25),
     ID_Comment CHAR(25),
     ID_User CHAR(25),
+    PRIMARY KEY (ID_Comment, ID_User),
     FOREIGN KEY (ID_Comment) REFERENCES Comment_Post(ID_Post) ON DELETE CASCADE,
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE    
 );
