@@ -41,6 +41,7 @@
     Post.waktu_post as 'waktu_post',
     Post.KATEGORI as 'tag',
     Post.Isi as 'caption',
+    User.foto as 'foto',
     (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
     (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
     FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
@@ -98,7 +99,7 @@
             </div>
             <div class="post-wrapper mc-post-wrapper">
                             <div class="post-info">
-                                <img src="../src/user_pfp/goblinlaugh.png"/>
+                                <img src="../src/user_pfp/<?= !$postInfo['foto'] ? 'no-pfp.webp' : $postInfo['foto']?>"/>
                                 <div class="post-info-header" onclick="redirectToUserPage('<?=$postInfo['username']?>')">
                                     <h1><?=$postInfo['username']?> <span style="font-weight:300"><?=$postInfo['waktu_post']?></span></h1>
                                     <div class="post-tag">
@@ -129,7 +130,7 @@
 
                                         <?php while($comment = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                                         <div class="user-comment-box">
-                                            <img src="../src/user_pfp/<?=$comment['foto']?>" onclick="redirectToUserPage('<?=$comment['username']?>')"/>  
+                                            <img src="../src/user_pfp/<?=  !$comment['foto'] ? 'no-pfp.webp' : $comment['foto']?>" onclick="redirectToUserPage('<?=$comment['username']?>')"/>  
                                             <div class="user-comment-text">
                                                 <p><span style="font-weight:bold;" onclick="redirectToUserPage('<?=$comment['username']?>')"><?=$comment['username']?></span><?=$comment['comment']?></p>
                                             </div> 

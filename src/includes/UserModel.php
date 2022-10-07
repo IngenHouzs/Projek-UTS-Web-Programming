@@ -20,7 +20,7 @@
         $data = json_decode(file_get_contents("php://input"));            
         $query = '%'.$data->query.'%';
 
-        $findUserQuery = "SELECT ID_User, username FROM User WHERE username LIKE ?";
+        $findUserQuery = "SELECT ID_User, username, foto FROM User WHERE username LIKE ?";
         $queryExecution = $db->prepare($findUserQuery);
         $queryExecution->execute([$query]);
         

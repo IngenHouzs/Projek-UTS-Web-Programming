@@ -34,12 +34,21 @@ const liveSearch = (query) => {
           return;
         }
         for (let user of response){
-            oldWrapper.innerHTML += `
-            <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
-            <img src="../src/user_pfp/goblinlaugh.png"/>
-            <p>${user.username}</p>
-            </div>             
-            `
+            if (user.foto) {
+              oldWrapper.innerHTML += `
+                <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
+                <img src="../src/user_pfp/${user.foto}"/>
+                <p>${user.username}</p>
+                </div>             
+                `              
+            } else {
+              oldWrapper.innerHTML += `
+                <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
+                <img src="../src/user_pfp/no-pfp.webp"/>
+                <p>${user.username}</p>
+                </div>             
+              `              
+            }
             
         }
 
