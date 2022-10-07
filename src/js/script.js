@@ -56,15 +56,19 @@ const showImagePreview = () => {
   }
 };
 
+
+
+
 // init;
 
-// const init = () => {
-//   document
-//     .getElementsByClassName("dropdown-button")[0]
-//     .addEventListener("click", showPostTagsOnCreate);
-// };
+const init = () => {
+  document
+    .getElementsByClassName("dropdown-button")[0]
+    .addEventListener("click", showPostTagsOnCreate);
+};
 
-// init();
+init();
+
 
 const logout = document.getElementById("logout-website");
 logout.onclick = function () {
@@ -73,6 +77,7 @@ logout.onclick = function () {
 
 const cancel_logout = document.getElementById("button-no");
 cancel_logout.onclick = function () {
+
   document.getElementById("overlay-logout").setAttribute("hidden", "");
 };
 
@@ -88,3 +93,7 @@ function closeNav() {
   document.getElementsByClassName("main-content")[0].style.marginLeft = "0";
   document.getElementById("overlay-navbar").setAttribute("hidden", "");
 }
+=======
+  document.getElementsByClassName("overlay")[0].setAttribute("hidden", "");
+};
+

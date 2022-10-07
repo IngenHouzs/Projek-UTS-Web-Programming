@@ -101,6 +101,7 @@
         <?php require('../src/includes/views/friendRecommendation.php')?>
     </main>
 
+
     <div id="overlay-logout" hidden>
         <div id="box" class="alert" role="alert">
             <h4 class="alert-heading">Log Out</h4>
@@ -117,8 +118,9 @@
         </div>
     </div>
 
+
     <script src="../src/bootstrap/js/bootstrap.min.js"></script>
     <script src="../src/js/script.js"></script>
-    <script src="../src/js/handle.js"></script>   
+    <script src="../src/js/handle.js"></script>    
 </body>
 </html>
