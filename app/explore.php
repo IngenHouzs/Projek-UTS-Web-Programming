@@ -29,26 +29,29 @@
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
     
-        $userInfo = $getIDQueryExecution->fetch(PDO::FETCH_ASSOC);
-        $userID = $userInfo['ID_User'];
-        // GET POSTS COUNT
+        $userInfo = $getIDQueryExecution->fetch(PDO::FETCH_ASSOC); 
+        if (isset($userInfo['ID_User'])){
+            $userID = $userInfo['ID_User'];
+            // GET POSTS COUNT
+    
+            $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM Post WHERE Post.ID_User = ?";
+            $queryExecution = $db->prepare($postCountQuery);
+            $queryExecution->execute([$userID]);
+    
+            $postCount = $queryExecution->fetch(PDO::FETCH_ASSOC);
+            
+    
+            // GET ALL POSTS
+            $getAllPostQuery = "SELECT 
+            Post.KATEGORI AS 'tag',
+            Post.ISI AS 'caption',
+            Post.ID_Post AS 'id'
+            FROM Post WHERE Post.ID_User = ?";
+    
+            $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
+            $getAllPostQueryExecution->execute([$userID]);            
+        }
 
-        $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM Post WHERE Post.ID_User = ?";
-        $queryExecution = $db->prepare($postCountQuery);
-        $queryExecution->execute([$userID]);
-
-        $postCount = $queryExecution->fetch(PDO::FETCH_ASSOC);
-        
-
-        // GET ALL POSTS
-        $getAllPostQuery = "SELECT 
-        Post.KATEGORI AS 'tag',
-        Post.ISI AS 'caption',
-        Post.ID_Post AS 'id'
-        FROM Post WHERE Post.ID_User = ?";
-
-        $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
-        $getAllPostQueryExecution->execute([$userID]);
 
 
         
@@ -82,7 +85,7 @@
                 </section>             
 
                 <?php 
-                    if (isset($_GET['u'])){
+                    if (isset($_GET['u']) && isset($userInfo['ID_User'])){
                     // kerjain view post disini ?>
 
                     <!-- HTML nya disini -->
