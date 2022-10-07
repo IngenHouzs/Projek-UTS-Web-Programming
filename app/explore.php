@@ -82,8 +82,7 @@
                             </div>
                         </div>      
                         <div class="search-box" style="display:none;">
-                                                            
-                              
+                            <!-- jangan diilangin -->                                                  
                         </div>
                         <button type="submit" form="search-user">Search</button>           
                 </section>             

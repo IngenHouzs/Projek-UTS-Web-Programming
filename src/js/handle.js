@@ -29,9 +29,13 @@ const liveSearch = (query) => {
         const response = JSON.parse(XMLHttp.responseText);        
         const oldWrapper = document.querySelector('.search-box');      
         oldWrapper.innerHTML = '';
+
+        if (response.length == 0 || document.querySelector('.search-user-form').value == ''){
+          return;
+        }
         for (let user of response){
             oldWrapper.innerHTML += `
-            <div class="result-search-box">
+            <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
             <img src="../src/user_pfp/goblinlaugh.png"/>
             <p>${user.username}</p>
             </div>             
@@ -51,4 +55,8 @@ const showSearchResult = () => {
     else searchResult.style.display = 'none';
 } 
 
-
+const autoAddInputValue = (username) => {
+  console.log("hehe");
+  const inputBar = document.querySelector('.search-user-form');
+  inputBar.value = username;
+}
