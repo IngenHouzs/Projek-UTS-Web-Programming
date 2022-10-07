@@ -56,17 +56,22 @@ const showImagePreview = () => {
   }
 };
 
-init;
+// init;
 
-const init = () => {
-  document
-    .getElementsByClassName("dropdown-button")[0]
-    .addEventListener("click", showPostTagsOnCreate);
-};
+// const init = () => {
+//   document
+//     .getElementsByClassName("dropdown-button")[0]
+//     .addEventListener("click", showPostTagsOnCreate);
+// };
 
-init();
+// init();
 
 const logout = document.getElementById("logout");
-logout.addEventListener("click", function () {
+logout.onclick = function () {
   document.getElementsByClassName("overlay")[0].removeAttribute("hidden");
-});
+};
+
+const cancel_logout = document.getElementById("button-no");
+cancel_logout.onclick = function () {
+  document.getElementsByClassName("overlay")[0].setAttribute("hidden", "");
+};
