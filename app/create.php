@@ -45,8 +45,8 @@
 
                 <div id="post-tag" style="display:none;">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col post-tag-col">
+                        <div class="row row-cols-3 row-cols-sm-2 row-cols-md-3">
+                            <div class="col-lg post-tag-col">
                                 <fieldset class="post-tag-col">
                                     <input type="radio" name="tag" value="JavaScript" id="tag-list" form="post_upload_form" required> <label for="tag-list">JavaScript</label></input>
                                 </fieldset>
@@ -56,7 +56,7 @@
                                 </fieldset>
                             </div>
 
-                            <div class="col post-tag-col">
+                            <div class="col-lg post-tag-col">
                                 <fieldset class="post-tag-col">
                                     <input type="radio" name="tag" value="CPP" id="tag-list" form="post_upload_form" required> <label for="tag-list">C++</label></input>  
                                 </fieldset>
@@ -66,7 +66,7 @@
                                 </fieldset>
                             </div>
                             
-                            <div class="col post-tag-col">
+                            <div class="col-lg post-tag-col">
                                 <fieldset class="post-tag-col">
                                     <input type="radio" name="tag" value="PHP" id="tag-list" form="post_upload_form" required> <label for="tag-list">PHP</label></input>  
                                 </fieldset>
@@ -76,7 +76,7 @@
                                 </fieldset>  
                             </div>
 
-                            <div class="col post-tag-col">
+                            <div class="col-lg post-tag-col">
                                 <fieldset class="post-tag-col">
                                     <input type="radio" name="tag" value="Java" id="tag-list" form="post_upload_form" required> <label for="tag-list">Java</label></input>  
                                 </fieldset>        
@@ -86,7 +86,7 @@
                                 </fieldset>  
                             </div>
 
-                            <div class="col">
+                            <div class="col-lg">
                                 <fieldset class="post-tag-col">
                                     <input type="radio" name="tag" value="Dart" id="tag-list" form="post_upload_form" required> <label for="tag-list">Dart</label></input>  
                                 </fieldset>           
@@ -122,6 +122,23 @@
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
         </section>
+
+        <div id="overlay-logout" hidden>
+            <div id="box" class="alert" role="alert">
+                <h4 class="alert-heading">Log Out</h4>
+                <p>Are you sure want to Log Out?</p>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" href="logout.php"><a id="button-yes" href="logout.php">Yes</a></button>
+                    </div>
+                    <div class="col">
+                        <button id="button-no" class="btn btn-primary">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="../src/js/script.js"></script>
         <script src="../src/js/handle.js"></script>        
         
