@@ -18,9 +18,9 @@
         // AJAX
         global $db;
         $data = json_decode(file_get_contents("php://input"));            
-        $query = $data->query;
+        $query = '%'.$data->query.'%';
 
-        $findUserQuery = "SELECT ID_User, username FROM User WHERE username LIKE '%?%'";
+        $findUserQuery = "SELECT ID_User, username FROM User WHERE username LIKE ?";
         $queryExecution = $db->prepare($findUserQuery);
         $queryExecution->execute([$query]);
         
@@ -37,12 +37,12 @@
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
         $q = $_REQUEST['query'];
-        if ($q = 'randomuser'){
+        if ($q == 'randomuser'){
             $data = getRandomUser();
             echo json_encode($data);
-        } else if ($q = 'livesearch'){
+        } else if ($q == 'livesearch'){
             $res = liveSearch();
-            echo json_encode($res);
+            echo json_encode($res);  
         }
     }
 ?>

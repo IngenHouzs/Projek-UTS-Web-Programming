@@ -26,7 +26,7 @@ const liveSearch = (query) => {
     const XMLHttp = new XMLHttpRequest();
     // response
     XMLHttp.onload = () => {
-        const response = JSON.parse(XMLHttp.responseText);
+        const response = XMLHttp.responseText;
         console.log(response);
     }
     XMLHttp.open("POST", "../src/includes/UserModel.php?query=livesearch&q=" + query, true);
