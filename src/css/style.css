@@ -634,8 +634,41 @@ body {
 } 
 
 .search-user-type{
-  width:90% !important;
-  
+  width:90% !important; 
+}
+
+.profile-header{
+  width:100%;
+  height:10rem;
+  border-bottom:1px solid #bdbdbd;
+
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left:1rem;
+
+}
+
+.profile-picture{
+  height:8rem;
+  width:8rem;
+  border-radius: 50%;
+  border:1px solid #bdbdbd;
+}
+
+
+.profile-header-desc{
+  height:100%;
+  width:100%;
+
+  display:flex;
+  flex-direction: column;
+  padding-top:1rem;
+  padding-left:2rem;
+}
+
+.profile-header-desc h1:nth-child(2){
+  font-size:1rem;
 }
 
 @media (min-width: 576px) {

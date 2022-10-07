@@ -43,9 +43,23 @@
 
                 <?php 
                     if (isset($_GET['u'])){
-                    // kerjain view post disini
-                ?>
+                    // kerjain view post disini ?>
+
+                    <!-- HTML nya disini -->
+
+                    <div class="profile-header">
+                        <img class="profile-picture" src="../src/user_pfp/goblinlaugh.png"/>
+                        <div class="profile-header-desc">
+                            <h1>ingenhouzs</h1>
+                            <h1>Farrel Dinarta</h1                            
+                            <p>4 posts</p>
+                        </div>
+                    </div> 
+
                     
+
+
+
                 <?php }?>
 
         </div>
