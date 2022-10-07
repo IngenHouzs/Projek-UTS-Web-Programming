@@ -26,11 +26,29 @@ const liveSearch = (query) => {
     const XMLHttp = new XMLHttpRequest();
     // response
     XMLHttp.onload = () => {
-        const response = XMLHttp.responseText;
-        console.log(response);
+        const response = JSON.parse(XMLHttp.responseText);        
+        const oldWrapper = document.querySelector('.search-box');      
+        oldWrapper.innerHTML = '';
+        for (let user of response){
+            oldWrapper.innerHTML += `
+            <div class="result-search-box">
+            <img src="../src/user_pfp/goblinlaugh.png"/>
+            <p>${user.username}</p>
+            </div>             
+            `
+            
+        }
+
     }
     XMLHttp.open("POST", "../src/includes/UserModel.php?query=livesearch&q=" + query, true);
     XMLHttp.send(JSON.stringify({query}));
+} 
+
+
+const showSearchResult = () => {
+    const searchResult = document.querySelector('.search-box');
+    if (searchResult.style.display == 'none') searchResult.style.display = 'block';
+    else searchResult.style.display = 'none';
 } 
 
 
