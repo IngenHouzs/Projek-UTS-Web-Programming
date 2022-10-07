@@ -80,6 +80,9 @@ function closeNav() {
 }
 
 
+const categoryDropdownToggle = () => {
+    console.log("wkkw");
+}
 
 
 const init = () => {
