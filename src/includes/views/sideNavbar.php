@@ -1,4 +1,4 @@
-<div id="overlay-navbar" hidden>
+<div id="overlay-navbar-mobile" hidden>
     <div id="new-side-bar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="new-profile-bar mb-1">
