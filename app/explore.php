@@ -78,7 +78,7 @@
                 <section class="main-content-wrapper dashboard-header">
                         <div class="row justify-content-center mb-3 search-user-type">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2 search-user-type">
-                                <input class="input-login-and-register search-user-type" id="login-form-username" type="text" name="u" placeholder="Search People" form="search-user">
+                                <input class="input-login-and-register search-user-type" id="login-form-username search-user-form" type="text" name="u" placeholder="Search People" form="search-user" onkeyup="liveSearch(this.value);">
                             </div>
                         </div>     
                         <button type="submit" form="search-user">Search</button>           
@@ -130,7 +130,7 @@
     
 
     <script src="../src/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../src/js/handle.js"></script>      
     <script src="../src/js/script.js"></script>
-    <script src="../src/js/handle.js"></script>    
 </body>
 </html>
