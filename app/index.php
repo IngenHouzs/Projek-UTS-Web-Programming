@@ -109,7 +109,7 @@
             <hr>
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary"><a id="button-yes" href="logout.php">Yes</a></button>
+                    <button class="btn btn-primary" href="logout.php"><a id="button-yes" href="logout.php">Yes</a></button>
                 </div>
                 <div class="col">
                     <button id="button-no" class="btn btn-primary">No</button>

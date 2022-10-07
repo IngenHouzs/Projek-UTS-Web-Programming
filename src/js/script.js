@@ -56,16 +56,6 @@ const showImagePreview = () => {
   }
 };
 
-// init;
-
-// const init = () => {
-//   document
-//     .getElementsByClassName("dropdown-button")[0]
-//     .addEventListener("click", showPostTagsOnCreate);
-// };
-
-// init();
-
 const logout = document.getElementById("logout-website");
 logout.onclick = function () {
   document.getElementById("overlay-logout").removeAttribute("hidden");
@@ -88,3 +78,15 @@ function closeNav() {
   document.getElementsByClassName("main-content")[0].style.marginLeft = "0";
   document.getElementById("overlay-navbar-mobile").setAttribute("hidden", "");
 }
+
+
+
+
+const init = () => {
+  document
+    .getElementsByClassName("dropdown-button")[0]
+    .addEventListener("click", showPostTagsOnCreate);
+};
+
+init();
+
