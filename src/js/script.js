@@ -61,10 +61,8 @@ logout.onclick = function () {
   document.getElementById("overlay-logout").removeAttribute("hidden");
 };
 
-const cancel_logout = document.getElementById("button-no");
-cancel_logout.onclick = function () {
-  document.getElementById("overlay-logout").setAttribute("hidden", "");
-};
+
+
 
 const open_button = document.getElementById("openbtn");
 open_button.onclick = function () {
@@ -84,8 +82,18 @@ const categoryDropdownToggle = () => {
     console.log("wkkw");
 }
 
+const postCategoryQuery = (tag) => {
+    location.href = `index.php?t=${tag}`
+}
+
 
 const init = () => {
+  try{
+    const cancel_logout = document.getElementById("button-no");
+    cancel_logout.onclick = function () {
+      document.getElementById("overlay-logout").setAttribute("hidden", "");
+    };  
+  } catch(err){}  
   document
     .getElementsByClassName("dropdown-button")[0]
     .addEventListener("click", showPostTagsOnCreate);

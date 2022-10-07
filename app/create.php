@@ -58,7 +58,7 @@
 
                             <div class="col post-tag-col">
                                 <fieldset class="post-tag-col">
-                                    <input type="radio" name="tag" value="C++" id="tag-list" form="post_upload_form" required> <label for="tag-list">C++</label></input>  
+                                    <input type="radio" name="tag" value="CPP" id="tag-list" form="post_upload_form" required> <label for="tag-list">C++</label></input>  
                                 </fieldset>
 
                                 <fieldset>

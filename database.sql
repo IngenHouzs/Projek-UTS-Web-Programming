@@ -25,7 +25,7 @@ CREATE TABLE Post (
     ID_Post CHAR(25) PRIMARY KEY,
     ID_User CHAR(25), 
     waktu_post DATETIME, 
-    KATEGORI ENUM('JavaScript', 'Python', 'C++', 'TypeScript', 'PHP', 'C', 'Java', 'Ruby', 'Dart', 'Kotlin'),
+    KATEGORI ENUM('JavaScript', 'Python', 'CPP', 'TypeScript', 'PHP', 'C', 'Java', 'Ruby', 'Dart', 'Kotlin'),
     Isi LONG VARCHAR, 
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE
 );

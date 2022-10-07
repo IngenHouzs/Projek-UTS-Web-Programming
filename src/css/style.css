@@ -604,6 +604,33 @@ body {
   right: 0;
   font-size: 36px;
   /* margin-left: 50px; */
+} 
+.nav-category{
+  position:relative;
+}
+
+.dropdown-category-btn{
+  display: flex;
+  height:auto;
+  width:100%;
+  background-color: green !important;
+  justify-content: space-between;
+}
+
+.dropdown-category-btn h1{
+  font-size: 1rem;
+} 
+
+.dropdown-category-btn img{
+  height:1rem;
+  width:1rem;
+}
+
+.category-dropdown{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 @media (min-width: 576px) {

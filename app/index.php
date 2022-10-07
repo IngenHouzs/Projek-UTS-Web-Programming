@@ -25,19 +25,39 @@
 
     require_once('../src/includes/db_external.php');    
 
-    // QUERY SORT BY RECENT POST
+    // QUERY SORT BY RECENT POST 
 
-    $getAllPostQuery = "SELECT User.username AS 'username', 
-            Post.waktu_post as 'post_date', 
-            Post.KATEGORI as 'kategori', 
-            Post.Isi as 'isi', 
-            Post.ID_Post as 'id', 
-            (SELECT COUNT(ID_Post) FROM Like_Post 
-            WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
-            (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
-            FROM Post, User WHERE Post.ID_User = User.ID_User 
-            ORDER BY Post.waktu_post DESC";
-    $queryExecution = $db->query($getAllPostQuery);
+    $postTag;
+
+    if (isset($_GET['t'])){
+        $postTag = $_GET['t'];
+
+        $getAllPostQuery = "SELECT User.username AS 'username', 
+        Post.waktu_post as 'post_date', 
+        Post.KATEGORI as 'kategori', 
+        Post.Isi as 'isi', 
+        Post.ID_Post as 'id', 
+        (SELECT COUNT(ID_Post) FROM Like_Post 
+        WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
+        FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ? 
+        ORDER BY Post.waktu_post DESC";        
+        $queryExecution = $db->prepare($getAllPostQuery);
+        $queryExecution->execute([$postTag]);
+
+    } else {
+        $getAllPostQuery = "SELECT User.username AS 'username', 
+        Post.waktu_post as 'post_date', 
+        Post.KATEGORI as 'kategori', 
+        Post.Isi as 'isi', 
+        Post.ID_Post as 'id', 
+        (SELECT COUNT(ID_Post) FROM Like_Post 
+        WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
+        FROM Post, User WHERE Post.ID_User = User.ID_User 
+        ORDER BY Post.waktu_post DESC";
+        $queryExecution = $db->query($getAllPostQuery);        
+    }
 ?>
 
 
