@@ -66,12 +66,25 @@ const showImagePreview = () => {
 
 // init();
 
-const logout = document.getElementById("logout");
+const logout = document.getElementById("logout-website");
 logout.onclick = function () {
-  document.getElementsByClassName("overlay")[0].removeAttribute("hidden");
+  document.getElementById("overlay-logout").removeAttribute("hidden");
 };
 
 const cancel_logout = document.getElementById("button-no");
 cancel_logout.onclick = function () {
-  document.getElementsByClassName("overlay")[0].setAttribute("hidden", "");
+  document.getElementById("overlay-logout").setAttribute("hidden", "");
 };
+
+const open_button = document.getElementById("openbtn");
+open_button.onclick = function () {
+  document.getElementById("new-side-bar").style.width = "150px";
+  document.getElementsByClassName("main-content")[0].style.marginLeft = "100px";
+  document.getElementById("overlay-navbar").removeAttribute("hidden");
+};
+
+function closeNav() {
+  document.getElementById("new-side-bar").style.width = "0";
+  document.getElementsByClassName("main-content")[0].style.marginLeft = "0";
+  document.getElementById("overlay-navbar").setAttribute("hidden", "");
+}

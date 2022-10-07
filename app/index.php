@@ -101,7 +101,7 @@
         <?php require('../src/includes/views/friendRecommendation.php')?>
     </main>
 
-    <div class="overlay" hidden>
+    <div id="overlay-logout" hidden>
         <div id="box" class="alert" role="alert">
             <h4 class="alert-heading">Log Out</h4>
             <p>Are you sure want to Log Out?</p>
