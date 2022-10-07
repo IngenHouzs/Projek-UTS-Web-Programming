@@ -55,11 +55,14 @@
         $user_id = $data->user_id;
         $comment_id = $data->comment_id; 
 
+        // LIKE COMMENT
+        
         $checkIfLikedQuery = "SELECT * FROM Like_Comment WHERE ID_Comment = ? AND ID_User = ?";
         $checkIfLikedQueryParams = [$comment_id, $user_id];
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
+
         if (isset($exists['ID_Comment'])){
             $unlikeQuery = "DELETE FROM Like_Comment WHERE ID_Comment = ? AND ID_User = ?";
             $unlikeQueryParams = [$comment_id, $user_id];
@@ -71,8 +74,9 @@
                 header('location: ../../app/index.php?err=1');   
                 die();
             }
-        }        
-
+        }      
+        
+        
         $like_id = uniqid('LC', true);
         $postLikeQuery = "INSERT INTO Like_Comment VALUES (?, ?, ?)";
 
@@ -97,9 +101,9 @@
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
         $q = $_REQUEST['query'];
-        if ($q = 'likepost'){
+        if ($q == 'likepost'){
             $data = likePost();
-        } else if ($q = 'likecomment'){
+        } else if ($q == 'likecomment'){
             $data = likeComment();
         }
     }    

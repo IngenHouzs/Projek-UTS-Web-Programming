@@ -59,7 +59,7 @@ CREATE TABLE Like_Comment(
     ID_Comment CHAR(25),
     ID_User CHAR(25),
     PRIMARY KEY (ID_Comment, ID_User),
-    FOREIGN KEY (ID_Comment) REFERENCES Comment_Post(ID_Post) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Comment) REFERENCES Comment_Post(ID_CommentPost) ON DELETE CASCADE,
     FOREIGN KEY (ID_User) REFERENCES User(ID_User) ON DELETE CASCADE    
 );
 
