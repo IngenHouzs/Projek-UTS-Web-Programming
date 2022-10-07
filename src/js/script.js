@@ -93,7 +93,5 @@ function closeNav() {
   document.getElementsByClassName("main-content")[0].style.marginLeft = "0";
   document.getElementById("overlay-navbar").setAttribute("hidden", "");
 }
-=======
-  document.getElementsByClassName("overlay")[0].setAttribute("hidden", "");
-};
+
 
