@@ -102,16 +102,16 @@
     </main>
 
     <div class="overlay" hidden>
-        <div id="box" class="alert alert-success" role="alert">
+        <div id="box" class="alert" role="alert">
             <h4 class="alert-heading">Log Out</h4>
             <p>Are you sure want to Log Out?</p>
             <hr>
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary">Yes</button>
+                    <button class="btn btn-primary"><a id="button-yes" href="logout.php">Yes</a></button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary">No</button>
+                    <button id="button-no" class="btn btn-primary">No</button>
                 </div>
             </div>
         </div>
