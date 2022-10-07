@@ -73,6 +73,17 @@ const autoAddInputValue = (username) => {
 }
 
 
+const carouselMoveLeft = () => {
+    
+}
+
+
+const carouselMoveRight = () => {
+  
+}
+
+
+
 
 const redirectToPostPage = (post_id) => {
     location.href = "post.php?p=" + post_id;

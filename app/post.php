@@ -66,6 +66,7 @@
     
     $params = [$currentPostID];
 
+
     try{
         $queryExecution = $db->prepare($getAllCommentsQuery);
         $queryExecution->execute($params);
@@ -73,6 +74,27 @@
     } catch(Exception $e){
 
     }
+
+    // GET ALL PICTURES
+    $pictures = [];    
+    if (isset($_GET['p'])){
+        $post_id = $_GET['p'];        
+
+        $getAllPicturesQuery = "SELECT
+            nama_gambar FROM Gambar_Postingan WHERE ID_Post = ? ORDER BY Urutan
+        ";
+        try{
+            $queryExec = $db->prepare($getAllPicturesQuery);
+            $queryExec->execute([$post_id]);
+   
+            while ($pict = $queryExec->fetch(PDO::FETCH_ASSOC)){
+                array_push($pictures, $pict);
+            }
+        } catch(Exception $e){}
+
+    }
+
+    // GET ALL Post Pictures
 
 ?>
 
@@ -90,11 +112,14 @@
 <body>
 
 <main id="main-frame">
+
         <?php require('../src/includes/views/sideNavbar.php')?>  
         <div class="main-content mc-post">
             <div class="user-post-image-wrapper">
                 <div class="image-frame">
-                    <img src="../src/user_pfp/goblinlaugh.png"/>
+                    <button onclick="carouselMoveLeft()">&lt;</button>
+                    <img src="../src/user_post_pictures/<?=$pictures[0]['nama_gambar']?>"/>
+                    <button onclick="carouselMoveRight()">&gt;</button>
                 </div>
             </div>
             <div class="post-wrapper mc-post-wrapper">

@@ -394,7 +394,20 @@ body {
   width: 50%;
   min-width: 350px;
   height: 100%;
-  background-color: red;
+  position:relative;
+}
+
+.image-frame button{
+  position:absolute;
+  top:50%;
+}
+
+.image-frame button:first-child{
+  left:0;
+}
+
+.image-frame button:last-child{
+  right:0;
 }
 
 .image-frame img {
