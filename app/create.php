@@ -122,6 +122,8 @@
             </div>
             <?php require('../src/includes/views/friendRecommendation.php')?>            
         </section>
-        <script language="JavaScript" type="text/javascript" src="../src/js/script.js"></script>
+        <script src="../src/js/script.js"></script>
+        <script src="../src/js/handle.js"></script>        
+        
 </body>
 </html>

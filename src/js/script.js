@@ -81,24 +81,38 @@ function closeNav() {
 const categoryDropdownToggle = () => {
   const dropdownWidget = document.querySelector('.category-dropdown');
   if (dropdownWidget.style.display == 'none') dropdownWidget.style.display = 'block';
-  else dropdownWidget.style.display = 'none';    
+  else dropdownWidget.style.display = 'none';  
+  console.log(dropdownWidget.style.display);
 }
+
+const categoryDropdownToggleMobile = () => {
+  const dropdownWidget = document.querySelector('.category-dropdown-m');
+  if (dropdownWidget.style.display == 'none') dropdownWidget.style.display = 'block';
+  else dropdownWidget.style.display = 'none';  
+  console.log(dropdownWidget.style.display);
+}
+
+
+
 const postCategoryQuery = (tag) => {
-    location.href = `index.php?t=${tag}`
+    location.href = `index.php?t=${tag}`;
 }
 
 
 const init = () => {
-  try{
-    const cancel_logout = document.getElementById("button-no");
-    cancel_logout.onclick = function () {
-      document.getElementById("overlay-logout").setAttribute("hidden", "");
-    };  
-  } catch(err){}  
+
   document
     .getElementsByClassName("dropdown-button")[0]
     .addEventListener("click", showPostTagsOnCreate);
 };
+
+
+try{
+  const cancel_logout = document.getElementById("button-no");
+  cancel_logout.onclick = function () {
+    document.getElementById("overlay-logout").setAttribute("hidden", "");
+  };  
+} catch(err){}  
 
 init();
 

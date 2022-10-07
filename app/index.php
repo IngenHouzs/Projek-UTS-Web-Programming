@@ -38,6 +38,7 @@
         Post.KATEGORI as 'kategori', 
         Post.Isi as 'isi', 
         Post.ID_Post as 'id', 
+        User.foto as 'foto',
         (SELECT COUNT(ID_Post) FROM Like_Post 
         WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
         (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
@@ -53,6 +54,7 @@
         Post.KATEGORI as 'kategori', 
         Post.Isi as 'isi', 
         Post.ID_Post as 'id', 
+        User.foto as 'foto',
         (SELECT COUNT(ID_Post) FROM Like_Post 
         WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
         (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
@@ -90,7 +92,7 @@
 
                         <div class="post-wrapper">
                             <div class="post-info" onclick="redirectToUserPage('<?=$post['username']?>')">
-                                <img src="../src/user_pfp/goblinlaugh.png"/>
+                                <img src="../src/user_pfp/<?= !$post['foto'] ? 'no-pfp.webp': $post['foto']?>"/>
                                 <div class="post-info-header">
                                     <h1><?=$post['username']?> <span style="font-weight:300"> <?=$post['post_date']?></span></h1>
                                     <div class="post-tag">

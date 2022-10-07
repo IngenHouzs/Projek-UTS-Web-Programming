@@ -25,7 +25,7 @@
         $user_name = $_GET['u'];
         
         // GET USER ID
-        $getUIDQuery = "SELECT ID_User, username, nama_lengkap FROM User WHERE User.username = ?";
+        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto FROM User WHERE User.username = ?";
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
     
@@ -94,7 +94,7 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-                        <img class="profile-picture" src="../src/user_pfp/goblinlaugh.png"/>
+                        <img class="profile-picture" src="../src/user_pfp/<?= !$userInfo['foto'] ? 'no-pfp.webp': $userInfo['foto']?>"/>
                         <div class="profile-header-desc">
                             <h1><?=$userInfo['username']?></h1>
                             <h1><?=$userInfo['nama_lengkap']?></h1>                            

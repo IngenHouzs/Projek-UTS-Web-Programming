@@ -49,6 +49,8 @@ const liveSearch = (query) => {
 } 
 
 
+
+
 const showSearchResult = () => {
     const searchResult = document.querySelector('.search-box');
     if (searchResult.style.display == 'none') searchResult.style.display = 'block';
@@ -60,6 +62,7 @@ const autoAddInputValue = (username) => {
   const inputBar = document.querySelector('.search-user-form');
   inputBar.value = username;
 }
+
 
 
 const redirectToPostPage = (post_id) => {
