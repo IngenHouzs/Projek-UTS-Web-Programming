@@ -57,7 +57,8 @@
         User.username AS 'username', 
         Comment_Post.Isi AS 'comment',
         Comment_Post.ID_CommentPost as 'comment_id',
-        User.foto AS 'foto'
+        User.foto AS 'foto', 
+        (SELECT COUNT(ID_Like) FROM  Like_Comment WHERE Like_Comment.ID_Comment = Comment_Post.ID_CommentPost)AS 'like_comment'        
         FROM Post, User, Comment_Post
         WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User AND Comment_Post.ID_Post = ?
     ";
@@ -135,6 +136,7 @@
 
                                             <!-- button like comment -->
                                             <button onclick="likeComment('<?=$_SESSION['ID_User']?>', '<?=$comment['comment_id']?>')"><img src="../src/assets/like.png"/></button>
+                                            <p><?=$comment['like_comment']?></p>
                                         </div>
                                         <?php }?>
                     
