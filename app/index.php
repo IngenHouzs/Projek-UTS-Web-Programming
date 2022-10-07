@@ -33,6 +33,7 @@
         $postTag = $_GET['t'];
 
         $getAllPostQuery = "SELECT User.username AS 'username', 
+        User.ID_User as 'user_id',        
         Post.waktu_post as 'post_date', 
         Post.KATEGORI as 'kategori', 
         Post.Isi as 'isi', 
@@ -47,6 +48,7 @@
 
     } else {
         $getAllPostQuery = "SELECT User.username AS 'username', 
+        User.ID_User as 'user_id',
         Post.waktu_post as 'post_date', 
         Post.KATEGORI as 'kategori', 
         Post.Isi as 'isi', 
@@ -87,7 +89,7 @@
                     <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
 
                         <div class="post-wrapper">
-                            <div class="post-info">
+                            <div class="post-info" onclick="redirectToUserPage('<?=$post['username']?>')">
                                 <img src="../src/user_pfp/goblinlaugh.png"/>
                                 <div class="post-info-header">
                                     <h1><?=$post['username']?> <span style="font-weight:300"> <?=$post['post_date']?></span></h1>
@@ -96,7 +98,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="post-description">
+                            <div class="post-description" onclick="redirectToPostPage('<?=$post['id']?>')">
                                 <!-- ini nanti jd carouselanny -->
                                 <div class="post-image"></div>
                                 <p><?=$post['isi']?></p>

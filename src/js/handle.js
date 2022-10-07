@@ -60,3 +60,12 @@ const autoAddInputValue = (username) => {
   const inputBar = document.querySelector('.search-user-form');
   inputBar.value = username;
 }
+
+
+const redirectToPostPage = (post_id) => {
+    location.href = "post.php?p=" + post_id;
+}
+
+const redirectToUserPage = (username) => {
+    location.href= "explore.php?u=" + username;
+}

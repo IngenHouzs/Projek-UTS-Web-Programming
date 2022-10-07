@@ -110,7 +110,7 @@
 
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
-                        <div class="post-preview">
+                        <div class="post-preview" onclick="redirectToPostPage('<?=$post['id']?>')">
                             <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
                             <div class="post-preview-desc">
                                 <h1>#<?=$post['tag']?></h1>
