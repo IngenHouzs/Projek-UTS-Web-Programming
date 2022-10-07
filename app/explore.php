@@ -1,6 +1,12 @@
 <?php
     require_once('../src/includes/auth.php');
 
+    require_once("../vendor/autoload.php");
+          
+    $dotenv = Dotenv\Dotenv::createImmutable('../');
+    $dotenv->load();    
+    require_once('../src/includes/db_external.php');      
+
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
@@ -12,6 +18,31 @@
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
+    }
+
+
+    if (isset($_GET['u'])){
+        $user_name = $_GET['u'];
+        
+        // GET USER ID
+        $getUIDQuery = "SELECT ID_User, username, nama_lengkap FROM User WHERE User.username = ?";
+        $getIDQueryExecution = $db->prepare($getUIDQuery);
+        $getIDQueryExecution->execute([$user_name]);
+    
+        $userInfo = $getIDQueryExecution->fetch(PDO::FETCH_ASSOC);
+        $userID = $userInfo['ID_User'];
+        // GET POSTS COUNT
+
+        $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM Post WHERE Post.ID_User = ?";
+        $queryExecution = $db->prepare($postCountQuery);
+        $queryExecution->execute([$userID]);
+
+        $postCount = $queryExecution->fetch(PDO::FETCH_ASSOC);
+        
+
+        // GET ALL POSTS
+
+        
     }
 ?>
 
@@ -50,9 +81,9 @@
                     <div class="profile-header">
                         <img class="profile-picture" src="../src/user_pfp/goblinlaugh.png"/>
                         <div class="profile-header-desc">
-                            <h1>ingenhouzs</h1>
-                            <h1>Farrel Dinarta</h1                            
-                            <p>4 posts</p>
+                            <h1><?=$userInfo['username']?></h1>
+                            <h1><?=$userInfo['nama_lengkap']?></h1>                            
+                            <p><?=$postCount['jumlah_post']?> posts</p>
                         </div>
                     </div> 
 
