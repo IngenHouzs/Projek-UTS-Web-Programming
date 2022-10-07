@@ -56,7 +56,44 @@
                         </div>
                     </div> 
 
-                    
+                    <section class="profile-post-list">
+                        <h1>POSTS</h1>
+
+                        <!-- template preview postingan -->
+
+                        <div class="post-preview">
+                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
+                            <div class="post-preview-desc">
+                                <h1>#Python</h1>
+                                <p>INI CAPTION</p>
+                            </div>
+                        </div>
+
+                        <div class="post-preview">
+                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
+                            <div class="post-preview-desc">
+                                <h1>#Python</h1>
+                                <p>INI CAPTION</p>
+                            </div>
+                        </div> 
+                        
+                        <div class="post-preview">
+                            <div class="post-preview-desc">
+                                <h1>#Python</h1>
+                                <p>INI CAPTION</p>
+                            </div>
+                        </div>                        
+                        
+                        <div class="post-preview">
+                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
+                            <div class="post-preview-desc">
+                                <h1>#Python</h1>
+                                <p>INI CAPTION</p>
+                            </div>
+                        </div>                         
+
+
+                    </section>
 
 
 
