@@ -55,7 +55,7 @@ body {
   height: 100vh;
   width: 27%;
   max-width: 300px;
-  min-width: 200px;
+  /* min-width: 200px; */
   border-right: 1px solid #bdbdbd;
   padding-left: 1.5rem;
   padding-top: 1rem;
@@ -497,7 +497,7 @@ body {
   width: 5rem;
 }
 
-.overlay {
+#overlay-logout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,13 +513,13 @@ body {
   padding: 50px 0;
 }
 
-.overlay #box {
+#overlay-logout #box {
   background-color: #bdbdbd;
   width: 30%;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
 }
 
-.overlay .btn {
+#overlay-logout .btn {
   width: 100% !important;
   padding: 0 !important;
 }
@@ -529,7 +529,116 @@ body {
 }
 
 @media (max-width: 900px) {
-  .overlay #box {
+  #overlay-logout #box {
     width: 50%;
+  }
+}
+
+.openbtn {
+  width: 40px;
+  margin-left: -20px !important;
+  border: none;
+  padding: 0;
+  box-shadow: 0px 0px 5px 2px #bdbdbd;
+}
+
+#new-side-bar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #bdbdbd;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+#new-side-bar .new-navbar-button {
+  padding: 5px;
+}
+
+.new-profile-bar img {
+  margin-top: 50px;
+  width: 2rem;
+  height: 2rem;
+}
+
+#new-side-bar svg {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 1rem;
+}
+
+#new-side-bar a {
+  /* padding: 8px 8px 8px 32px; */
+  text-decoration: none;
+  font-size: 1rem;
+  /* color: #818181; */
+  /* display: block; */
+  transition: 0.3s;
+}
+
+/* #new-side-bar a:hover {
+  color: #f1f1f1;
+} */
+
+#overlay-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999;
+  /* text-align: center; */
+  padding: 50px 0;
+}
+
+#new-side-bar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  /* margin-left: 50px; */
+}
+
+@media (min-width: 576px) {
+  .openbtn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-bar {
+    display: block;
+  }
+
+  .profile-bar img {
+    margin-bottom: 10px;
+  }
+
+  .side-navbar {
+    padding-right: 10px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-button,
+  .profile-bar {
+    display: none;
+  }
+
+  .side-navbar {
+    width: 53px !important;
+    padding-right: 0 !important;
+  }
+
+  .friend-recommendation-section {
+    display: none;
   }
 }
