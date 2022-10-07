@@ -41,6 +41,15 @@
         
 
         // GET ALL POSTS
+        $getAllPostQuery = "SELECT 
+        Post.KATEGORI AS 'tag',
+        Post.ISI AS 'caption',
+        Post.ID_Post AS 'id'
+        FROM Post WHERE Post.ID_User = ?";
+
+        $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
+        $getAllPostQueryExecution->execute([$userID]);
+
 
         
     }
@@ -92,36 +101,18 @@
 
                         <!-- template preview postingan -->
 
-                        <div class="post-preview">
-                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
-                            <div class="post-preview-desc">
-                                <h1>#Python</h1>
-                                <p>INI CAPTION</p>
-                            </div>
-                        </div>
+
+                        <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
                         <div class="post-preview">
                             <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
                             <div class="post-preview-desc">
-                                <h1>#Python</h1>
-                                <p>INI CAPTION</p>
+                                <h1>#<?=$post['tag']?></h1>
+                                <p><?=$post['caption']?></p>
                             </div>
-                        </div> 
-                        
-                        <div class="post-preview">
-                            <div class="post-preview-desc">
-                                <h1>#Python</h1>
-                                <p>INI CAPTION</p>
-                            </div>
-                        </div>                        
-                        
-                        <div class="post-preview">
-                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
-                            <div class="post-preview-desc">
-                                <h1>#Python</h1>
-                                <p>INI CAPTION</p>
-                            </div>
-                        </div>                         
+                        </div>
+                
+                        <?php }?>
 
 
                     </section>
