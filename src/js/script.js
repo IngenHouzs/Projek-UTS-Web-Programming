@@ -56,15 +56,19 @@ const showImagePreview = () => {
   }
 };
 
+
+
+
 // init;
 
-// const init = () => {
-//   document
-//     .getElementsByClassName("dropdown-button")[0]
-//     .addEventListener("click", showPostTagsOnCreate);
-// };
+const init = () => {
+  document
+    .getElementsByClassName("dropdown-button")[0]
+    .addEventListener("click", showPostTagsOnCreate);
+};
 
-// init();
+init();
+
 
 const logout = document.getElementById("logout");
 logout.onclick = function () {
