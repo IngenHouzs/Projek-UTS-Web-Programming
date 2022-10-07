@@ -61,13 +61,7 @@ const showImagePreview = () => {
 
 // init;
 
-const init = () => {
-  document
-    .getElementsByClassName("dropdown-button")[0]
-    .addEventListener("click", showPostTagsOnCreate);
-};
 
-init();
 
 
 const logout = document.getElementById("logout-website");
@@ -95,3 +89,11 @@ function closeNav() {
 }
 
 
+
+const init = () => {
+  document
+    .getElementsByClassName("dropdown-button")[0]
+    .addEventListener("click", showPostTagsOnCreate);
+};
+
+init();
