@@ -69,3 +69,4 @@ const redirectToPostPage = (post_id) => {
 const redirectToUserPage = (username) => {
     location.href= "explore.php?u=" + username;
 }
+

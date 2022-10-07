@@ -79,9 +79,10 @@ function closeNav() {
 
 
 const categoryDropdownToggle = () => {
-    console.log("wkkw");
+  const dropdownWidget = document.querySelector('.category-dropdown');
+  if (dropdownWidget.style.display == 'none') dropdownWidget.style.display = 'block';
+  else dropdownWidget.style.display = 'none';    
 }
-
 const postCategoryQuery = (tag) => {
     location.href = `index.php?t=${tag}`
 }

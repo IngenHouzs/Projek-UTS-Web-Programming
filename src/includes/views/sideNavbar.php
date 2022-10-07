@@ -26,9 +26,52 @@
             <a href="explore.php">Explore</a>        
         </div>    
         
-        <div class="new-navbar-button" onclick="categoryDropdownToggle();">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>
-            <a href="index.php">Category</a>                
+        <div class="new-navbar-button"  onclick="categoryDropdownToggle()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L306.7 128 169.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L352 173.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V64c0-17.7-14.3-32-32-32H288zM80 64C35.8 64 0 99.8 0 144V400c0 44.2 35.8 80 80 80H336c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V144c0-8.8 7.2-16 16-16h80c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+            <a>Category</a>        
+        </div>   
+
+        <div class="category-dropdown" style="display:none;">
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('JavaScript')">
+                <img src="../src/assets/like.png"/>
+                <h1>JavaScript</h1>
+            </div>     
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('Python')">
+                <img src="../src/assets/like.png"/>
+                <h1>Python</h1>            
+            </div>             
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('CPP')">
+                <img src="../src/assets/like.png"/>
+                <h1>C++</h1>
+            </div>          
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('TypeScript')">
+                <img src="../src/assets/like.png"/>
+                <h1>TypeScript</h1>
+            </div>                
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('PHP')">
+                <img src="../src/assets/like.png"/>
+                <h1>PHP</h1>
+            </div>          
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('C')">
+                <img src="../src/assets/like.png"/>
+                <h1>C</h1>
+            </div>        
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('Java')">
+                <img src="../src/assets/like.png"/>
+                <h1>Java</h1>
+            </div>           
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('Ruby')">
+                <img src="../src/assets/like.png"/>
+                <h1>Ruby</h1>
+            </div>           
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('Dart')">
+                <img src="../src/assets/like.png"/>
+                <h1>Dart</h1>
+            </div>           
+            <div class="dropdown-category-btn" onclick="postCategoryQuery('Kotlin')">
+                <img src="../src/assets/like.png"/>
+                <h1>Kotlin</h1>
+            </div>                     
         </div>    
 
         <div class="new-navbar-button">
@@ -47,8 +90,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 
@@ -83,12 +124,12 @@
     
     <!-- ini dropdown?-->
     <!-- ya -->
-    <div class="navbar-button nav-category" onclick="categoryDropdownToggle();">
+    <div class="navbar-button nav-category" onclick="categoryDropdownToggle()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>
         <a>Category</a>        
     </div>    
 
-    <div class="category-dropdown">
+    <div class="category-dropdown" style="display:none;">
         <div class="dropdown-category-btn" onclick="postCategoryQuery('JavaScript')">
             <img src="../src/assets/like.png"/>
             <h1>JavaScript</h1>

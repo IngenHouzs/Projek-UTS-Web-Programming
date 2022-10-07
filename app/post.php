@@ -99,7 +99,7 @@
             <div class="post-wrapper mc-post-wrapper">
                             <div class="post-info">
                                 <img src="../src/user_pfp/goblinlaugh.png"/>
-                                <div class="post-info-header">
+                                <div class="post-info-header" onclick="redirectToUserPage('<?=$postInfo['username']?>')">
                                     <h1><?=$postInfo['username']?> <span style="font-weight:300"><?=$postInfo['waktu_post']?></span></h1>
                                     <div class="post-tag">
                                         <h1><?=$postInfo['tag']?></h1>
@@ -129,9 +129,9 @@
 
                                         <?php while($comment = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                                         <div class="user-comment-box">
-                                            <img src="../src/user_pfp/<?=$comment['foto']?>"/>  
+                                            <img src="../src/user_pfp/<?=$comment['foto']?>" onclick="redirectToUserPage('<?=$comment['username']?>')"/>  
                                             <div class="user-comment-text">
-                                                <p><span style="font-weight:bold;"><?=$comment['username']?></span><?=$comment['comment']?></p>
+                                                <p><span style="font-weight:bold;" onclick="redirectToUserPage('<?=$comment['username']?>')"><?=$comment['username']?></span><?=$comment['comment']?></p>
                                             </div> 
 
                                             <!-- button like comment -->
