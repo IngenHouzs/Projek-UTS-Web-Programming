@@ -75,9 +75,11 @@ const autoAddInputValue = (username) => {
 
 const carouselMoveLeft = (imgList) => {
   const getCurrentImage = document.getElementById('image-show-post');
-  const getCurrentIndex = sessionStorage.getItem('post-img-index');
-  getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[(getCurrentIndex-1) % (imgList.length)].nama_gambar);
-  sessionStorage.setItem("post-img-index", (getCurrentIndex-1) % (imgList.length));
+  const getCurrentIndex = sessionStorage.getItem('post-img-index');   
+  if (getCurrentIndex > 0) sessionStorage.setItem('post-img-index', (Number(getCurrentIndex)-1));
+  const newIndex = sessionStorage.getItem('post-img-index');
+  getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[newIndex].nama_gambar);  
+
 }
 
 
@@ -85,8 +87,9 @@ const carouselMoveLeft = (imgList) => {
 const carouselMoveRight = (imgList) => {
     const getCurrentImage = document.getElementById('image-show-post');
     const getCurrentIndex = sessionStorage.getItem('post-img-index');
-    getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[(getCurrentIndex+1) % (imgList.length)].nama_gambar);  
-    sessionStorage.setItem("post-img-index", (getCurrentIndex+1) % (imgList.length));
+    if (getCurrentIndex < imgList.length-1) sessionStorage.setItem('post-img-index', (Number(getCurrentIndex)+1));
+    const newIndex = sessionStorage.getItem('post-img-index');    
+    getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[newIndex].nama_gambar);    
 }
 
 
