@@ -73,13 +73,20 @@ const autoAddInputValue = (username) => {
 }
 
 
-const carouselMoveLeft = () => {
-    
+const carouselMoveLeft = (imgList) => {
+  const getCurrentImage = document.getElementById('image-show-post');
+  const getCurrentIndex = sessionStorage.getItem('post-img-index');
+  getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[(getCurrentIndex-1) % (imgList.length)].nama_gambar);
+  sessionStorage.setItem("post-img-index", (getCurrentIndex-1) % (imgList.length));
 }
 
 
-const carouselMoveRight = () => {
-  
+
+const carouselMoveRight = (imgList) => {
+    const getCurrentImage = document.getElementById('image-show-post');
+    const getCurrentIndex = sessionStorage.getItem('post-img-index');
+    getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[(getCurrentIndex+1) % (imgList.length)].nama_gambar);  
+    sessionStorage.setItem("post-img-index", (getCurrentIndex+1) % (imgList.length));
 }
 
 
@@ -93,3 +100,4 @@ const redirectToUserPage = (username) => {
     location.href= "explore.php?u=" + username;
 }
 
+sessionStorage.setItem("post-img-index", 0);

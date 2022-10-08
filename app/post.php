@@ -121,9 +121,9 @@
 
             <div class="user-post-image-wrapper">
                 <div class="image-frame">
-                    <button onclick="carouselMoveLeft()">&lt;</button>
-                    <img src="../src/user_post_pictures/<?=$pictures[0]['nama_gambar']?>"/>
-                    <button onclick="carouselMoveRight()">&gt;</button>
+                    <button onclick='carouselMoveLeft(<?=json_encode($pictures)?>)'>&lt;</button>
+                    <img id="image-show-post"src="../src/user_post_pictures/<?=$pictures[0]['nama_gambar']?>"/>
+                    <button onclick='carouselMoveRight(<?=json_encode($pictures)?>)'>&gt;</button>
                 </div>
             </div>
             
