@@ -64,7 +64,8 @@ if (isset($_SESSION['error'])){
             </div>
             <div class="row">
                 <div class="col">
-                    <form action="../src/includes/admin_login_process.php" method="post">
+                    <form action="../src/includes/login_process.php" method="post">
+                        <input type="text" hidden value="ADMIN" name="ADMIN"/>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
                                 <input class="input-login-and-register" id="admin-login-form-username" type="text" name="identity" placeholder="Username">
