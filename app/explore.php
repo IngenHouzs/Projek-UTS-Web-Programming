@@ -27,7 +27,7 @@
         $user_name = $_GET['u'];
         
         // GET USER ID
-        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto FROM User WHERE User.username = ?";
+        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto, isBanned FROM User WHERE User.username = ?";
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
     
@@ -106,7 +106,13 @@
                                     
                                     <div class="admin-user-control-explore">
                                         <button onclick="deleteUser('<?=$userID?>')">Delete User</button>
-                                        <button onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
+
+
+                                        <?php if (!$userInfo['isBanned']){?>
+                                            <button onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
+                                        <?php } else {?>
+                                            <button onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
+                                        <?php }?>
                                     </div>
 
                                 <?php }?>

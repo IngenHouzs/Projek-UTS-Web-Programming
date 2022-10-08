@@ -34,12 +34,12 @@ ADMIN
     PUNYA SEMUA FITUR USER 
     FITUR TAMBAHAN ADMIN : 
     - Monitor & Manajemen Postingan User 
-        -> Delete Post 
+        -> Delete Post DONE
         -> Delete Comment 
         -> Export Laporan Dengan data dari Setiap Postingan (Nama Lengkap User, Email, Username, Jumlah Like, Jumlah Comment, Konten Post);
-        -> Ban User (Temporary / Permanen)
-        -> Unban User 
-        -> Delete User 
+        -> Ban User (Temporary / Permanen) DONE Permanen
+        -> Unban User DONE 
+        -> Delete User DONE
 
 
 ________________________________________________________________

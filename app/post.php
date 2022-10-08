@@ -167,9 +167,18 @@
                                         <!-- ini buat comment per user -->
 
                                         <?php while($comment = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
-                                        <div class="user-comment-box">
+                                        <div class="user-comment-box">                                            
                                             <img src="../src/user_pfp/<?=  !$comment['foto'] ? 'no-pfp.webp' : htmlspecialchars($comment['foto'])?>" onclick="redirectToUserPage('<?=htmlspecialchars($comment['username'])?>')"/>  
-                                            <div class="user-comment-text">
+                                            <div class="user-comment-text"> 
+
+                                                <?php if(isset($_SESSION['ADMIN'])){?>
+
+                                                <div class="admin-delete-comment" onclick="deleteComment('<?=$comment['comment_id']?>')">
+                                                    <button>Delete Comment</button>                                                
+                                                </div>
+
+                                                <?php }?>
+                                                                         
                                                 <p><span style="font-weight:bold;" onclick="redirectToUserPage('<?=htmlspecialchars($comment['username'])?>')"><?=htmlspecialchars($comment['username'])?></span><?=htmlspecialchars($comment['comment'])?></p>
                                             </div> 
 

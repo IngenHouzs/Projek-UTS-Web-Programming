@@ -54,6 +54,51 @@
     }
 
 
+    function unbanUser(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));      
+        $user_id = $data->user_id;
+
+        $unbanUserQuery = "UPDATE User SET isBanned = 0 WHERE ID_User = ?";
+        try{
+            $queryExecution = $db->prepare($unbanUserQuery);
+            $queryExecution->execute([$user_id]); 
+        } catch(Exception $e){
+            $err = [
+                "status" => "fail"
+            ];
+            return json_encode($err);
+        }
+
+        $success = [
+            "status" => "success"
+        ];
+        return json_encode($success);        
+    }    
+
+
+    function banUserPermanently(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));      
+        $user_id = $data->user_id;
+
+        $banUserQuery = "UPDATE User SET isBanned = 1 WHERE ID_User = ?";
+        try{
+            $queryExecution = $db->prepare($banUserQuery);
+            $queryExecution->execute([$user_id]); 
+        } catch(Exception $e){
+            $err = [
+                "status" => "fail"
+            ];
+            return json_encode($err);
+        }
+
+        $success = [
+            "status" => "success"
+        ];
+        return json_encode($success);        
+    }
+
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
         $q = $_REQUEST['query'];
@@ -68,6 +113,9 @@
             echo $res;
         } else if ($q == 'banuser'){
             $res = banUserPermanently();
+            echo $res;
+        } else if ($q == 'unbanuser'){
+            $res = unbanUser();
             echo $res;
         }
     }

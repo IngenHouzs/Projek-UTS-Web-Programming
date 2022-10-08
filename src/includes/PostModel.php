@@ -118,9 +118,29 @@
             "status" => "success"
         ];
         return json_encode($success);
+    }
 
 
+    function deleteComment(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));      
+        $comment_id = $data->comment_id;
 
+        $deleteCommentQuery = "DELETE FROM Comment_Post WHERE ID_CommentPost = ?";
+        try{
+            $queryExecution = $db->prepare($deleteCommentQuery);
+            $queryExecution->execute([$comment_id]); 
+        } catch(Exception $e){
+            $err = [
+                "status" => "fail"
+            ];
+            return json_encode($err);
+        }
+
+        $success = [
+            "status" => "success"
+        ];
+        return json_encode($success);        
     }
 
 
@@ -133,6 +153,9 @@
             $data = likeComment();
         } else if ($q == 'deletepost'){
             $result = deletePost();
+            echo $result;
+        } else if ($q == 'deletecomment'){
+            $result = deleteComment();
             echo $result;
         }
     }    
