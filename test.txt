@@ -35,7 +35,7 @@ ADMIN
     FITUR TAMBAHAN ADMIN : 
     - Monitor & Manajemen Postingan User 
         -> Delete Post DONE
-        -> Delete Comment 
+        -> Delete Comment DONE
         -> Export Laporan Dengan data dari Setiap Postingan (Nama Lengkap User, Email, Username, Jumlah Like, Jumlah Comment, Konten Post);
         -> Ban User (Temporary / Permanen) DONE Permanen
         -> Unban User DONE 
