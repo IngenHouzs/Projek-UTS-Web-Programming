@@ -13,9 +13,9 @@
 
     $id = uniqid('U-', true);
     $encrypted_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?,?)";
+    $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?,?, ?)";
 
-    $data = [$id, $fullname, $username, $email, NULL,$encrypted_password];
+    $data = [$id, $fullname, $username, $email, NULL,FALSE,$encrypted_password];
 
     $queryExecution = $db->prepare($query);
 

@@ -14,13 +14,6 @@ CREATE TABLE User (
     password VARCHAR(100) NOT NULL
 );
 
-
-CREATE TABLE Admin (
-    ID_Admin CHAR(5) PRIMARY KEY,
-    nama_lengkap VARCHAR(50) NOT NULL,
-    password VARCHAR(100) NOT NULL
-);
-
 CREATE TABLE Post (
     -- PAKE PREFIX P-, PAKE uniqid('P-', true) -> generate 23, tambah 2 dari prefix = 25 --
     ID_Post CHAR(25) PRIMARY KEY,
@@ -74,3 +67,7 @@ CREATE TABLE Gambar_Postingan(
     FOREIGN KEY (ID_Post) REFERENCES Post(ID_Post) ON DELETE CASCADE
 );
 
+
+
+-- ADMIN -- 
+INSERT INTO User VALUES ('A-12345678901234567890123', 'ADMIN', 'ADMIN','-',NULL,TRUE,'$2y$10$DCLT4NGWavvimM0LIpOLL.zu77nkH9uyK.Z3Y6QewejjgJQM/TdgS');

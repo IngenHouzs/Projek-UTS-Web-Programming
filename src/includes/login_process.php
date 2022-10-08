@@ -10,7 +10,7 @@
             $identity = $_POST['identity'];
             $password = $_POST['password'];
         
-            $query = "SELECT * FROM Admin WHERE nama_lengkap = ?";
+            $query = "SELECT * FROM User WHERE nama_lengkap = ? AND isAdmin = 1";
             
             $data = [$identity];
             
@@ -22,9 +22,9 @@
             if ($result){
                 $verifyPassword = password_verify($password, $result['password']);
                 if ($verifyPassword){
-                    $_SESSION['ID_User'] = $result['ID_Admin'];
+                    $_SESSION['ID_User'] = $result['ID_User'];
                     $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
-                    $_SESSION['username'] = $result['nama_lengkap'];
+                    $_SESSION['username'] = $result['username'];
                     $_SESSION['email'] = '-';           
                     $_SESSION['foto'] = NULL;
                     $_SESSION['ADMIN'] = true;

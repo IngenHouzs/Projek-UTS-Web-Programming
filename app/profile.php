@@ -2,14 +2,7 @@
     require_once('../src/includes/auth.php');
 
     require_once("../vendor/autoload.php");
-
-    if (isset($_SESSION['ADMIN'])){
-        if ($_SESSION['ADMIN'] == 'ADMIN'){
-            header("location: index.php");
-            die();
-        }
-    }    
-          
+   
     $dotenv = Dotenv\Dotenv::createImmutable('../');
     $dotenv->load();    
     require_once('../src/includes/db_external.php');      
