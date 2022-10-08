@@ -1,6 +1,12 @@
 <?php
 
     session_start();
+
+    if (!isset($_SESSION['ID_User'])){
+        header('location: ../../app/login.php');
+        die();
+    }
+
     require('db.php');    
 
     // ADD COMMENT TO POST 
