@@ -27,7 +27,7 @@
 
         <div class="random-friend-popup-wrapper">
             <img src="../src/user_pfp/<?=$user["foto"]?>"/>
-            <a href="index.php"><?= $user["username"]?></a>        
+            <a href="explore.php?u=<?=$user['username']?>"><?= $user["username"]?></a>        
         </div>    
 
     <?php endforeach?>
