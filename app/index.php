@@ -87,39 +87,42 @@
                 <section id="dashboard-post-list">
 
                     <!-- FORMAT POST-->
-     
-                    <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
-
-                        <div class="post-wrapper">
-                            <div class="post-info" onclick="redirectToUserPage('<?=$post['username']?>')">
-                                <img src="../src/user_pfp/<?= !$post['foto'] ? 'no-pfp.webp': $post['foto']?>"/>
-                                <div class="post-info-header">
-                                    <h1><?=$post['username']?> <span style="font-weight:300"> <?=$post['post_date']?></span></h1>
-                                    <div class="post-tag">
-                                        <h1><?=$post['kategori']?></h1>
+                    <div class="container-fluid">
+                        <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
+                            <div id="post-row" class="row">
+                                <div class="col">
+                                    <div class="post-wrapper m-auto">
+                                        <div class="post-info p-1">
+                                            <img id="post-profile-image" onclick="redirectToUserPage('<?=$post['username']?>')" src="../src/user_pfp/<?= !$post['foto'] ? 'no-pfp.webp': $post['foto']?>"/>
+                                            <div class="post-info-header p-1 mx-1">
+                                                <h1><span id="post-username" onclick="redirectToUserPage('<?=$post['username']?>')"><?=$post['username']?></span> <span id="post-date" style="font-weight:300"> <?=$post['post_date']?></span></h1>
+                                                <div class="post-tag">
+                                                    <small><?=$post['kategori']?></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-description p-1" onclick="redirectToPostPage('<?=$post['id']?>')">
+                                            <!-- ini nanti jd carouselanny -->
+                                            <div class="post-image"></div>
+                                            <p><?=$post['isi']?></p>
+                                            <div class="post-reaction">
+                                                <div class="post-like">
+                                                    <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/like.png" /></button>
+                                                    <p><?= $post['like']?></p>
+                                                </div>
+                                                <div class="post-comment">
+                                                    <button><a href="post.php?p=<?=$post['id']?>"><img src="../src/assets/comment.png"/></a></button>
+                                                    <p><?=$post['comments']?></p>
+                                                </div>                                
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="post-description" onclick="redirectToPostPage('<?=$post['id']?>')">
-                                <!-- ini nanti jd carouselanny -->
-                                <div class="post-image"></div>
-                                <p><?=$post['isi']?></p>
-                                <div class="post-reaction">
-                                    <div class="post-like">
-                                        <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/like.png" /></button>
-                                        <p><?= $post['like']?></p>
-                                    </div>
-                                    <div class="post-comment">
-                                        <button><a href="post.php?p=<?=$post['id']?>"><img src="../src/assets/comment.png"/></a></button>
-                                        <p><?=$post['comments']?></p>
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div>
-
-                    <?php }?>
-                 
-
+                        <?php }?>
+                    </div>
+                    
+    
                 </section>
         </div>
         <?php require('../src/includes/views/friendRecommendation.php')?>
