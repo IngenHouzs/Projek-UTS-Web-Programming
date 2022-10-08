@@ -114,8 +114,11 @@
 
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
-                        <div class="post-preview" onclick="redirectToPostPage('<?=htmlspecialchars($post['id'])?>')">
-                            <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
+                        <div class="post-preview" onclick="redirectToPostPage('<?=htmlspecialchars($post['id'])?>')"> 
+                            
+                            <?php if ($post['nama_gambar']){?>
+                                <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
+                            <?php }?>
                             <div class="post-preview-desc">
                                 <h1>#<?=htmlspecialchars($post['tag'])?></h1>
                                 <p><?=htmlspecialchars($post['caption'])?></p>
