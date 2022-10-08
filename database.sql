@@ -10,6 +10,7 @@ CREATE TABLE User (
     username VARCHAR(50) UNIQUE NOT NULL, 
     email VARCHAR(50) UNIQUE NOT NULL, 
     foto VARCHAR(50),
+    isAdmin BIT,
     password VARCHAR(100) NOT NULL
 );
 
