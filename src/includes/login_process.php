@@ -26,7 +26,7 @@
                     $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
                     $_SESSION['username'] = $result['nama_lengkap'];
                     $_SESSION['email'] = '-';           
-                    $_SESSION['foto'] = '-';
+                    $_SESSION['foto'] = NULL;
                     $_SESSION['ADMIN'] = true;
                     header('location: ../../app/index.php'); 
                     die();

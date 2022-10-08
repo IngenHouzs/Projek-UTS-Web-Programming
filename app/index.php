@@ -13,6 +13,7 @@
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
+        $isAdmin = $_SESSION['ADMIN'];
     }
 ?>
 
