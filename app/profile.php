@@ -35,7 +35,8 @@
             $getAllPostQuery = "SELECT 
             Post.KATEGORI AS 'tag',
             Post.ISI AS 'caption',
-            Post.ID_Post AS 'id'
+            Post.ID_Post AS 'id', 
+            (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar              
             FROM Post WHERE Post.ID_User = ?";
     
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
@@ -89,7 +90,7 @@
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
                         <div class="post-preview" onclick="redirectToPostPage('<?=$post['id']?>')">
-                            <img class="post-pict-preview" src="../src/user_pfp/goblinlaugh.png"/>
+                            <img class="post-pict-preview" src="../src/user_post_pictures/<?=$post['nama_gambar']?>"/>
                             <div class="post-preview-desc">
                                 <h1>#<?=$post['tag']?></h1>
                                 <p><?=$post['caption']?></p>
