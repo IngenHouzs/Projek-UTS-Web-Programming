@@ -29,10 +29,30 @@
             array_push($result, $user);
         }
         return $result;
-
-        
-        
     }
+
+    function deleteUser(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));      
+        $user_id = $data->user_id;
+
+        $deleteUserQuery = "DELETE FROM User WHERE ID_User = ?";
+        try{
+            $queryExecution = $db->prepare($deleteUserQuery);
+            $queryExecution->execute([$user_id]); 
+        } catch(Exception $e){
+            $err = [
+                "status" => "fail"
+            ];
+            return json_encode($err);
+        }
+
+        $success = [
+            "status" => "success"
+        ];
+        return json_encode($success);
+    }
+
 
     // REQUEST CHECKER    
     if (isset($_REQUEST['query'])){
@@ -43,6 +63,9 @@
         } else if ($q == 'livesearch'){
             $res = liveSearch();
             echo json_encode($res);  
+        } else if ($q == 'deleteuser'){
+            $res = deleteUser();
+            echo json_encode($res);
         }
     }
 ?>

@@ -106,4 +106,7 @@ const redirectToUserPage = (username) => {
     location.href= "explore.php?u=" + username;
 }
 
+
 sessionStorage.setItem("post-img-index", 0);
+
+

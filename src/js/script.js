@@ -101,10 +101,16 @@ const postCategoryQuery = (tag) => {
 };
 
 const init = () => {
+  try{
   document
     .getElementsByClassName("dropdown-button")[0]
     .addEventListener("click", showPostTagsOnCreate);
+  } catch(err){}
 };
+
+
+init();
+
 
 try {
   const cancel_logout = document.getElementById("button-no");
@@ -112,5 +118,3 @@ try {
     document.getElementById("overlay-logout").setAttribute("hidden", "");
   };
 } catch (err) {}
-
-init();

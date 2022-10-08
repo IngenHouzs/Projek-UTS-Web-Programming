@@ -98,6 +98,18 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
+         
+                
+                                <?php if (isset($_SESSION['ADMIN'])){?>
+                                    
+                                    <div class="admin-user-control-explore">
+                                        <button onclick="deleteUser('<?=$userID?>')">Delete User</button>
+                                        <button onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
+                                    </div>
+
+                                <?php }?>
+
+                        
                         <img class="profile-picture" src="../src/user_pfp/<?= !$userInfo['foto'] ? 'no-pfp.webp': htmlspecialchars($userInfo['foto'])?>"/>
                         <div class="profile-header-desc">
                             <h1><?=htmlspecialchars($userInfo['username'])?></h1>
@@ -155,8 +167,8 @@
     </div>
     
     <script src="../src/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../src/js/handle.js"></script>      
     <script src="../src/js/script.js"></script>
+    <script src="../src/js/handle.js"></script>    
     <script src="../src/js/admin.js"></script>          
 </body>
 </html>

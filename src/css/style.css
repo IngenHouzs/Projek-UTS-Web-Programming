@@ -755,7 +755,11 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
+
+  position:relative;
 }
+
+
 
 .profile-picture {
   height: 8rem;
@@ -773,10 +777,16 @@ body {
   padding-top: 1rem;
   padding-left: 2rem;
   position:relative;
+
+  z-index: 0;
 }
 
 .profile-header-desc h1:nth-child(2) {
   font-size: 1rem;
+} 
+
+.profile-header-desc h1{
+  width:70%;
 }
 
 
@@ -879,6 +889,16 @@ body {
   display:flex;
   flex-direction: row;
   gap:1rem;
+}
+
+.admin-user-control-explore{
+  position:absolute;
+  right:0;
+  top:2rem;
+  display:flex;
+  flex-direction: row;
+  gap:1rem;  
+  z-index:2;
 }
 
 /** Media Query **/
