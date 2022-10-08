@@ -120,6 +120,6 @@
         </div>
     </main>
     
-    <script src="../src/bootstrap/js/bootstra.min.js"></script>
+    <script src="../src/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

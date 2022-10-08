@@ -1,9 +1,3 @@
-const logout_website = document.getElementById("logout-website");
-logout_website.onclick = function () {
-  console.log(document.getElementById("overlay-logout"));
-  document.getElementById("overlay-logout").removeAttribute("hidden");
-};
-
 const open_button = document.getElementById("openbtn");
 open_button.onclick = function () {
   document.getElementById("new-side-bar").style.width = "150px";
@@ -11,10 +5,7 @@ open_button.onclick = function () {
   document.getElementById("overlay-navbar-mobile").removeAttribute("hidden");
 };
 
-const logout_mobile = document.getElementById("logout-mobile");
-logout_mobile.onclick = function () {
-  document.getElementById("overlay-logout").removeAttribute("hidden");
-};
+
 
 const getRandomUser = () => {
   var XMLHttp = new XMLHttpRequest();
@@ -99,6 +90,24 @@ const categoryDropdownToggleMobile = () => {
 const postCategoryQuery = (tag) => {
   location.href = `index.php?t=${tag}`;
 };
+
+
+try{
+  const logout_website = document.getElementById("logout-website");
+  logout_website.onclick = function () {
+    console.log(document.getElementById("overlay-logout"));
+    document.getElementById("overlay-logout").removeAttribute("hidden");
+  };
+  
+  const logout_mobile = document.getElementById("logout-mobile");
+  logout_mobile.onclick = function () {
+    document.getElementById("overlay-logout").removeAttribute("hidden");
+  };  
+} catch(err){}
+
+
+
+
 
 const init = () => {
   try{
