@@ -392,7 +392,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  text-align: left;
+}
+
+.post-description p{
+  text-align: left;
   padding-left: 3rem !important;
+
 }
 
 .post-image {
