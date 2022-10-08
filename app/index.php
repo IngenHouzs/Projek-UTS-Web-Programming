@@ -41,6 +41,7 @@
         User.foto as 'foto',
         (SELECT COUNT(ID_Post) FROM Like_Post 
         WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,        
         (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
         FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ? 
         ORDER BY Post.waktu_post DESC";        
@@ -57,6 +58,7 @@
         User.foto as 'foto',
         (SELECT COUNT(ID_Post) FROM Like_Post 
         WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
         (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
         FROM Post, User WHERE Post.ID_User = User.ID_User 
         ORDER BY Post.waktu_post DESC";
@@ -104,9 +106,12 @@
                                         <div class="post-description p-1">
                                             <!-- ini nanti jd carouselanny -->
 
-                                            <div class="post-image" onclick="redirectToPostPage('<?=$post['id']?>')"></div>
+                                            <?php if ($post['nama_gambar']){ ?>
+                                            <div class="post-image" onclick="redirectToPostPage('<?=$post['id']?>')">
+                                                <img src="../src/user_post_pictures/<?=$post['nama_gambar']?>"/>                                            
+                                            </div>
+                                            <?php }?>
 
-                                            <div class="post-image"></div>
                                             <div class="post-isi w-100 pt-2">
                                                 <p><?=$post['isi']?></p>
                                             </div>
