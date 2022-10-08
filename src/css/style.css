@@ -328,6 +328,7 @@ body {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #bdbdbd;
+  position: relative;
 }
 
 .post-info {
@@ -852,6 +853,10 @@ body {
   margin: 0;
 }
 
+.dashboard-post-wrapper{
+  position:relative;
+}
+
 .result-search-box img {
   height: 2rem;
   width: 2rem;
@@ -865,6 +870,15 @@ body {
   width:8rem;
   height:3rem;
   
+}
+
+
+.admin-user-control{
+  position:absolute;
+  right:0;
+  display:flex;
+  flex-direction: row;
+  gap:1rem;
 }
 
 /** Media Query **/

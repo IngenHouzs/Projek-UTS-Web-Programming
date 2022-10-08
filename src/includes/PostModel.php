@@ -94,6 +94,32 @@
             die();
         }
         
+    
+    }
+
+
+    function deletePost(){
+        global $db;
+        $data = json_decode(file_get_contents("php://input"));      
+        $post_id = $data->post_id;
+
+        $deletePostQuery = "DELETE FROM Post WHERE ID_Post = ?";
+        try{
+            $queryExecution = $db->prepare($deletePostQuery);
+            $queryExecution->execute([$post_id]); 
+        } catch(Exception $e){
+            $err = [
+                "status" => "fail"
+            ];
+            return json_encode($err);
+        }
+
+        $success = [
+            "status" => "success"
+        ];
+        return json_encode($success);
+
+
 
     }
 
@@ -105,6 +131,9 @@
             $data = likePost();
         } else if ($q == 'likecomment'){
             $data = likeComment();
+        } else if ($q == 'deletepost'){
+            $result = deletePost();
+            echo $result;
         }
     }    
 

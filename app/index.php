@@ -14,8 +14,6 @@
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
-
-
 ?>
 
 
@@ -96,6 +94,16 @@
                             <div id="post-row" class="row">
                                 <div class="col">
                                     <div class="post-wrapper m-auto">
+
+
+                                    <?php if (isset($_SESSION['ADMIN'])){?>
+                                    
+                                    <div class="admin-user-control">
+                                        <button onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
+                                    </div>
+
+                                <?php }?>
+
                                         <div class="post-info p-1">
                                             <img id="post-profile-image" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')" src="../src/user_pfp/<?= !$post['foto'] ? 'no-pfp.webp': htmlspecialchars($post['foto'])?>"/>
                                             <div class="post-info-header p-1 mx-1">
