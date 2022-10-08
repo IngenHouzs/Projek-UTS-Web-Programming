@@ -65,7 +65,10 @@
             echo json_encode($res);  
         } else if ($q == 'deleteuser'){
             $res = deleteUser();
-            echo json_encode($res);
+            echo $res;
+        } else if ($q == 'banuser'){
+            $res = banUserPermanently();
+            echo $res;
         }
     }
 ?>

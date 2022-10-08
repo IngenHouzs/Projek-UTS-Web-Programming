@@ -58,6 +58,13 @@
     if ($result){
         $verifyPassword = password_verify($password, $result['password']);
         if ($verifyPassword){
+            
+            $isBanned = $result['isBanned'];
+            if ($isBanned){
+                header('location: ../../app/login.php?err=banned'); 
+                die();                
+            }
+
             $_SESSION['ID_User'] = $result['ID_User'];
             $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
             $_SESSION['username'] = $result['username'];

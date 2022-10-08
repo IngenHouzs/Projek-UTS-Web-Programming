@@ -1,6 +1,12 @@
 <?php 
     require_once('../src/includes/auth.php');
 
+    require_once("../vendor/autoload.php");
+    $dotenv = Dotenv\Dotenv::createImmutable('../');
+    $dotenv->load();    
+    require_once('../src/includes/db_external.php');    
+    
+    require_once('../src/includes/check_ban.php'); 
 
 
     if (

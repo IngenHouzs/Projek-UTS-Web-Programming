@@ -1,7 +1,7 @@
 <?php 
 
     session_start();    
-    require_once('../src/includes/prevent_login_auth.php');   
+    require_once('../src/includes/prevent_login_auth.php');     
     
     $success_register = $error_login = "";
     if(isset($_SESSION['success-register'])){
