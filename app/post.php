@@ -115,6 +115,9 @@
 
         <?php require('../src/includes/views/sideNavbar.php')?>  
         <div class="main-content mc-post">
+
+            <?php if(count($pictures) > 0) {?>
+
             <div class="user-post-image-wrapper">
                 <div class="image-frame">
                     <button onclick="carouselMoveLeft()">&lt;</button>
@@ -122,6 +125,9 @@
                     <button onclick="carouselMoveRight()">&gt;</button>
                 </div>
             </div>
+            
+            <?php }?>
+
             <div class="post-wrapper mc-post-wrapper">
                             <div class="post-info">
                                 <img src="../src/user_pfp/<?= !$postInfo['foto'] ? 'no-pfp.webp' : $postInfo['foto']?>"/>

@@ -101,10 +101,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="post-description p-1" onclick="redirectToPostPage('<?=$post['id']?>')">
+                                        <div class="post-description p-1">
                                             <!-- ini nanti jd carouselanny -->
-                                            <div class="post-image"></div>
-                                            <p><?=$post['isi']?></p>
+                                            <div class="post-image" onclick="redirectToPostPage('<?=$post['id']?>')"></div>
+                                            <p onclick="redirectToPostPage('<?=$post['id']?>')"><?=$post['isi']?></p>
                                             <div class="post-reaction">
                                                 <div class="post-like">
                                                     <button onclick="likePost('<?=$_SESSION['ID_User']?>', '<?=$post['id']?>')"><img src="../src/assets/like.png" /></button>
