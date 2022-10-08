@@ -92,6 +92,9 @@ const carouselMoveRight = (imgList) => {
     getCurrentImage.setAttribute('src', "../src/user_post_pictures/" + imgList[newIndex].nama_gambar);    
 }
 
+const goToEditProfile = () => {
+  location.href = 'edit_profile.php';
+}
 
 
 

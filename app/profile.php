@@ -69,11 +69,14 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-                        <img class="profile-picture" src="../src/user_pfp/<?= !$userInfo['foto'] ? 'no-pfp.webp': $userInfo['foto']?>"/>
+                        <img class="profile-picture" src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': $user_foto?>"/>
                         <div class="profile-header-desc">
                             <h1><?=$user_username?></h1>
                             <h1><?=$user_fullname?></h1>                            
                             <p><?= $postCount['jumlah_post']?> posts</p>
+
+                            <button class="edit-profile-button" onclick="goToEditProfile()">Edit Profile</button>
+
                         </div>
                     </div> 
 
