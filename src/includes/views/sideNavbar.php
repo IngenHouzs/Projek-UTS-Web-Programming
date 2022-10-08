@@ -5,12 +5,12 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col text-center">
-                    <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': $user_foto?>"/>
+                    <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col m-auto text-center">
-                    <h5><?=$user_username?></h5>        
+                    <h5><?=htmlspecialchars($user_username)?></h5>        
                     </div>
                 </div>
             </div>
@@ -107,8 +107,8 @@
     <!-- ini kalo diklik mau redirect ke profile juga gak? -->
     <!-- gk ush gk si soalnya udah ada pilihan profile di navbar -->
     <div class="profile-bar">
-        <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': $user_foto?>"/>
-        <h1><?=$user_username?></h1>        
+        <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>
+        <h1><?=htmlspecialchars($user_username)?></h1>        
     </div>
 
     <!-- Ini nanti mau bisa di klik gk si semuanya (divnya) (bukan link nya aja)?-->

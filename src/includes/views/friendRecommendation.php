@@ -26,8 +26,8 @@
     <?php foreach($queryResult as $user): ?>
 
         <div class="random-friend-popup-wrapper">
-            <img src="../src/user_pfp/<?=$user["foto"]?>"/>
-            <a href="explore.php?u=<?=$user['username']?>"><?= $user["username"]?></a>        
+            <img src="../src/user_pfp/<?=htmlspecialchars($user["foto"])?>"/>
+            <a href="explore.php?u=<?=htmlspecialchars($user['username'])?>"><?= htmlspecialchars($user["username"])?></a>        
         </div>    
 
     <?php endforeach?>

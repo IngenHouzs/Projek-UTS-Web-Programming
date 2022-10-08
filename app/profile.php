@@ -70,11 +70,11 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-                        <img class="profile-picture" src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': $user_foto?>"/>
+                        <img class="profile-picture" src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>
                         <div class="profile-header-desc">
-                            <h1><?=$user_username?></h1>
-                            <h1><?=$user_fullname?></h1>                            
-                            <p><?= $postCount['jumlah_post']?> posts</p>
+                            <h1><?=htmlspecialchars($user_username)?></h1>
+                            <h1><?=htmlspecialchars($user_fullname)?></h1>                            
+                            <p><?= htmlspecialchars($postCount['jumlah_post'])?> posts</p>
 
                             <button class="edit-profile-button" onclick="goToEditProfile()">Edit Profile</button>
 
@@ -89,11 +89,11 @@
 
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
-                        <div class="post-preview" onclick="redirectToPostPage('<?=$post['id']?>')">
-                            <img class="post-pict-preview" src="../src/user_post_pictures/<?=$post['nama_gambar']?>"/>
+                        <div class="post-preview" onclick="redirectToPostPage('<?=htmlspecialchars($post['id'])?>')">
+                            <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
                             <div class="post-preview-desc">
-                                <h1>#<?=$post['tag']?></h1>
-                                <p><?=$post['caption']?></p>
+                                <h1>#<?=htmlspecialchars($post['tag'])?></h1>
+                                <p><?=htmlspecialchars($post['caption'])?></p>
                             </div>
                         </div>
 
