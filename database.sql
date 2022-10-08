@@ -73,14 +73,3 @@ CREATE TABLE Gambar_Postingan(
     FOREIGN KEY (ID_Post) REFERENCES Post(ID_Post) ON DELETE CASCADE
 );
 
-
-
-
--- USER ---
-INSERT INTO User VALUES ('U-6337ffe69c8741.93507763', 'Farrel Dinarta', 'farreldinarta', 'farreldinarta133@gmail.com', 'goblinlaugh.png','gataudhserah');
-
--- POST ---
-INSERT INTO Post VALUES ('P-6338009c57d286.48478648', 'U-6337ffe69c8741.93507763', '1120-01-01 01:00:00', 'JavaScript', 'WKWKWKWKWKKWKW');
-
--- COMMENT POST --- 
-INSERT INTO Comment_Post VALUES ('C-6338016f336449.55829493', 'P-6338009c57d286.48478648', 'U-6337ffe69c8741.93507763', 'hehehehhehe');

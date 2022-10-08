@@ -42,6 +42,7 @@
     Post.KATEGORI as 'tag',
     Post.Isi as 'caption',
     User.foto as 'foto',
+    (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post),
     (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
     (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
     FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
@@ -59,6 +60,7 @@
         Comment_Post.Isi AS 'comment',
         Comment_Post.ID_CommentPost as 'comment_id',
         User.foto AS 'foto', 
+        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post),
         (SELECT COUNT(ID_Like) FROM  Like_Comment WHERE Like_Comment.ID_Comment = Comment_Post.ID_CommentPost)AS 'like_comment'        
         FROM Post, User, Comment_Post
         WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User AND Comment_Post.ID_Post = ?
