@@ -1,3 +1,20 @@
+
+const categoryDropdownToggle = () => {
+  const dropdownWidget = document.querySelector(".category-dropdown");
+  if (dropdownWidget.style.display == "none")
+    dropdownWidget.style.display = "block";
+  else dropdownWidget.style.display = "none";
+  console.log(dropdownWidget.style.display);
+};
+
+const categoryDropdownToggleMobile = () => {
+  const dropdownWidget = document.querySelector(".category-dropdown-m");
+  if (dropdownWidget.style.display == "none")
+    dropdownWidget.style.display = "block";
+  else dropdownWidget.style.display = "none";
+  console.log(dropdownWidget.style.display);
+};
+
 const open_button = document.getElementById("openbtn");
 open_button.onclick = function () {
   document.getElementById("new-side-bar").style.width = "150px";
@@ -71,21 +88,7 @@ function closeNav() {
   document.getElementById("overlay-navbar-mobile").setAttribute("hidden", "");
 }
 
-const categoryDropdownToggle = () => {
-  const dropdownWidget = document.querySelector(".category-dropdown");
-  if (dropdownWidget.style.display == "none")
-    dropdownWidget.style.display = "block";
-  else dropdownWidget.style.display = "none";
-  console.log(dropdownWidget.style.display);
-};
 
-const categoryDropdownToggleMobile = () => {
-  const dropdownWidget = document.querySelector(".category-dropdown-m");
-  if (dropdownWidget.style.display == "none")
-    dropdownWidget.style.display = "block";
-  else dropdownWidget.style.display = "none";
-  console.log(dropdownWidget.style.display);
-};
 
 const postCategoryQuery = (tag) => {
   location.href = `index.php?t=${tag}`;
@@ -94,15 +97,21 @@ const postCategoryQuery = (tag) => {
 
 try{
   const logout_website = document.getElementById("logout-website");
-  logout_website.onclick = function () {
-    console.log(document.getElementById("overlay-logout"));
-    document.getElementById("overlay-logout").removeAttribute("hidden");
-  };
+  if (logout_website){
+    logout_website.onclick = function () {
+      console.log(document.getElementById("overlay-logout"));
+      document.getElementById("overlay-logout").removeAttribute("hidden");
+    };
+  }
+
   
   const logout_mobile = document.getElementById("logout-mobile");
-  logout_mobile.onclick = function () {
-    document.getElementById("overlay-logout").removeAttribute("hidden");
-  };  
+  if (logout_mobile){
+    logout_mobile.onclick = function () {
+      document.getElementById("overlay-logout").removeAttribute("hidden");
+    }; 
+  }
+ 
 } catch(err){}
 
 

@@ -28,7 +28,16 @@
     <?php foreach($queryResult as $user): ?>
 
         <div class="random-friend-popup-wrapper">
+
+            <?php if($user["foto"]){?>
+
             <img src="../src/user_pfp/<?=htmlspecialchars($user["foto"])?>"/>
+
+            <?php }else{?>
+                <img src="../src/user_pfp/no-pfp.webp?>"/>
+            <?php }?>
+
+
             <a href="explore.php?u=<?=htmlspecialchars($user['username'])?>"><?= htmlspecialchars($user["username"])?></a>        
         </div>    
 
