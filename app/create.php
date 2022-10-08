@@ -1,6 +1,13 @@
 <?php 
     require_once('../src/includes/auth.php');
 
+    if (isset($_SESSION['ADMIN'])){
+        if ($_SESSION['ADMIN'] == 'ADMIN'){
+            header("location: index.php");
+            die();
+        }
+    }
+
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
