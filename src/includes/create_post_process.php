@@ -40,6 +40,7 @@
     )  {
       
         $user_id = $_SESSION['ID_User'];
+        date_default_timezone_set('Antarctica/Davis');        
         $date = date('Y-m-d H:i:s');        
         $createPostQuery = "INSERT INTO Post VALUES (?, ?, ?, ?, ?)";
 
