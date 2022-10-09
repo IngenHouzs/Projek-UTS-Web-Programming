@@ -36,39 +36,54 @@
 
     $postTag;
 
-    if (isset($_GET['t'])){
+    if (isset($_GET['t'])){    // WITH TAG 
+     
         $postTag = $_GET['t'];
+        $getAllPostQuery;
 
-        $getAllPostQuery = "SELECT User.username AS 'username', 
-        User.ID_User as 'user_id',        
-        Post.waktu_post as 'post_date', 
-        Post.KATEGORI as 'kategori', 
-        Post.Isi as 'isi', 
-        Post.ID_Post as 'id', 
-        User.foto as 'foto',
-        (SELECT COUNT(ID_Post) FROM Like_Post 
-        WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
-        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,        
-        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
-        FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ? 
-        ORDER BY Post.waktu_post DESC";        
+        if (isset($_GET['key'])){ 
+
+
+        } else {
+            $getAllPostQuery = "SELECT User.username AS 'username', 
+            User.ID_User as 'user_id',        
+            Post.waktu_post as 'post_date', 
+            Post.KATEGORI as 'kategori', 
+            Post.Isi as 'isi', 
+            Post.ID_Post as 'id', 
+            User.foto as 'foto',
+            (SELECT COUNT(ID_Post) FROM Like_Post 
+            WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+            (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,        
+            (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
+            FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ? 
+            ORDER BY Post.waktu_post DESC";      
+        }
         $queryExecution = $db->prepare($getAllPostQuery);
         $queryExecution->execute([$postTag]);
 
-    } else {
-        $getAllPostQuery = "SELECT User.username AS 'username', 
-        User.ID_User as 'user_id',
-        Post.waktu_post as 'post_date', 
-        Post.KATEGORI as 'kategori', 
-        Post.Isi as 'isi', 
-        Post.ID_Post as 'id', 
-        User.foto as 'foto',
-        (SELECT COUNT(ID_Post) FROM Like_Post 
-        WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
-        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
-        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
-        FROM Post, User WHERE Post.ID_User = User.ID_User 
-        ORDER BY Post.waktu_post DESC";
+    } else {   // WITHOUT TAG
+        $getAllPostQuery;
+        if (isset($_GET['key'])){ 
+
+
+        } else {
+            $getAllPostQuery = "SELECT User.username AS 'username', 
+            User.ID_User as 'user_id',
+            Post.waktu_post as 'post_date', 
+            Post.KATEGORI as 'kategori', 
+            Post.Isi as 'isi', 
+            Post.ID_Post as 'id', 
+            User.foto as 'foto',
+            (SELECT COUNT(ID_Post) FROM Like_Post 
+            WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
+            (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
+            (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'              
+            FROM Post, User WHERE Post.ID_User = User.ID_User 
+            ORDER BY Post.waktu_post DESC";
+        }        
+      
+
         $queryExecution = $db->query($getAllPostQuery);        
     }
 ?>
@@ -90,7 +105,11 @@
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
                 <section class="main-content-wrapper dashboard-header">
-                    <h1 class="dashboard-page-title">Home</h1>
+                    <h1 class="dashboard-page-title">Home</h1> 
+                    <div class="post-sort">
+                        <button>Trending</button>
+                        <button>Recent</button>                        
+                    </div>
                 </section>      
 
                 <section id="dashboard-post-list">
