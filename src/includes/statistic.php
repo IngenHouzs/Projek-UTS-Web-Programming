@@ -23,7 +23,8 @@
     Post.waktu_post as 'post_date', 
     Post.KATEGORI as 'kategori', 
     Post.Isi as 'isi', 
-    Post.ID_Post as 'id', 
+    Post.ID_Post as 'id',
+    Post.waktu_post as 'waktu_post',
     User.foto as 'foto',
     (SELECT COUNT(ID_Post) FROM Like_Post 
     WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
@@ -55,19 +56,14 @@
 
 
     while ($result = $exec->fetch(PDO::FETCH_ASSOC)){
+        if ($index > 0) $pdf->addPage();     
         if ($currentTag != $result['kategori']){ 
-            if ($index > 0) $pdf->addPage();
-            $currentTag = $result['kategori'];
+            $currentTag = $result['kategori'];            
             $pdf->createTagLineBreak($currentTag);   
             $index++;                  
         }   
-
         $pdf->createPostFragment($result);
-
-
-
-
-
+    
     }
     
 
