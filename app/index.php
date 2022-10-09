@@ -313,9 +313,9 @@
                 <span id="reminder-text" class="mx-1">Prolangram</span>
                 <span class="mx-1"> | </span>
                 <small class="mx-1">Have an Account?</small>
-                <button id="reminder-button" class="btn btn-light mx-1">Log In</button>
+                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToLogin()">Log In</button>
                 <small class="mx-1">Doesn't have an Account?</small>
-                <button id="reminder-button" class="btn btn-light mx-1">Register</button>
+                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToRegister()">Register</button>
             </div>
         </div>
         

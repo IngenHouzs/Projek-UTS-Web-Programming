@@ -65,6 +65,7 @@
             <div class="row">
                 <div class="col text-center">
                     <p>Best Community for Code-nerds.</p>
+                    <a href="index.php">LOG IN AS GUEST</a>                    
                 </div>
             </div>
             <div class="row mb-1">

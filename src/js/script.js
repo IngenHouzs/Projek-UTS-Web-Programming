@@ -22,7 +22,13 @@ open_button.onclick = function () {
   document.getElementById("overlay-navbar-mobile").removeAttribute("hidden");
 };
 
+const goToLogin = () => {
+  location.href = "login.php";
+} 
 
+const goToRegister = () => {
+  location.href = "register.php";
+} 
 
 const getRandomUser = () => {
   var XMLHttp = new XMLHttpRequest();
