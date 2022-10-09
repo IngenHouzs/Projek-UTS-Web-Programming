@@ -27,26 +27,54 @@
 
             $pictureList = explode(",", $data['gambar']);
 
-            $this->Cell(50, 10, "User Name", 1, 0,'L');
-            $this->Cell(140, 10, $data['username'],1, 1, 'L');   
+            $this->SetFillColor(126, 156, 204);            
+            $this->Cell(50, 10, "User Name", 1, 0,'L', 1);
+            $this->SetFillColor(189, 209, 240);
+            $this->Cell(140, 10, $data['username'],1, 1, 'L', 1);   
             
-            $this->Cell(50, 10, "Nama Lengkap", 1, 0, 'L');            
-            $this->Cell(140, 10,  $data['nama_lengkap'],1, 1, 'L');    
+            $this->SetFillColor(126, 156, 204);                   
+            $this->Cell(50, 10, "Nama Lengkap", 1, 0, 'L', 1);   
+            $this->SetFillColor(189, 209, 240);                                 
+            $this->Cell(140, 10,  $data['nama_lengkap'],1, 1, 'L', 1);    
 
-            $this->Cell(50, 10, "Email", 1, 0, 'L');            
-            $this->Cell(140, 10,  $data['email'],1, 1, 'L');    
+            $this->SetFillColor(126, 156, 204);                   
+            $this->Cell(50, 10, "Email", 1, 0, 'L', 1);            
+            $this->SetFillColor(189, 209, 240);            
+            $this->Cell(140, 10,  $data['email'],1, 1, 'L', 1);    
 
-            $this->Cell(50, 10, "Jumlah Like", 1, 0, 'L');            
-            $this->Cell(140, 10, $data['like'],1, 1, 'L');
+            $this->SetFillColor(126, 156, 204);                   
+            $this->Cell(50, 10, "Waktu Post", 1, 0, 'L', 1);    
+            $this->SetFillColor(189, 209, 240);                    
+            $this->Cell(140, 10,  $data['waktu_post'],1, 1, 'L', 1);               
 
-            $this->Cell(50, 10, "Jumlah Komen", 1, 0, 'L');            
-            $this->Cell(140, 10,  $data['comments'],1, 1, 'L');   
+            $this->SetFillColor(126, 156, 204);                   
+            $this->Cell(50, 10, "Kategori", 1, 0, 'L', 1);            
+            $this->SetFillColor(189, 209, 240);            
+            $this->Cell(140, 10,  $data['kategori'],1, 1, 'L', 1);              
+
+            $this->SetFillColor(126, 156, 204);       
+            $this->Cell(50, 10, "Jumlah Like", 1, 0, 'L', 1);            
+            $this->SetFillColor(189, 209, 240);            
+            $this->Cell(140, 10, $data['like'],1, 1, 'L', 1);
+
+            $this->SetFillColor(126, 156, 204);                   
+            $this->Cell(50, 10, "Jumlah Komen", 1, 0, 'L', 1);            
+            $this->SetFillColor(189, 209, 240);            
+            $this->Cell(140, 10,  $data['comments'],1, 1, 'L', 1);  
+
+
 
             $this->Cell(190, 10, "KONTEN POST" ,0, 1, 'L');                 
                 foreach($pictureList as $pict){
+                    $this->Cell(0, 1, NULL,0, 1, 'L');                                
                     $this->Image("../user_post_pictures/".$pict, NULL, NULL, 80,64);          
+                   
                 }            
             
+            $this->Cell(0, 5, NULL,0, 1, 'L');                    
+
+            $this->Cell(190, 10, "CAPTION" ,0, 1, 'L');              
+            $this->Cell(0, 5, NULL,0, 1, 'L');                     
             $this->MultiCell(190, 10, $data['isi'], 1, 'L');
 
 
