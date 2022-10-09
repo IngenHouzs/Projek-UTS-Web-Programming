@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    require_once('../src/includes/prevent_login_auth.php');   
+ ?>
+
+
 <?php
 $error_login = "";
 if (isset($_SESSION['error'])){
