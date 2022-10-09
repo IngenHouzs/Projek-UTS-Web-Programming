@@ -31,10 +31,10 @@
 
             <?php if($user["foto"]){?>
 
-            <img src="../src/user_pfp/<?=htmlspecialchars($user["foto"])?>"/>
+            <img src="../src/user_profile/<?=htmlspecialchars($user["foto"])?>"/>
 
             <?php }else{?>
-                <img src="../src/user_pfp/no-pfp.webp?>"/>
+                <img src="../src/user_profile/no-pfp.webp?>"/>
             <?php }?>
 
 

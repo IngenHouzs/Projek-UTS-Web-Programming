@@ -52,14 +52,14 @@ const liveSearch = (query) => {
             if (user.foto) {
               oldWrapper.innerHTML += `
                 <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
-                <img src="../src/user_pfp/${user.foto}"/>
+                <img src="../src/user_profile/${user.foto}"/>
                 <p>${user.username}</p>
                 </div>             
                 `              
             } else {
               oldWrapper.innerHTML += `
                 <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
-                <img src="../src/user_pfp/no-pfp.webp"/>
+                <img src="../src/user_profile/no-pfp.webp"/>
                 <p>${user.username}</p>
                 </div>             
               `              

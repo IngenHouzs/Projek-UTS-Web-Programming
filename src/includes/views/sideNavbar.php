@@ -9,9 +9,9 @@
                     <?php 
             if (isset($_SESSION['ID_User'])){
         ?>
-            <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>      
+            <img src="../src/user_profile/<?= !$_SESSION['foto'] ? 'no-pfp.webp': htmlspecialchars($_SESSION['foto'])?>"/>      
         <?php } else{?>
-            <img src="../src/user_pfp/no-pfp.webp"/>          
+            <img src="../src/user_profile/no-pfp.webp"/>          
         <?php }?>                            
                     </div>
                 </div>
@@ -184,16 +184,16 @@
         <?php 
             if (isset($_SESSION['ID_User'])){
         ?>
-            <img src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>      
+            <img src="../src/user_profile/<?= !$_SESSION['foto'] ? 'no-pfp.webp': htmlspecialchars($_SESSION['foto'])?>"/>      
         <?php } else{?>
-            <img src="../src/user_pfp/no-pfp.webp"/>          
+            <img src="../src/user_profile/no-pfp.webp"/>          
         <?php }?>        
 
 
         <?php 
             if (isset($_SESSION['username'])){
         ?>
-        <h1><?=htmlspecialchars($user_username)?></h1>        
+        <h1><?=htmlspecialchars($_SESSION['username'])?></h1>        
         <?php } else{?>
             <h1>GUEST</h1>              
         <?php }?>

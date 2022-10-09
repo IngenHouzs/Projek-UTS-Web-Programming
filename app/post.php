@@ -134,7 +134,7 @@
 
             <div class="post-wrapper mc-post-wrapper">
                             <div class="post-info">
-                                <img src="../src/user_pfp/<?= !$postInfo['foto'] ? 'no-pfp.webp' : htmlspecialchars($postInfo['foto'])?>"/>
+                                <img src="../src/user_profile/<?= !$postInfo['foto'] ? 'no-pfp.webp' : htmlspecialchars($postInfo['foto'])?>"/>
                                 <div class="post-info-header" onclick="redirectToUserPage('<?=htmlspecialchars($postInfo['username'])?>')">
                                     <h1><?=htmlspecialchars($postInfo['username'])?> <span style="font-weight:300"><?=htmlspecialchars($postInfo['waktu_post'])?></span></h1>
                                     <div class="post-tag">
@@ -180,7 +180,7 @@
 
                                         <?php while($comment = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                                         <div class="user-comment-box">                                            
-                                            <img src="../src/user_pfp/<?=  !$comment['foto'] ? 'no-pfp.webp' : htmlspecialchars($comment['foto'])?>" onclick="redirectToUserPage('<?=htmlspecialchars($comment['username'])?>')"/>  
+                                            <img src="../src/user_profile/<?=  !$comment['foto'] ? 'no-pfp.webp' : htmlspecialchars($comment['foto'])?>" onclick="redirectToUserPage('<?=htmlspecialchars($comment['username'])?>')"/>  
                                             <div class="user-comment-text"> 
 
                                                 <?php if(isset($_SESSION['ADMIN'])){?>

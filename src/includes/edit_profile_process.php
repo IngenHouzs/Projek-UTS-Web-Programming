@@ -22,6 +22,8 @@ if (empty($result)) {
 
 	// kalo user not found , buat warning
 	echo "User tidak ditemukan";
+	header('location: ../../app/profile.php');
+	die();
 }
 else
 {
@@ -37,6 +39,8 @@ else
 
 	if ($result_check_username) {
 		echo "Username telah digunakan. Gunakan username lain <br>";
+	} else{
+		$_SESSION['username'] = $_POST['username'];
 	}
 
 	// cek email juga
@@ -50,10 +54,12 @@ else
 
 	if ($result_check_email) {
 		echo "Email telah digunakan. Gunakan email lain <br>";
+
 	}
 
 	else
 	{
+		$_SESSION['email'] = $_POST['email'];
 		// cek apakah user berganti password
 		if (!empty($_POST['password'])) {
 
@@ -66,6 +72,8 @@ else
 			$q_edit_password = $db->prepare($edit_password);
 			$q_edit_password->execute($data_password);
 
+
+			$tf;
 			// masukin foto dulu ke storage
 
 			if ($_FILES['foto']['size'] != 0) {
@@ -75,6 +83,7 @@ else
 
 				// nama file yang akan dimasukan ke database + folder
 				$target_file = 'foto_user_'.strtotime(date('Y-m-d H:i:s')).'.'.$ext.'';
+				$tf = $target_file;
 
 				$check = $_FILES["foto"]["tmp_name"];
 
@@ -85,6 +94,7 @@ else
 			else
 			{
 				$target_file = $result['foto'];
+				$tf = $target_file;
 			}
 
 			// edit profile simpen ke variable
@@ -92,15 +102,26 @@ else
 			$nama_lengkap 	= $_POST['nama_lengkap'];
 			$email 			= $_POST['email'];
 
+
+			session_destroy();
+			session_start();
+			$_SESSION['ID_User'] = $uid;
+			$_SESSION['username'] = $username;					
+			$_SESSION['nama_lengkap'] = $nama_lengkap;				
+			$_SESSION['email'] = $email;	
+			$_SESSION['foto'] = $tf;
+
 			// query
 
-			$update = "UPDATE user SET username = '$username' , nama_lengkap = '$nama_lengkap' , email = '$email' , foto = '$target_file' WHERE ID_User = ?";
-			$data_update = [$uid];
+			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE ID_User = ?";
+			$data_update = [$username,$nama_lengkap, $email,$target_file,$uid];
 
 			$q_update_data = $db->prepare($update);
 			$q_update_data->execute($data_update);
 
 			echo 'Data sukses diubah. Kembali ke menu <a href=../../app/profile.php> profile </a>';
+			header('location: ../../app/profile.php');
+			die();					
 
 		}
 		else
@@ -108,7 +129,7 @@ else
 			// edit profile
 
 			// masukin foto dulu ke storage
-
+			$tf;
 			if ($_FILES['foto']['size'] != 0) {
 
 				$path = $_FILES['foto']['name'];
@@ -120,12 +141,15 @@ else
 				$check = $_FILES["foto"]["tmp_name"];
 
 				//Mengupload gambar
-                move_uploaded_file($check, '../user_profile/'.$target_file);
+                move_uploaded_file($check, '../user_profile/'.$target_file); 
+				$_SESSION['foto'] = $target_file;
+				$tf = $target_file;				
 
 			}
 			else
 			{
 				$target_file = $result['foto'];
+				$tf = $target_file;
 			}
 
 			// edit profile simpen ke variable
@@ -133,10 +157,18 @@ else
 			$nama_lengkap 	= $_POST['nama_lengkap'];
 			$email 			= $_POST['email'];
 
+			session_destroy();
+			session_start();
+			$_SESSION['ID_User'] = $uid;
+			$_SESSION['username'] = $username;					
+			$_SESSION['nama_lengkap'] = $nama_lengkap;				
+			$_SESSION['email'] = $email;		
+			$_SESSION['foto'] = $tf;			
+
 			// query
 
-			$update = "UPDATE user SET username = '$username' , nama_lengkap = '$nama_lengkap' , email = '$email' , foto = '$target_file' WHERE ID_User = ?";
-			$data_update = [$uid];
+			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE ID_User = ?";
+			$data_update = [$username,$nama_lengkap,$email,$target_file,$uid];
 
 			$q_update_data = $db->prepare($update);
 			$q_update_data->execute($data_update);
@@ -144,5 +176,7 @@ else
 			echo 'Data sukses diubah. Kembali ke menu <a href=../../app/profile.php> profile </a>';
 		}
 	}
-}
+} 
+header('location: ../../app/profile.php');
+die();		
 ?>
