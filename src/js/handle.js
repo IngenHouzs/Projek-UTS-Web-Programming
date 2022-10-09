@@ -10,6 +10,21 @@ const likePost = (user_id, post_id) => {
 };
 
 
+const sortPostByTrend = () => {
+  location.href = "index.php?key=trending";
+}
+
+const sortPostByRecentPost = () => {
+  location.href = "index.php?key=recent";
+} 
+
+const sortPostByTrendWithTag = (tag) => {
+  location.href = "index.php?key=trending&t=" + tag;
+}
+
+const sortPostByRecentPostWithTag = (tag) => {
+  location.href = "index.php?key=recent&t=" + tag;
+}
 
 
 const likeComment = (user_id, comment_id) => {
@@ -106,11 +121,12 @@ const redirectToUserPage = (username) => {
     location.href= "explore.php?u=" + username;
 }
  
-
-
 const redirectToLoginPage = () => {
   location.href = "login.php";
 }
+
+
+
 
 sessionStorage.setItem("post-img-index", 0);
 
