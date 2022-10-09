@@ -39,6 +39,8 @@ else
 
 	if ($result_check_username) {
 		echo "Username telah digunakan. Gunakan username lain <br>";
+		header('location: ../../app/profile.php');
+		die();		
 	} else{
 		$_SESSION['username'] = $_POST['username'];
 	}
@@ -54,7 +56,8 @@ else
 
 	if ($result_check_email) {
 		echo "Email telah digunakan. Gunakan email lain <br>";
-
+		header('location: ../../app/profile.php');
+		die();
 	}
 
 	else
