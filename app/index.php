@@ -175,8 +175,19 @@
                 <section class="main-content-wrapper dashboard-header">
                     <h1 class="dashboard-page-title">Home</h1> 
                     <div class="post-sort">
-                        <button>Trending</button>
-                        <button>Recent</button>                        
+
+                        <?php if (!isset($_GET['t'])){?>
+
+                        <button onclick="sortPostByTrend()">Trending</button>
+                        <button onclick="sortPostByRecentPost()">Recent</button>                        
+
+                        <?php }else{
+                            $key = $_GET['t'];
+                            ?>
+                            <button onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                            <button onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
+                        <?php }?>
+
                     </div>
                 </section>      
 
