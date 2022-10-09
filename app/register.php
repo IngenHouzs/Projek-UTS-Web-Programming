@@ -65,12 +65,16 @@
             <div class="row">
                 <div class="col text-center">
                     <p>Best Community for Code-nerds.</p>
-                    <a href="index.php">LOG IN AS GUEST</a>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <small>Already have an account? <strong><a href="login.php">Log in</a></strong> here.</small>
                 </div>
             </div>
             <div class="row mb-1">
-                <div class="col d-flex justify-content-center align-items-end pt-3">
-                    <small>Already have an account? <strong><a href="login.php">Log in</a></strong> here.</small>
+                <div class="col text-center">
+                    <small>Don't want to register? <strong><a href="index.php">Log in as guest</a></strong> here.</small>
                 </div>
             </div>
             <div class="row">

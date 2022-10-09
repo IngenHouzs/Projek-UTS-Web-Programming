@@ -10,6 +10,7 @@
     
     require_once('../src/includes/check_ban.php'); 
 
+    $hidden = "";
     if (
         isset($_SESSION['ID_User']) &&
         isset($_SESSION['nama_lengkap']) &&
@@ -21,6 +22,7 @@
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
+        $hidden = "hidden";
     }
 ?>
 
@@ -178,14 +180,14 @@
 
                         <?php if (!isset($_GET['t'])){?>
 
-                        <button onclick="sortPostByTrend()">Trending</button>
-                        <button onclick="sortPostByRecentPost()">Recent</button>                        
+                        <button class="btn btn-sort" onclick="sortPostByTrend()">Trending</button>
+                        <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>                        
 
                         <?php }else{
                             $key = $_GET['t'];
                             ?>
-                            <button onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
-                            <button onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
+                            <button class="btn btn-sort" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                            <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
                         <?php }?>
 
                     </div>
@@ -297,7 +299,7 @@
         </div>
     </div>
 
-    <div id="notif-reminder" class=" fixed-bottom bg-secondary p-3">
+    <div id="notif-reminder" class=" fixed-bottom bg-secondary p-3" <?= $hidden ?>>
         <div class="row">
             <div class="col text-white text-center">
                 <svg
@@ -314,7 +316,7 @@
                 <span class="mx-1"> | </span>
                 <small class="mx-1">Have an Account?</small>
                 <button id="reminder-button" class="btn btn-light mx-1" onclick="goToLogin()">Log In</button>
-                <small class="mx-1">Doesn't have an Account?</small>
+                <small class="mx-1">Don't have an Account?</small>
                 <button id="reminder-button" class="btn btn-light mx-1" onclick="goToRegister()">Register</button>
             </div>
         </div>
