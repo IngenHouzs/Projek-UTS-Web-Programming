@@ -158,7 +158,7 @@
 
 
 
-<div class="side-navbar">
+<div class="side-navbar overflow-auto">
     <div class="navbar-button-collapse">
         <button id="openbtn" class="openbtn">☰</button> 
     </div>
