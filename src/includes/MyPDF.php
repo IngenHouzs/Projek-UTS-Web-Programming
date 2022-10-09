@@ -23,6 +23,28 @@
             $this->Cell(190, 10, $tag,0, 1, 'C');
         }
 
+        public function createPostFragment($data){
+
+            $this->Cell(50, 10, "User Name", 1, 0, 'L');
+            $this->Cell(140, 10, $data['username'],1, 1, 'L');   
+            
+            $this->Cell(50, 10, "Nama Lengkap", 1, 0, 'L');            
+            $this->Cell(140, 10,  $data['nama_lengkap'],1, 1, 'L');    
+
+            $this->Cell(50, 10, "Email", 1, 0, 'L');            
+            $this->Cell(140, 10,  $data['email'],1, 1, 'L');    
+
+            $this->Cell(50, 10, "Jumlah Like", 1, 0, 'L');            
+            $this->Cell(140, 10, $data['like'],1, 1, 'L');
+
+            $this->Cell(50, 10, "Jumlah Komen", 1, 0, 'L');            
+            $this->Cell(140, 10,  $data['comments'],1, 1, 'L');   
+            
+            $this->Cell(190, 30, $data['isi'], 1, 1, 'L');
+
+            $this->Cell(0, 30, NULL,0, 1, 'L');                                                                
+            
+        }
         
 
     }
