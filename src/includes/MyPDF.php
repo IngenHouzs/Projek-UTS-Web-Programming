@@ -5,36 +5,24 @@
     class PDF extends FPDF\FPDF{
 
         
-        public function createTableTitle($title){
-            $this->Cell(190, 10, $title, 1,1, 'C');  // 1 pertama buat frame or no
-        }                                            // 1 kedua buat next line next/no   
-
-        public function createTableHeader($params){ 
-            $index = TRUE;
-            foreach($params as $p){
-                if ($index){
-                    $this->Cell(30, 10, $p, 1, 0, 'L');
-                    $index = FALSE;
-                    continue;
-                }
-                if ($p == 'Prodi') $this->Cell(53.3, 10, $p, 1, 1, 'L');                
-                else $this->Cell(53.3, 10, $p, 1, 0, 'L');                
-            }
+        public function createDocumentTitle($title){
+            $this->setFont('Arial', 'B', 16);             
+            $this->Cell(190, 10, $title,0, 1, 'C');
         }
 
-
-        public function insertContentToTable($data){
-            $index = TRUE;
-            $cellWidth = 30;
-            $numbering = 0;
-            foreach($data as $d){
-                $numbering++;   
-                $this->Cell(30, 10, $numbering, 1, 0, 'L');    
-                $this->Cell(53.3, 10, $d["NIM"], 1, 0, 'L');                
-                $this->Cell(53.3, 10, $d["Nama"], 1, 0, 'L');   
-                $this->Cell(53.3, 10, $d["Prodi"], 1, 1, 'L');                 
-            }                         
+        public function addDownloadTime(){
+            $this->Cell(190, 10, 'Ditulis pada '.date('Y/m/d h:i:sa'),0, 1, 'C');            
         }
+
+        public function createLine(){
+            $this->Ln(4);             
+            $this->Line(30, 30, $this->getPageWidth()-30, 30);            
+        }
+
+        public function createTagLineBreak($tag){
+            $this->Cell(190, 10, $tag,0, 1, 'C');
+        }
+
         
 
     }
