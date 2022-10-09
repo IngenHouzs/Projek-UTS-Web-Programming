@@ -83,6 +83,12 @@
                     <p>Best Community for Code-nerds.</p>
                 </div>
             </div>
+
+            <div class="row mb-1">
+                <div class="col text-center">
+                    <small><strong><a href="admin_login.php">LOG IN AS ADMIN</a></strong></small>
+                </div>
+            </div>            
             <div class="row">
                 <div class="col text-center">
                     <small>Don't have account? <strong><a href="register.php">Sign up</a></strong> here.</small>
@@ -93,6 +99,8 @@
                     <small>Don't want to register? <strong><a href="index.php">Log in as guest</a></strong> here.</small>
                 </div>
             </div>
+
+
             <div class="row">
                 <div class="col">
                     <form action="../src/includes/login_process.php" method="post">

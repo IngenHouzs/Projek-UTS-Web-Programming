@@ -40,7 +40,24 @@
        
         </div>
         <?php require('../src/includes/views/friendRecommendation.php')?>
-    </main>
+    </main> 
+
+    <div id="overlay-logout" hidden>
+        <div id="box" class="alert" role="alert">
+            <h4 class="alert-heading">Log Out</h4>
+            <p>Are you sure want to Log Out?</p>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" onclick="logOut()"><a id="button-yes" href="logout.php">Yes</a></button>
+                </div>
+                <div class="col">
+                    <button id="button-no" class="btn btn-primary">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     
 
     <script src="../src/bootstrap/js/bootstrap.min.js"></script>

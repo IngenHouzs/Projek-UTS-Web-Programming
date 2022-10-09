@@ -15,7 +15,7 @@
     $encrypted_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?,?, ?,?)";
 
-    $data = [$id, $fullname, $username, $email, NULL,FALSE,FALSE,$encrypted_password];
+    $data = [$id, $fullname, strtolower(join('',explode(' ', $username))), $email, NULL,FALSE,FALSE,$encrypted_password];
 
     $queryExecution = $db->prepare($query);
 

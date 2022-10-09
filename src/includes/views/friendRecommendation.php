@@ -8,7 +8,7 @@
 
     require_once('../src/includes/db_external.php');
 
-    $fetchRandomUserQuery = "SELECT ID_User, username, foto FROM User  WHERE username != ? ORDER BY RAND() LIMIT 5"; // WHERE (UNLESS DIRI SENDIRI)
+    $fetchRandomUserQuery = "SELECT ID_User, username, foto FROM User  WHERE username != ? AND isAdmin = 0 ORDER BY RAND() LIMIT 5"; // WHERE (UNLESS DIRI SENDIRI)
     $queryExecution = $db->prepare($fetchRandomUserQuery);
     if (isset($_SESSION['username'])) $queryExecution->execute([$_SESSION['username']]);
     else $queryExecution->execute(['']);
@@ -31,10 +31,10 @@
 
             <?php if($user["foto"]){?>
 
-            <img src="../src/user_pfp/<?=htmlspecialchars($user["foto"])?>"/>
+            <img src="../src/user_profile/<?=htmlspecialchars($user["foto"])?>"/>
 
             <?php }else{?>
-                <img src="../src/user_pfp/no-pfp.webp?>"/>
+                <img src="../src/user_profile/no-pfp.webp?>"/>
             <?php }?>
 
 

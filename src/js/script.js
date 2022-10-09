@@ -26,6 +26,10 @@ const goToLogin = () => {
   location.href = "login.php";
 } 
 
+const logOut = () => {
+  location.href = "logout.php";
+}
+
 const goToRegister = () => {
   location.href = "register.php";
 } 
