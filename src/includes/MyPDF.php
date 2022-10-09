@@ -23,7 +23,7 @@
             $this->Cell(190, 10, $tag,0, 1, 'C');
         }
 
-        public function createPostFragment($data){
+        public function createPostFragment($data, $pictures){
 
             $pictureList = explode(",", $data['gambar']);
 
@@ -65,15 +65,18 @@
 
 
             $this->Cell(190, 10, "KONTEN POST" ,0, 1, 'L');                 
-                foreach($pictureList as $pict){
-                    $this->Cell(0, 1, NULL,0, 1, 'L');                                
-                    $this->Image("../user_post_pictures/".$pict, NULL, NULL, 80,64);          
-                   
-                }            
+                if (isset($pictures)){
+                    foreach($pictureList as $pict){
+                        $this->Cell(0, 1, NULL,0, 1, 'L');                                
+                        $this->Image("../user_post_pictures/".$pict, NULL, NULL, 80,64);          
+                       
+                    }    
+                }
+        
             
             $this->Cell(0, 5, NULL,0, 1, 'L');                    
 
-            $this->Cell(190, 10, "CAPTION" ,0, 1, 'L');              
+            if (isset($pictures)) $this->Cell(190, 10, "CAPTION" ,0, 1, 'L');              
             $this->Cell(0, 5, NULL,0, 1, 'L');                     
             $this->MultiCell(190, 10, $data['isi'], 1, 'L');
 

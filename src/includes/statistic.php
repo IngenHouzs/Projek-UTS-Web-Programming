@@ -62,7 +62,7 @@
             $pdf->createTagLineBreak($currentTag);   
             $index++;                  
         }   
-        $pdf->createPostFragment($result);
+        $pdf->createPostFragment($result, $result['gambar']);
     
     }
     
