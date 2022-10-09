@@ -32,8 +32,9 @@
 
 ((SELECT COUNT(ID_Post) FROM Like_Post 
     WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-(SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
-
+(SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity', 
+	
+	(SELECT GROUP_CONCAT(gambar_postingan.nama_gambar) FROM gambar_postingan WHERE Post.ID_Post = gambar_postingan.ID_Post) AS 'gambar'
 
     FROM Post, User WHERE Post.ID_User = User.ID_User
     ORDER BY Post.KATEGORI ASC, 'popularity' DESC"; 

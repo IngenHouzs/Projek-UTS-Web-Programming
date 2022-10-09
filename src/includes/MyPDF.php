@@ -25,6 +25,8 @@
 
         public function createPostFragment($data){
 
+            $pictureList = explode(",", $data['gambar']);
+
             $this->Cell(50, 10, "User Name", 1, 0,'L');
             $this->Cell(140, 10, $data['username'],1, 1, 'L');   
             
@@ -40,10 +42,13 @@
             $this->Cell(50, 10, "Jumlah Komen", 1, 0, 'L');            
             $this->Cell(140, 10,  $data['comments'],1, 1, 'L');   
 
-
             $this->Cell(190, 10, "KONTEN POST" ,0, 1, 'L');                 
+                foreach($pictureList as $pict){
+                    $this->Image("../user_post_pictures/".$pict, NULL, NULL, 80,64);          
+                }            
             
-            $this->MultiCell(190, 30, $data['isi'], 1, 'L');
+            $this->MultiCell(190, 10, $data['isi'], 1, 'L');
+
 
             $this->Cell(0, 30, NULL,0, 1, 'L');                                                                
             
