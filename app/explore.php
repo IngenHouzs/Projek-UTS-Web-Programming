@@ -173,6 +173,9 @@
         </div>
         <?php require('../src/includes/views/friendRecommendation.php')?>
     </main>
+
+
+    <?php if (!isset($_SESSION['ID_User'])){?>
     
     <div id="notif-reminder" class=" fixed-bottom bg-secondary p-3" <?= $hidden ?>>
         <div class="row">
@@ -195,6 +198,8 @@
                 <button id="reminder-button" class="btn btn-light mx-1" onclick="goToRegister()">Register</button>
             </div>
         </div>
+
+    <?php }?>
         
 
     

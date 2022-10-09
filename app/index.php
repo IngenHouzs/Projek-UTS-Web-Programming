@@ -211,7 +211,7 @@
 
                                 <?php }?>
                                         <div class="post-info p-1">
-                                            <img id="post-profile-image" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')" src="../src/user_pfp/<?= !$post['foto'] ? 'no-pfp.webp': htmlspecialchars($post['foto'])?>"/>
+                                            <img id="post-profile-image" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')" src="../src/user_profile/<?= !$post['foto'] ? 'no-pfp.webp': htmlspecialchars($post['foto'])?>"/>
                                             <div class="post-info-header p-1 mx-1">
                                                 <h1><span id="post-username" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')"><?=htmlspecialchars($post['username'])?></span> <span id="post-date" style="font-weight:300"> <?=htmlspecialchars($post['post_date'])?></span></h1>
                                                 <div class="post-tag">

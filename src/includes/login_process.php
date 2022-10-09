@@ -43,7 +43,9 @@
         }
     }
     
-    $identity = $_POST['identity'];
+    $rawIdentity = $_POST['identity'];
+    $identity = strtolower(join('',explode(' ', $rawIdentity)));    
+
     $password = $_POST['password'];
 
     $query = "SELECT * FROM User WHERE email = ? OR username= ?";

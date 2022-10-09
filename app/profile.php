@@ -82,7 +82,7 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-                        <img class="profile-picture" src="../src/user_profile/<?= $res['foto'] ?>"/>
+                        <img class="profile-picture" src="../src/user_profile/<?= $res['foto'] ? $res['foto'] : 'no-pfp.webp'?>"/>
                         <div class="profile-header-desc">
                             <h1><?=htmlspecialchars($res['username'])?></h1>
                             <h1><?=htmlspecialchars($res['nama_lengkap'])?></h1>                            
@@ -103,7 +103,9 @@
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
 
                         <div class="post-preview" onclick="redirectToPostPage('<?=htmlspecialchars($post['id'])?>')">
-                            <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
+                            <?php if(isset($post['nama_gambar'])){?>
+                                <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
+                            <?php }?>
                             <div class="post-preview-desc">
                                 <h1>#<?=htmlspecialchars($post['tag'])?></h1>
                                 <p><?=htmlspecialchars($post['caption'])?></p>
