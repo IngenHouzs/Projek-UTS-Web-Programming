@@ -1,13 +1,11 @@
 <?php
     require_once('../src/includes/auth.php');
 
-
     require_once("../vendor/autoload.php");
+   
     $dotenv = Dotenv\Dotenv::createImmutable('../');
     $dotenv->load();    
-    require_once('../src/includes/db_external.php');    
-    
-    require_once('../src/includes/check_ban.php');    
+    require_once('../src/includes/db_external.php');      
 
     if (
         isset($_SESSION['ID_User']) &&
@@ -42,7 +40,19 @@
             FROM Post WHERE Post.ID_User = ?";
     
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
-            $getAllPostQueryExecution->execute([$user_id]);            
+            $getAllPostQueryExecution->execute([$user_id]);        
+
+
+            // ambil profile diri kita sendiri
+
+            $query = "SELECT * FROM user WHERE ID_User = ?";
+            
+            $data = [$_SESSION['ID_User']];
+                        
+            $query_call_profile = $db->prepare($query); // siapin query
+            $query_call_profile->execute($data); // jalankan hasil query dan ambil data    
+
+            $res = $query_call_profile->fetch(PDO::FETCH_ASSOC); // hasil yang udah diambil
         }
 
 
@@ -72,10 +82,10 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-                        <img class="profile-picture" src="../src/user_pfp/<?= !$user_foto ? 'no-pfp.webp': htmlspecialchars($user_foto)?>"/>
+                        <img class="profile-picture" src="../src/user_profile/<?= $res['foto'] ?>"/>
                         <div class="profile-header-desc">
-                            <h1><?=htmlspecialchars($user_username)?></h1>
-                            <h1><?=htmlspecialchars($user_fullname)?></h1>                            
+                            <h1><?=htmlspecialchars($res['username'])?></h1>
+                            <h1><?=htmlspecialchars($res['nama_lengkap'])?></h1>                            
                             <p><?= htmlspecialchars($postCount['jumlah_post'])?> posts</p>
 
                             <button class="edit-profile-button" onclick="goToEditProfile()">Edit Profile</button>
@@ -84,6 +94,7 @@
                     </div> 
 
                     <section class="profile-post-list">
+                        <br>
                         <h1>POSTS</h1>
 
                         <!-- template preview postingan -->
