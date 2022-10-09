@@ -17,6 +17,8 @@
 
 
     $query = "SELECT User.username AS 'username', 
+    User.nama_lengkap AS 'nama_lengkap', 
+    User.email AS 'email',
     User.ID_User as 'user_id',
     Post.waktu_post as 'post_date', 
     Post.KATEGORI as 'kategori', 
@@ -34,7 +36,7 @@
 
 
     FROM Post, User WHERE Post.ID_User = User.ID_User
-    ORDER BY Post.KATEGORI ASC"; 
+    ORDER BY Post.KATEGORI ASC, 'popularity' DESC"; 
 
 
     date_default_timezone_set('Antarctica/Davis');
@@ -42,6 +44,7 @@
     $exec = $db->query($query);
 
     $currentTag = '';
+    $index = 0;
     // PDF Assignment
 
     $pdf->createDocumentTitle('STATISTIK UNGGAHAN PENGGUNA PROLANGRAM');
@@ -49,11 +52,20 @@
     $pdf->addDownloadTime();
     $pdf->createLine();
 
+
     while ($result = $exec->fetch(PDO::FETCH_ASSOC)){
-        if ($currentTag != $result['kategori']){
+        if ($currentTag != $result['kategori']){ 
+            if ($index > 0) $pdf->addPage();
             $currentTag = $result['kategori'];
-            $pdf->createTagLineBreak($currentTag);
+            $pdf->createTagLineBreak($currentTag);   
+            $index++;                  
         }   
+
+        $pdf->createPostFragment($result);
+
+
+
+
 
     }
     
