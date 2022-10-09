@@ -8,6 +8,9 @@
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
+    } else {
+        header('location: index.php');
+        die();
     }
 ?>
 
@@ -32,7 +35,7 @@
                 </section>      
 
                 
-                 
+                 <button><a href="../src/includes/statistic.php">Export Post Statistics</a></button>
 
        
         </div>
