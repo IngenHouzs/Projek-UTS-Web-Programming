@@ -7,7 +7,20 @@
 
     $pdf = new MyPDF\PDF();    
 
+
+    $pdf = new MyPDF\PDF();
+    $pdf->addPage();
+    $pdf->setFont('Arial', '', 16);
+
+
     
+    $pdf->createTableTitle('Data Mahasiswa');
+    $pdf->createTableHeader(array('No.', 'NIM', 'Nama', 'Prodi'));
+    $pdf->insertContentToTable($mahasiswa);
+    $pdf->Output();    
+
+    
+
 
 
 ?>
