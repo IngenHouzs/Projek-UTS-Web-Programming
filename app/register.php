@@ -86,27 +86,27 @@
                     <form action="../src/includes/register_process.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="register-form-username" type="text" name="username" placeholder="Username" required>
+                                <input class="input-username-login-and-register" id="register-form-username" type="text" name="username" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="register-form-fullname" type="text" name="fullname" placeholder="Full Name" required>
+                                <input class="input-username-login-and-register" id="register-form-fullname" type="text" name="fullname" placeholder="Full Name" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="register-form-email" type="email" name="email" placeholder="E-Mail" required>
+                                <input class="input-email-register" id="register-form-email" type="email" name="email" placeholder="E-Mail" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="register-form-password" type="password" name="password" placeholder="Password" required>
+                                <input class="input-password-login-and-register" id="register-form-password" type="password" name="password" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-2">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="register-form-password" type="password" name="password_check" placeholder="Konfirmasi Password" required>
+                                <input class="input-password-login-and-register" id="register-form-password" type="password" name="password_check" placeholder="Konfirmasi Password" required>
                             </div>
                         </div>
                         <div class="row">
