@@ -34,22 +34,46 @@
 
     // Get specific information of current post
 
-    $currentPostID = $_GET['p'];
+    $currentPostID = $_GET['p']; 
 
-    $getCurrentPostDataQuery = "SELECT User.username AS 'username', 
-    Post.waktu_post as 'post_date', 
-    Post.KATEGORI as 'kategori', 
-    Post.Isi as 'isi', 
-    Post.ID_Post as 'id',
-    Post.waktu_post as 'waktu_post',
-    Post.KATEGORI as 'tag',
-    Post.Isi as 'caption',
-    User.foto as 'foto',
-    (SELECT Like_Post.ID_Post  FROM Like_Post WHERE ? = Like_Post.ID_User AND Like_Post.ID_Post = Post.ID_Post) AS 'is_liked',                    
-    (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post),
-    (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
-    (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
-    FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
+
+    $getCurrentPostDataQuery;
+
+    if (isset($_SESSION['ID_User'])){
+        $getCurrentPostDataQuery = "SELECT User.username AS 'username', 
+        Post.waktu_post as 'post_date', 
+        Post.KATEGORI as 'kategori', 
+        Post.Isi as 'isi', 
+        Post.ID_Post as 'id',
+        Post.waktu_post as 'waktu_post',
+        Post.KATEGORI as 'tag',
+        Post.Isi as 'caption',
+        User.foto as 'foto', 
+        User.ID_User as 'uid',
+        (SELECT Like_Post.ID_Post  FROM Like_Post WHERE ? = Like_Post.ID_User AND Like_Post.ID_Post = Post.ID_Post) AS 'is_liked',                    
+        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post),
+        (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
+        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
+        FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";              
+
+    } else {
+        $getCurrentPostDataQuery = "SELECT User.username AS 'username', 
+        Post.waktu_post as 'post_date', 
+        Post.KATEGORI as 'kategori', 
+        Post.Isi as 'isi', 
+        Post.ID_Post as 'id',
+        Post.waktu_post as 'waktu_post',
+        Post.KATEGORI as 'tag',
+        Post.Isi as 'caption',
+        User.foto as 'foto',
+        (SELECT Like_Post.ID_Post  FROM Like_Post WHERE ? = Like_Post.ID_User AND Like_Post.ID_Post = Post.ID_Post) AS 'is_liked',                    
+        (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post),
+        (SELECT COUNT(ID_Post) FROM Like_Post WHERE ID_Post = Like_Post.ID_Post AND ID_Post = ?) AS 'like',
+        (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = ?) AS 'comments'    
+        FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.ID_Post = ?";      
+    }
+
+
 
     $executeQuery = $db->prepare($getCurrentPostDataQuery);
 
@@ -146,6 +170,16 @@
 
             <div class="post-wrapper mc-post-wrapper">
                             <div class="post-info">
+
+                                <?php if(isset($_SESSION['ID_User']) && isset($postInfo['uid'])){
+                                        if ($_SESSION['ID_User'] == $postInfo['uid'] || isset($_SESSION['ADMIN'])){
+                                    ?>
+                                        <div class="admin-user-control">
+                                            <button onclick="deletePost('<?=$postInfo['id']?>')">Delete Post</button>
+                                        </div>                    
+
+                                <?php }}?>
+
                                 <img class="post-profile-image" src="../src/user_profile/<?= !$postInfo['foto'] ? 'no-pfp.webp' : htmlspecialchars($postInfo['foto'])?>"/>
                                 <div class="post-info-header mx-2">
                                     <h1><span class="post-username" onclick="redirectToUserPage('<?=htmlspecialchars($postInfo['username'])?>')"><?=htmlspecialchars($postInfo['username'])?></span> <span class="post-date" style="font-weight:300"><?=htmlspecialchars($postInfo['waktu_post'])?></span></h1>
