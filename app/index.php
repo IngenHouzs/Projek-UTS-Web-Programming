@@ -93,7 +93,11 @@
             ORDER BY Post.waktu_post DESC";      
         }
         $queryExecution = $db->prepare($getAllPostQuery);
-        $queryExecution->execute([$_SESSION['ID_User'],$postTag]);
+        if (!isset($_SESSION['ID_User'])){
+            $queryExecution->execute(['-', $postTag]);            
+        } else $queryExecution->execute([$_SESSION['ID_User'],$postTag]);
+
+
     } else {   // WITHOUT TAG
         $getAllPostQuery;
         if (isset($_GET['key'])){ 
@@ -151,8 +155,10 @@
             ORDER BY Post.waktu_post DESC";
         }        
       
-        $queryExecution = $db->prepare($getAllPostQuery);        
-        $queryExecution->execute([$_SESSION['ID_User']]);
+        $queryExecution = $db->prepare($getAllPostQuery);      
+        if (!isset($_SESSION['ID_User'])){
+            $queryExecution->execute(['-']);            
+        } else $queryExecution->execute([$_SESSION['ID_User']]);
     }
 ?>
 
