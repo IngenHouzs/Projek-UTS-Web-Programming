@@ -66,6 +66,7 @@ if (isset($_SESSION['error'])){
             <div class="row">
                 <div class="col text-center">
                     <p>Admin Portal</p>
+                    <a href="login.php"><strong>Log in as user</strong></a>
                 </div>
             </div>
             <div class="row">

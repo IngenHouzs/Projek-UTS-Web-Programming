@@ -26,16 +26,24 @@
 
         if (isset($_GET['err'])){
             if ($_GET['err'] == '1'){
-                echo "<h1>Your username is unavailable.</h1>";
+                echo "<div class='alert alert-danger' role='alert'>
+                Username unavailable
+              </div>";
             }
             if ($_GET['err'] == '2'){
-                echo "<h1>Your Email is already registered.</h1>";
+                echo "<div class='alert alert-danger' role='alert'>
+                Your email is already registered.
+              </div>";
             }
             if ($_GET['err'] == '3'){
-                echo "<h1>Failed to insert data</h1>";
+                echo "<div class='alert alert-danger' role='alert'>
+                Failed to insert data
+              </div>";
             }                        
             if ($_GET['err'] == '4'){
-                echo "<h1>Invalid Password Confirmation</h1>";
+                echo "<div class='alert alert-danger' role='alert'>
+                Invalid Password Confirmation
+              </div>";
             }                                    
         }
     ?>
