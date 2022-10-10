@@ -1,9 +1,10 @@
-const likePost = (user_id, post_id) => {
+const likePost = (user_id, post_id, key,req_id) => {
   const XMLHttp = new XMLHttpRequest();
   XMLHttp.onload = () => {
-    const response = XMLHttp.responseText;
- 
-
+    const response = XMLHttp.responseText; 
+    // if (req_id == 1) location.href="index.php";
+    // if (req_id == 2) location.href = "post.php?p=" + post_id;
+    location.href = window.location.href;
   };
   XMLHttp.open("POST", "../src/includes/PostModel.php?query=likepost", true);
   XMLHttp.send(JSON.stringify({ user_id, post_id }));
