@@ -134,7 +134,7 @@
                                 <?php }?>
 
                         
-                        <img class="profile-picture" src="../src/user_pfp/<?= !$userInfo['foto'] ? 'no-pfp.webp': htmlspecialchars($userInfo['foto'])?>"/>
+                        <img class="profile-picture" src="../src/user_profile/<?= !$userInfo['foto'] ? 'no-pfp.webp': htmlspecialchars($userInfo['foto'])?>"/>
                         <div class="profile-header-desc">
                             <h1><?=htmlspecialchars($userInfo['username'])?></h1>
                             <h1><?=htmlspecialchars($userInfo['nama_lengkap'])?></h1>                            
