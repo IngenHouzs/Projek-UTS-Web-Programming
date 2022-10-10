@@ -74,12 +74,12 @@ if (isset($_SESSION['error'])){
                         <input type="text" hidden value="ADMIN" name="ADMIN"/>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="admin-login-form-username" type="text" name="identity" placeholder="Username">
+                                <input class="input-username-login-and-register" id="admin-login-form-username" type="text" name="identity" placeholder="Username">
                             </div>
                         </div>
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="admin-login-form-password" type="password" name="password" placeholder="Password">
+                                <input class="input-password-login-and-register" id="admin-login-form-password" type="password" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="row">
