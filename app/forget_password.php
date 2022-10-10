@@ -1,56 +1,29 @@
+
 <?php 
+    session_start();
+    require_once('../src/includes/prevent_login_auth.php');   
+ ?>
 
-    session_start();    
-    require_once('../src/includes/prevent_login_auth.php');     
-    
-    $success_register = $error_login = "";
-    if(isset($_SESSION['success-register'])){
-        $success_register = "<div class='alert alert-success' role='alert'>
-        Selamat! Akun telah berhasil dibuat.
-      </div>";
-    }
-
-    if (isset($_SESSION['error'])){
-        $error_login = "<div class='alert alert-danger' role='alert'>
-        Credentials and Password does not match!
-      </div>"; 
-    }
-    
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-
-    <title>Prolangram | Log In</title>
-
+    <title>Prolangram | Forgot Password</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
-
 
     <!-- CSS -->
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
-    <main id="main-login">
-        <div id="container-login" class="container mt-5">
-            <div class="row">
-                <div class="col">
-                    <?php
-                    echo $success_register ;
-                    unset($_SESSION['success-register']);
-                    ?>
-                    <?php
-                    echo $error_login ;
-                    unset($_SESSION['error']);
-                    ?>
-                </div>
-            </div>
+
+    <main id="main-register">
+        <div id="container-register" class="container mt-5">
             <div class="row">
                 <div class="col text-center">
                     <svg
@@ -72,6 +45,7 @@
                     <h1 class="font-weight-bold">Prolangram</h1>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col text-center">
                     <p class="p-0 m-0">Best Community for Code-nerds.</p>
@@ -86,38 +60,31 @@
 
             <div class="row">
                 <div class="col text-center">
-                    <small>Don't have account? <strong><a href="register.php">Sign up</a></strong> here.</small>
+                    <small>Already have an account? <strong><a href="login.php">Log in</a></strong> here.</small>
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="col">
-                    <form action="../src/includes/login_process.php" method="post">
+                    <form action="../src/includes/register_process.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-
-                                <input class="icon-username" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
-
-                                <input class="input-username-login-and-register" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
-
+                                <input class="input-login-and-register" id="register-form-username" type="text" name="username" placeholder="Username" required>
                             </div>
                         </div>
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-password-login-and-register" id="login-form-password" type="password" name="password" placeholder="Password">
+                                <input class="input-login-and-register" id="register-form-fullname" type="text" name="fullname" placeholder="Full Name" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
+                                <input class="input-login-and-register" id="register-form-email" type="email" name="email" placeholder="E-Mail" required>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-3 col-sm-6 col-8 m-auto">
-                                <div class="row">
-                                    <div class="col">
-                                        <small id="forgot-password-login"><a href="#">Forgot Password</a></small>
-                                    </div>
-                                    <div class="col my-2">
-                                        <button id="button-login" class="btn btn-primary w-100 button-login-and-register">Log In</button>
-                                    </div>    
-                                </div>
+                            <div class="col-lg-2 col-sm-3 col-3 m-auto">
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Sign Up</button>
                             </div>
                         </div>                        
                     </form>
@@ -126,7 +93,7 @@
    
         </div>
     </main>
-    
-    <script src="../src/bootstrap/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
