@@ -43,6 +43,36 @@
 <body>
 
 <main id="main-frame">
+
+
+        <?php 
+            if (isset($_GET['err'])){
+              if ($_GET['err'] == 1){
+                echo "         <div class='error-msg'>
+                <p>Username sudah digunakan.</p>
+                <button onclick='closeErrMsg()'>CLOSE</button>
+            </div> ";
+              } else if ($_GET['err'] == 2){
+                echo "         <div class='error-msg'>
+                <p>Email sudah digunakan.</p>
+                <button onclick='closeErrMsg()'>CLOSE</button>
+            </div> ";                
+              } else if ($_GET['err'] == 3){
+                echo "         <div class='error-msg'>
+                <p>Format foto tidak valid.</p>
+                <button onclick='closeErrMsg()'>CLOSE</button>
+            </div> ";                
+              } 
+              else if ($_GET['err'] == 'none'){
+                echo "         <div class='success-msg'>
+                <p>Profil berhasil diubah.</p>
+                <button onclick='closeSuccessMsg()'>CLOSE</button>
+            </div> ";                
+              }              
+            }
+            ?>
+
+
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
                 <section class="main-content-wrapper dashboard-header">

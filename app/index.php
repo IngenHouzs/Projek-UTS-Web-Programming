@@ -176,6 +176,10 @@
 </head>
 <body>
     <main id="main-frame">
+
+        
+
+
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
             <section class="main-content-wrapper dashboard-header">

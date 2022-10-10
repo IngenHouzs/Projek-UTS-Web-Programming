@@ -11,6 +11,8 @@ const likePost = (user_id, post_id, key,req_id) => {
 };
 
 
+
+
 const sortPostByTrend = () => {
   location.href = "index.php?key=trending";
 }
@@ -66,7 +68,7 @@ const liveSearch = (query) => {
                 </div>             
               `              
             }
-            
+        
         }
 
     }

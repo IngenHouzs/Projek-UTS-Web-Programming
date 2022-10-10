@@ -38,8 +38,7 @@ else
 	$result_check_username = $query_check_username->fetch(PDO::FETCH_ASSOC);
 
 	if ($result_check_username) {
-		echo "Username telah digunakan. Gunakan username lain <br>";
-		header('location: ../../app/profile.php');
+		header('location: ../../app/edit_profile.php?err=1');
 		die();		
 	} else{
 		$_SESSION['username'] = $_POST['username'];
@@ -55,9 +54,8 @@ else
 	$result_check_email = $query_check_email->fetch(PDO::FETCH_ASSOC);
 
 	if ($result_check_email) {
-		echo "Email telah digunakan. Gunakan email lain <br>";
-		header('location: ../../app/profile.php');
-		die();
+		header('location: ../../app/edit_profile.php?err=2');
+		die();		
 	}
 
 	else
@@ -82,6 +80,15 @@ else
 			if ($_FILES['foto']['size'] != 0) {
 
 				$path = $_FILES['foto']['name'];
+
+				$file_ext = explode('.', $path);
+				$file_ext = end($file_ext);
+				$file_ext = strtolower($file_ext);
+				if (!($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif')){
+					header('location: ../../app/edit_profile.php?err=3');
+					die();							
+				}
+
 				$ext = pathinfo($path, PATHINFO_EXTENSION);
 
 				// nama file yang akan dimasukan ke database + folder
@@ -125,9 +132,9 @@ else
 			$q_update_data = $db->prepare($update);
 			$q_update_data->execute($data_update);
 
-			echo 'Data sukses diubah. Kembali ke menu <a href=../../app/profile.php> profile </a>';
-			header('location: ../../app/profile.php');
-			die();					
+
+			header('location: ../../app/edit_profile.php?err=none');
+			die();							
 
 		}
 		else
@@ -138,7 +145,18 @@ else
 			$tf;
 			if ($_FILES['foto']['size'] != 0) {
 
+
 				$path = $_FILES['foto']['name'];
+
+				$file_ext = explode('.', $path);
+				$file_ext = end($file_ext);
+				$file_ext = strtolower($file_ext);
+				if (!($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif')){
+					header('location: ../../app/edit_profile.php?err=3');
+					die();							
+				}
+
+
 				$ext = pathinfo($path, PATHINFO_EXTENSION);
 
 				// nama file yang akan dimasukan ke database + folder
@@ -182,7 +200,8 @@ else
 			$q_update_data = $db->prepare($update);
 			$q_update_data->execute($data_update);
 
-			echo 'Data sukses diubah. Kembali ke menu <a href=../../app/profile.php> profile </a>';
+			header('location: ../../app/edit_profile.php?err=none');
+			die();					
 		}
 	}
 } 

@@ -37,6 +37,33 @@
 </head>
 <body>
         <section id="main-frame">
+
+            <?php 
+                if (isset($_GET['err'])){   
+                    if ($_GET['err'] == 1){
+                        echo "         <div class='error-msg'>
+                        <p>Format gambar tidak valid</p>
+                        <button onclick='closeErrMsg()'>CLOSE</button>
+                    </div> ";                        
+                    }
+                    else if ($_GET['err'] == 5){
+                        echo "         <div class='error-msg'>
+                        <p>Gagal memasukkan data.</p>
+                        <button onclick='closeErrMsg()'>CLOSE</button>
+                    </div> ";                        
+                    }                    
+                    else if ($_GET['err'] == 'none'){
+                        echo "         <div class='success-msg'>
+                        <p>Post berhasil diunggah.</p>
+                        <button onclick='closeSuccessMsg()'>CLOSE</button>
+                    </div> ";                        
+                    }                      
+                }
+
+            ?>
+
+
+
             <?php require('../src/includes/views/sideNavbar.php')?>
             <div class="main-content">
                 <section class="main-content-wrapper dashboard-header">

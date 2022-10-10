@@ -21,7 +21,7 @@
         if ($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif'){        
             move_uploaded_file($tmp_file[$index], "../user_post_pictures/$newUniqueFileName"); 
             array_push($encryptedImageNames, $newUniqueFileName);
-        }
+        } 
     }
 
 
@@ -49,7 +49,7 @@
         try{
             $queryExecution->execute($data);
         } catch(Exception $e){
-            header('location: ../../app/create.php?err=1');            
+            header('location: ../../app/create.php?err=5');            
             die();
         }
     } else {
@@ -73,9 +73,9 @@
         $imageQueryExecution = $db->prepare($insertPostImagesQuery);
         try{
             $imageQueryExecution->execute($statements); 
-            header('location: ../../app/index.php');                            
+            header('location: ../../app/create.php?err=none');                            
         } catch(Exception $e){
-            header('location: ../../app/create.php?err=1');            
+            header('location: ../../app/create.php?err=none');            
             die();            
         }
 

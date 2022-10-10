@@ -36,7 +36,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
-<body>
+<body> 
     <main id="main-login">
         <div id="container-login" class="container mt-5">
             <div class="row">

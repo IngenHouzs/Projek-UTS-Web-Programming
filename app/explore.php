@@ -54,10 +54,6 @@
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
             $getAllPostQueryExecution->execute([$userID]);            
         }
-
-
-
-        
     }
 ?>
 
@@ -91,7 +87,11 @@
     </div>
 
 <main id="main-frame">
-        <?php require('../src/includes/views/sideNavbar.php')?>
+        <?php require('../src/includes/views/sideNavbar.php')?>  
+
+            
+
+
         <div class="main-content">
                 <form id="search-user" action="explore.php" method="GET"></form>
                 <section class="mt-3 main-content-wrapper dashboard-header search-box-header">
@@ -116,8 +116,6 @@
                     <!-- HTML nya disini -->
 
                     <div class="profile-header">
-         
-                
                                 <?php if (isset($_SESSION['ADMIN'])){?>
                                     
                                     <div class="admin-user-control-explore">

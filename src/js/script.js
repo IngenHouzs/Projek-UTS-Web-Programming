@@ -6,6 +6,14 @@ const categoryDropdownToggle = () => {
   console.log(dropdownWidget.style.display);
 };
 
+const closeErrMsg = () => {
+  document.getElementsByClassName('error-msg')[0].setAttribute('hidden', true);
+}
+
+const closeSuccessMsg = () => {
+document.getElementsByClassName('success-msg')[0].setAttribute('hidden', true);
+}
+
 const categoryDropdownToggleMobile = () => {
   const dropdownWidget = document.querySelector(".category-dropdown-m");
   if (dropdownWidget.style.display == "none")
