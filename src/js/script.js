@@ -97,7 +97,7 @@ function closeNav() {
   document.getElementById("overlay-navbar-mobile").setAttribute("hidden", "");
 }
 
-autosize(document.getElementById("textarea-comment"));
+
 
 const postCategoryQuery = (tag) => {
   location.href = `index.php?t=${tag}`;
@@ -136,3 +136,5 @@ try {
     document.getElementById("overlay-logout").setAttribute("hidden", "");
   };
 } catch (err) {}
+
+autosize(document.getElementById("textarea-comment"));
