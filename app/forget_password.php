@@ -64,9 +64,11 @@
                 </div>
             </div>
 
+            <?php if(!isset($_POST['id'])){?>
+
             <div class="row">
                 <div class="col">
-                    <form action="../src/includes/register_process.php" method="post">
+                    <form action="../src/includes/forget_password_identity.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
                                 <input class="input-login-and-register" id="register-form-username" type="text" name="username" placeholder="Username" required>
@@ -84,12 +86,46 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-sm-3 col-3 m-auto">
-                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Sign Up</button>
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Verify</button>
                             </div>
                         </div>                        
                     </form>
                 </div>
             </div>
+
+
+
+            <?php } else {?>
+                <div class="row">
+                <div class="col">
+                    <form action="../src/includes/change_password.php" method="post">
+                    <div class="row justify-content-center mb-3">
+                            <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
+                                <input class="input-password-login-and-register" id="register-form-password" type="password" name="password" placeholder="New Password" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mb-2">
+                            <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
+                                <input class="input-password-login-and-register" id="register-form-password" type="password" name="password_check" placeholder="Confirm Password" required>
+                            </div>
+                        </div>              
+
+
+
+                        <input hidden type="text" value="<?=$_POST['id']?>" name="id"/>                        
+                        
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-3 col-3 m-auto">
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Change Password</button>
+                            </div>
+                        </div>  
+
+                    </form>
+                </div>
+            </div>
+
+
+            <?php }?>
    
         </div>
     </main>
