@@ -54,6 +54,50 @@ body {
   height: 3rem;
 }
 
+
+.error-msg, .success-msg{
+  position:absolute;
+  top:1rem;
+  border-radius:5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  left:45%;
+}
+
+
+.error-msg{
+  box-shadow: 0px 0px 5px 0px red;  
+  background-color: #FFCCCC;  
+  color:red;
+}
+
+.success-msg{
+  box-shadow: 0px 0px 5px 0px green;    
+  background-color: #5cb85c;
+  color:green;
+} 
+
+.error-msg button, .success-msg button{
+  margin:0 auto !important;
+  border:none;
+  border-radius: .2rem;
+  margin-bottom:.5rem !important;
+  padding:0 .2rem;
+}
+
+.error-msg button{
+  background-color: #fc7c7c;
+  color:red;
+}
+
+.success-msg button{
+  background-color: #6cd663;
+  color: green;
+}
+
+
 .input-username-login-and-register {
   background: url(../assets/user-solid.svg) no-repeat;
   padding-left: 30px;
@@ -93,6 +137,7 @@ body {
 #main-frame {
   display: flex;
   flex-direction: row;
+  position:relative;
 }
 
 .side-navbar {
@@ -900,7 +945,7 @@ body {
 
 .profile-post-list {
   width: 100%;
-  height: calc(100% - 160px);
+  height: calc(100% - 2000px);
   overflow-y: auto;
   /* gap: 1.5rem; */
 
