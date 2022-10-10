@@ -945,7 +945,7 @@ body {
 
 .profile-post-list {
   width: 100%;
-  height: calc(100% - 2000px);
+  height: calc(100% - 200px);
   overflow-y: auto;
   /* gap: 1.5rem; */
 
