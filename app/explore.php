@@ -53,6 +53,8 @@
     
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
             $getAllPostQueryExecution->execute([$userID]);            
+        
+            
         }
     }
 ?>
@@ -88,9 +90,6 @@
 
 <main id="main-frame">
         <?php require('../src/includes/views/sideNavbar.php')?>  
-
-            
-
 
         <div class="main-content">
                 <form id="search-user" action="explore.php" method="GET"></form>
@@ -144,9 +143,12 @@
                         <h1>POSTS</h1>
 
                         <!-- template preview postingan -->
-
+                                
 
                         <?php while($post = $getAllPostQueryExecution->fetch(PDO::FETCH_ASSOC)){?>
+                            
+           
+                                         
 
                         <div class="post-preview" onclick="redirectToPostPage('<?=htmlspecialchars($post['id'])?>')"> 
                             
