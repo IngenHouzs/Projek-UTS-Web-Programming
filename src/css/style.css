@@ -104,6 +104,11 @@ body {
   gap: 1rem;
 }
 
+.random-friend-popup-wrapper img{
+  border-radius: 50%;
+  border:1px solid #bdbdbd;
+}
+
 .navbar-button {
   padding-left: 1rem;
 }
@@ -937,8 +942,13 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-left: 1rem;
-  background-color: grey;
+  height:3rem;
+  background-color: rgb(208, 208, 208);
   border: 1px solid #bdbdbd;
+}
+
+.result-search-box img{
+  margin-right:1rem;
 }
 
 .result-search-box p {
