@@ -1,4 +1,3 @@
-
 <?php
     // require_once('../src/includes/auth.php')
     session_start();
@@ -28,16 +27,12 @@
 
 
 <?php 
-
-
-
     require_once('../src/includes/db_external.php');    
     require_once('../src/includes/check_ban.php');      
 
     // QUERY SORT BY RECENT POST 
 
     $postTag;
-
     if (isset($_GET['t'])){    // WITH TAG 
      
         $postTag = $_GET['t'];
@@ -58,10 +53,9 @@
                 (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
                 (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'       ,
 
-((SELECT COUNT(ID_Post) FROM Like_Post 
+                ((SELECT COUNT(ID_Post) FROM Like_Post 
                 WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-(SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
-
+                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ?
                 ORDER BY 'popularity' DESC";                
@@ -97,7 +91,6 @@
         }
         $queryExecution = $db->prepare($getAllPostQuery);
         $queryExecution->execute([$postTag]);
-
     } else {   // WITHOUT TAG
         $getAllPostQuery;
         if (isset($_GET['key'])){ 
@@ -115,10 +108,9 @@
                 (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
                 (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'       ,
 
-((SELECT COUNT(ID_Post) FROM Like_Post 
+                ((SELECT COUNT(ID_Post) FROM Like_Post 
                 WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-(SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
-
+                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User 
                 ORDER BY 'popularity' DESC";
@@ -153,7 +145,6 @@
             ORDER BY Post.waktu_post DESC";
         }        
       
-
         $queryExecution = $db->query($getAllPostQuery);        
     }
 ?>
@@ -174,46 +165,43 @@
     <main id="main-frame">
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
-                <section class="main-content-wrapper dashboard-header">
-                    <h1 class="dashboard-page-title">Home</h1> 
-                    <div class="post-sort">
+            <section class="main-content-wrapper dashboard-header">
+                <h1 class="dashboard-page-title">Home</h1> 
+                <div class="post-sort">
 
-                        <?php if (!isset($_GET['t'])){?>
+                <?php if (!isset($_GET['t'])){?>
+                    <button class="btn btn-sort" onclick="sortPostByTrend()">Trending</button>
+                    <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>                        
 
-                        <button class="btn btn-sort" onclick="sortPostByTrend()">Trending</button>
-                        <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>                        
+                <?php }else{
+                    $key = $_GET['t'];
+                ?>
+                    <button class="btn btn-sort" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                    <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
+                <?php }?>
+                </div>
+            </section>      
 
-                        <?php }else{
-                            $key = $_GET['t'];
-                            ?>
-                            <button class="btn btn-sort" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
-                            <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
-                        <?php }?>
+            <section id="dashboard-post-list">
 
-                    </div>
-                </section>      
-
-                <section id="dashboard-post-list">
-
-                    <!-- FORMAT POST-->
-                    <div class="container-fluid">
-                        <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
-                            <div id="post-row" class="row">
-                                <div class="col">
-                                    <div class="post-wrapper m-auto">
-
+                <!-- FORMAT POST-->
+                <div class="container-fluid">
+                    <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
+                        <div id="post-row" class="row">
+                            <div class="col">
+                                <div class="post-wrapper m-auto">
 
                                     <?php if (isset($_SESSION['ADMIN'])){?>
                                     
-                                    <div class="admin-user-control">
-                                        <button onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
-                                    </div>
+                                        <div class="admin-user-control">
+                                            <button onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
+                                        </div>
 
-                                <?php }?>
-                                        <div class="post-info p-1">
-                                            <img id="post-profile-image" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')" src="../src/user_profile/<?= !$post['foto'] ? 'no-pfp.webp': htmlspecialchars($post['foto'])?>"/>
-                                            <div class="post-info-header p-1 mx-1">
-                                                <h1><span id="post-username" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')"><?=htmlspecialchars($post['username'])?></span> <span id="post-date" style="font-weight:300"> <?=htmlspecialchars($post['post_date'])?></span></h1>
+                                    <?php }?>
+                                    <div class="post-info p-1">
+                                        <img class="post-profile-image" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')" src="../src/user_profile/<?= !$post['foto'] ? 'no-pfp.webp': htmlspecialchars($post['foto'])?>"/>
+                                        <div class="post-info-header p-1 mx-1">
+                                             <h1><span class="post-username" onclick="redirectToUserPage('<?=htmlspecialchars($post['username'])?>')"><?=htmlspecialchars($post['username'])?></span> <span id="post-date" style="font-weight:300"> <?=htmlspecialchars($post['post_date'])?></span></h1>
                                                 <div class="post-tag">
                                                     <small>#<?=htmlspecialchars($post['kategori'])?></small>
                                                 </div>
