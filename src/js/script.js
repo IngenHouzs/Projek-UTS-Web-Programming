@@ -1,4 +1,3 @@
-
 const categoryDropdownToggle = () => {
   const dropdownWidget = document.querySelector(".category-dropdown");
   if (dropdownWidget.style.display == "none")
@@ -24,15 +23,15 @@ open_button.onclick = function () {
 
 const goToLogin = () => {
   location.href = "login.php";
-} 
+};
 
 const logOut = () => {
   location.href = "logout.php";
-}
+};
 
 const goToRegister = () => {
   location.href = "register.php";
-} 
+};
 
 const getRandomUser = () => {
   var XMLHttp = new XMLHttpRequest();
@@ -98,47 +97,38 @@ function closeNav() {
   document.getElementById("overlay-navbar-mobile").setAttribute("hidden", "");
 }
 
-
+autosize(document.getElementById("textarea-comment"));
 
 const postCategoryQuery = (tag) => {
   location.href = `index.php?t=${tag}`;
 };
 
-
-try{
+try {
   const logout_website = document.getElementById("logout-website");
-  if (logout_website){
+  if (logout_website) {
     logout_website.onclick = function () {
       console.log(document.getElementById("overlay-logout"));
       document.getElementById("overlay-logout").removeAttribute("hidden");
     };
   }
 
-  
   const logout_mobile = document.getElementById("logout-mobile");
-  if (logout_mobile){
+  if (logout_mobile) {
     logout_mobile.onclick = function () {
       document.getElementById("overlay-logout").removeAttribute("hidden");
-    }; 
+    };
   }
- 
-} catch(err){}
-
-
-
-
+} catch (err) {}
 
 const init = () => {
-  try{
-  document
-    .getElementsByClassName("dropdown-button")[0]
-    .addEventListener("click", showPostTagsOnCreate);
-  } catch(err){}
+  try {
+    document
+      .getElementsByClassName("dropdown-button")[0]
+      .addEventListener("click", showPostTagsOnCreate);
+  } catch (err) {}
 };
 
-
 init();
-
 
 try {
   const cancel_logout = document.getElementById("button-no");

@@ -9,7 +9,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -145,6 +145,7 @@ body {
 
 .main-content {
   width: 100%;
+  height: 100vh;
 }
 
 .friend-recommendation-section {
@@ -222,6 +223,19 @@ body {
   outline: none;
   overflow: auto;
   resize: none;
+}
+
+#textarea-comment {
+  width: 100%;
+  padding: 0.5rem;
+  display: block;
+  /* border: none; */
+  outline: none;
+  /* overflow: hidden; */
+  resize: none;
+  height: 3rem;
+  /* min-height: 50px;
+  max-height: 100px; */
 }
 
 .dropdown-button img {
@@ -325,13 +339,13 @@ body {
 
 .post-wrapper {
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   max-width: 540px;
   min-width: 360px;
   height: auto;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #bdbdbd;
+  /* border-bottom: 1px solid #bdbdbd; */
   position: relative;
 }
 
@@ -345,7 +359,7 @@ body {
   /* padding-left: 0.2rem; */
 }
 
-.post-info img {
+.post-profile-image {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
@@ -367,13 +381,15 @@ body {
   font-weight: bold;
 }
 
-#post-username:hover,
-#post-profile-image:hover {
+.post-username:hover,
+.post-profile-image:hover,
+.post-image {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.post-info-header h1 #post-date {
+.post-info-header h1 #post-date,
+.post-date {
   font-size: 0.85rem;
 }
 
@@ -396,14 +412,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  /* align-items: center; */
   text-align: left;
 }
 
-.post-description p {
+/* .post-description p {
   text-align: left;
-  /* padding-left: 3rem !important; */
-}
+  padding-left: 3rem !important;
+} */
 
 .post-image {
   width: 100%;
@@ -450,18 +466,21 @@ body {
   width: 100%;
   height: 300px;
   border-bottom: 1px solid #bdbdbd;
+  border-top: 1px solid #bdbdbd;
   display: flex;
   justify-content: center;
   align-items: center;
   position: sticky;
+  background-color: #1e232a;
 }
 
 .image-frame {
-  max-width: 450px;
-  width: 50%;
+  /* max-width: 450px; */
+  width: 70%;
   min-width: 350px;
   height: 100%;
   position: relative;
+  border: none;
 }
 
 .image-frame button {
@@ -487,7 +506,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .mc-post-wrapper {
@@ -501,9 +520,9 @@ body {
 }
 
 .post-comments-wrapper {
-  height: 350px;
+  /* height: 350px; */
   width: 100%;
-  background-color: rgb(236, 236, 236);
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -518,23 +537,26 @@ body {
 .comment-box {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
-  background-color: blue;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* background-color: blue; */
+  overflow-y: auto;
+  /* overflow-x: hidden; */
 }
 
 .user-comment-box {
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
-  background-color: brown;
+  /* background-color: brown; */
   display: flex;
   flex-direction: row;
-  padding-left: 0.3rem;
-  padding-top: 0.3rem;
-
+  /* padding-left: 0.3rem;
+  padding-top: 0.3rem; */
+  padding: 0.3rem;
   position: relative;
+  background-color: #e5e4e2;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
 }
 
 .admin-delete-comment {
@@ -549,16 +571,17 @@ body {
   background-color: green;
 }
 
-.user-comment-box img:first-child {
+/* .user-comment-box img:first-child {
   height: 3rem;
   height: 3rem;
   border-radius: 50%;
-}
+} */
 
 .user-comment-text {
-  width: 100%;
+  width: 90%;
   height: 100%;
-  background-color: purple;
+  margin-left: 8px;
+  /* background-color: purple; */
   position: relative;
 }
 
@@ -588,26 +611,38 @@ body {
   margin-right: 1rem;
 }
 
-.user-comment-box button:last-child,
+/* .user-comment-box button:last-child,
 .user-comment-box button:last-child img {
   margin: auto 0;
   height: 2rem;
   width: 2rem;
-}
+} */
 
 .add-comment-section {
-  background-color: red;
+  /* background-color: red; */
   width: 100%;
-  height: 4rem;
+  /* height: 3rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 }
 
-.add-comment-section textarea,
+#button-post {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #bdbdbd;
+  color: white;
+}
+
+#button-post:hover {
+  box-shadow: 0 0 3px 0.5px black;
+  color: black;
+}
+
+/* .add-comment-section textarea,
 .add-comment-section button {
   height: 100%;
-}
+} */
 
 .add-comment-section textarea {
   width: 100%;

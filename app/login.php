@@ -80,23 +80,19 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <p>Best Community for Code-nerds.</p>
+                    <p class="p-0 m-0">Best Community for Code-nerds.</p>
                 </div>
             </div>
 
-            <div class="row mb-1">
+            <div class="row mb-4">
                 <div class="col text-center">
-                    <small><strong><a href="admin_login.php">LOG IN AS ADMIN</a></strong></small>
+                    <small><strong><a href="admin_login.php">Log in as Admin</a></strong> | <strong><a href="index.php">Log in as Guest</a></strong></small>
                 </div>
-            </div>            
+            </div> 
+
             <div class="row">
                 <div class="col text-center">
                     <small>Don't have account? <strong><a href="register.php">Sign up</a></strong> here.</small>
-                </div>
-            </div>
-            <div class="row mb-1">
-                <div class="col text-center">
-                    <small>Don't want to register? <strong><a href="index.php">Log in as guest</a></strong> here.</small>
                 </div>
             </div>
 
