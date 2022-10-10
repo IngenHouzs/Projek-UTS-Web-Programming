@@ -97,7 +97,7 @@
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
 
-                                <input class="icon-username" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
+     
 
                                 <input class="input-username-login-and-register" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
 
