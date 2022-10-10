@@ -94,8 +94,7 @@
                     </div> 
 
                     <section class="profile-post-list">
-                        <br>
-                        <h1>POSTS</h1>
+                        <h1 class="my-4">POSTS</h1>
 
                         <!-- template preview postingan -->
 
@@ -107,7 +106,7 @@
                                 <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
                             <?php }?>
                             <div class="post-preview-desc">
-                                <h1>#<?=htmlspecialchars($post['tag'])?></h1>
+                                <span>#<?=htmlspecialchars($post['tag'])?></span>
                                 <p><?=htmlspecialchars($post['caption'])?></p>
                             </div>
                         </div>
