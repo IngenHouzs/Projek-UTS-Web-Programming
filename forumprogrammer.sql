@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 04:29 PM
+-- Generation Time: Oct 10, 2022 at 04:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -52,7 +52,8 @@ INSERT INTO `comment_post` (`ID_CommentPost`, `ID_Post`, `ID_User`, `Isi`) VALUE
 ('C-63442b38163192.58816802', 'P-634426323744e4.06723000', 'U-634404be06a469.69537889', 'sama, tutor-tutornya mantap wkwkw'),
 ('C-63442bae423ce6.77122643', 'P-63442b7b4bef67.63963301', 'U-634404d5e7aad1.52572028', 'Depannya jangan pake <?= , kalo = itu buat shorthandnya echo... = nya ganti echo bwang'),
 ('C-63442bba697738.39844661', 'P-63442b7b4bef67.63963301', 'U-634404be06a469.69537889', 'walah iya bener.. makasih ya hehe'),
-('C-63442bf53f5642.81065472', 'P-63442b7b4bef67.63963301', 'U-6344048ca89813.67032277', 'di console gak ada error message kah?');
+('C-63442bf53f5642.81065472', 'P-63442b7b4bef67.63963301', 'U-6344048ca89813.67032277', 'di console gak ada error message kah?'),
+('C-63442f68b3cbd0.27927884', 'P-63440d6dbae768.02526895', 'U-6344048ca89813.67032277', 'gimana? udah bisa?');
 
 -- --------------------------------------------------------
 
@@ -112,7 +113,8 @@ INSERT INTO `like_comment` (`ID_Like`, `ID_Comment`, `ID_User`) VALUES
 ('LC63442b3a661e09.91203878', 'C-63442b38163192.58816802', 'U-634404be06a469.69537889'),
 ('LC63442baf74c7a1.82737856', 'C-63442bae423ce6.77122643', 'U-634404d5e7aad1.52572028'),
 ('LC63442bbf1263a3.83409947', 'C-63442bba697738.39844661', 'U-634404d5e7aad1.52572028'),
-('LC63442bf7919a88.41212847', 'C-63442bf53f5642.81065472', 'U-6344048ca89813.67032277');
+('LC63442bf7919a88.41212847', 'C-63442bf53f5642.81065472', 'U-6344048ca89813.67032277'),
+('LC63442f79b59316.66278354', 'C-63442f68b3cbd0.27927884', 'U-6344048ca89813.67032277');
 
 -- --------------------------------------------------------
 
