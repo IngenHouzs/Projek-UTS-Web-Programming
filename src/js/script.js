@@ -137,4 +137,7 @@ try {
   };
 } catch (err) {}
 
-autosize(document.getElementById("textarea-comment"));
+
+try{
+  autosize(document.getElementById("textarea-comment"));
+}catch(err){}
