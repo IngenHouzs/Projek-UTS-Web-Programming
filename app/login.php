@@ -96,12 +96,16 @@
                     <form action="../src/includes/login_process.php" method="post">
                         <div class="row justify-content-center mb-3">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
+
                                 <input class="icon-username" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
+
+                                <input class="input-username-login-and-register" id="login-form-username" type="text" name="identity" placeholder="Username / Email">
+
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2">
-                                <input class="input-login-and-register" id="login-form-password" type="password" name="password" placeholder="Password">
+                                <input class="input-password-login-and-register" id="login-form-password" type="password" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="row">
