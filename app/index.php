@@ -56,10 +56,10 @@
 
                 ((SELECT COUNT(ID_Post) FROM Like_Post 
                 WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
+                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS popularity                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ?
-                ORDER BY 'popularity' DESC";                
+                ORDER BY popularity DESC";                
             } else {
                 $getAllPostQuery = "SELECT User.username AS 'username', 
                 User.ID_User as 'user_id',        
@@ -118,10 +118,10 @@
 
                 ((SELECT COUNT(ID_Post) FROM Like_Post 
                 WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity'                 
+                (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS popularity                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User 
-                ORDER BY 'popularity' DESC";
+                ORDER BY popularity DESC";
             } else {
                 $getAllPostQuery = "SELECT User.username AS 'username', 
                 User.ID_User as 'user_id',
