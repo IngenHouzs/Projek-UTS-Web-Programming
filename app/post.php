@@ -53,8 +53,14 @@
 
     $executeQuery = $db->prepare($getCurrentPostDataQuery);
 
-    $executeQuery->execute([$_SESSION['ID_User'],$currentPostID,$currentPostID, $currentPostID]);
+    if (!isset($_SESSION['ID_User'])){
+        $executeQuery->execute(['-',$currentPostID,$currentPostID, $currentPostID]);
+    } else $executeQuery->execute([$_SESSION['ID_User'],$currentPostID,$currentPostID, $currentPostID]);
     $postInfo = $executeQuery->fetch(PDO::FETCH_ASSOC);
+    if (!$postInfo['id']){
+        header('location: index.php');
+        die();
+    }
 
 
 
@@ -71,7 +77,10 @@
         WHERE Comment_Post.ID_Post = Post.ID_Post AND User.ID_User = Comment_Post.ID_User AND Comment_Post.ID_Post = ?
     ";
     
-    $params = [$_SESSION['ID_User'],$currentPostID];
+    $params;
+    if (!isset($_SESSION['ID_User'])){
+        $params = ['', $currentPostID];
+    } else $params = [$_SESSION['ID_User'],$currentPostID];
 
 
     try{

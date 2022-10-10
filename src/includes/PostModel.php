@@ -104,9 +104,20 @@
         $post_id = $data->post_id;
 
         $deletePostQuery = "DELETE FROM Post WHERE ID_Post = ?";
+
         try{
             $queryExecution = $db->prepare($deletePostQuery);
             $queryExecution->execute([$post_id]); 
+            $getOldPictures = "SELECT GROUP_CONCAT(gambar_postingan.nama_gambar) AS 'gambar' FROM gambar_postingan WHERE ? = gambar_postingan.ID_Post";            
+
+            $exec = $db->prepare($getOldPictures);
+            $exec->execute([$post_id]); 
+
+            $result = $exec->fetch(PDO::FETCH_ASSOC);
+            $pictList = explode(",", $result);
+            foreach($pictList as $pict){
+                unlink("../user_post_pictures/$pict");
+            }            
         } catch(Exception $e){
             $err = [
                 "status" => "fail"

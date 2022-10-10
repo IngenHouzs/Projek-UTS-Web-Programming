@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('db.php');
 
 
@@ -91,6 +91,9 @@ else
 				$check = $_FILES["foto"]["tmp_name"];
 
 				//Mengupload gambar
+				try{
+					unlink('../user_profile/'.$_SESSION['foto']);
+				} catch(Exception $e){}
                 move_uploaded_file($check, '../user_profile/'.$target_file);
 
 			}
@@ -144,6 +147,9 @@ else
 				$check = $_FILES["foto"]["tmp_name"];
 
 				//Mengupload gambar
+				try{
+					unlink('../user_profile/'.$_SESSION['foto']);
+				} catch(Exception $e){}				
                 move_uploaded_file($check, '../user_profile/'.$target_file); 
 				$_SESSION['foto'] = $target_file;
 				$tf = $target_file;				
