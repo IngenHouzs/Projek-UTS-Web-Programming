@@ -94,9 +94,9 @@
         <div class="main-content">
                 <form id="search-user" action="explore.php" method="GET"></form>
                 <section class="mt-3 main-content-wrapper dashboard-header search-box-header">
-                        <div class="row justify-content-center mb-3 search-user-type">
-                            <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2 search-user-type">
-                                <input class="input-login-and-register search-user-type search-user-form" id="login-form-username" type="text" name="u" placeholder="Search People" form="search-user" onkeyup="liveSearch(this.value);" onclick="showSearchResult();">
+                        <div class="row justify-content-center mb-3 search-user-type ">
+                            <div class="col-lg-3 col-sm-6 col-8 border border-dark p-2 search-user-type col-user-search">
+                                <input class="input-username-login-and-register search-user-type search-user-form" id="login-form-username" type="text" name="u" placeholder="Search People" form="search-user" onkeyup="liveSearch(this.value);" onclick="showSearchResult();">
                             </div>
                         </div>      
                         <div class="search-box" style="display:none;">

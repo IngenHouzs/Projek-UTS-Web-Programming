@@ -88,7 +88,7 @@
                             <h1><?=htmlspecialchars($res['nama_lengkap'])?></h1>                            
                             <p><?= htmlspecialchars($postCount['jumlah_post'])?> posts</p>
 
-                            <button class="edit-profile-button" onclick="goToEditProfile()">Edit Profile</button>
+                            <button class="btn edit-profile-button" onclick="goToEditProfile()">Edit Profile</button>
 
                         </div>
                     </div> 
