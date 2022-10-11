@@ -54,49 +54,52 @@ body {
   height: 3rem;
 }
 
-
-.error-msg, .success-msg{
-  position:absolute;
-  top:1rem;
-  border-radius:5px;
+.error-msg,
+.success-msg {
+  position: absolute;
+  padding: 0.5rem;
+  /* top: 1rem; */
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  left:45%;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 20vw;
 }
 
-
-.error-msg{
-  box-shadow: 0px 0px 5px 0px red;  
-  background-color: #FFCCCC;  
-  color:red;
+.error-msg {
+  box-shadow: 0px 0px 5px 0px red;
+  /* background-color: #ffcccc;
+  color: red; */
 }
 
-.success-msg{
-  box-shadow: 0px 0px 5px 0px green;    
-  background-color: #5cb85c;
-  color:green;
-} 
-
-.error-msg button, .success-msg button{
-  margin:0 auto !important;
-  border:none;
-  border-radius: .2rem;
-  margin-bottom:.5rem !important;
-  padding:0 .2rem;
+.success-msg {
+  box-shadow: 0px 0px 5px 0px green;
+  /* background-color: #5cb85c;
+  color: green; */
 }
 
-.error-msg button{
+.error-msg button,
+.success-msg button {
+  /* margin: 0 auto !important; */
+  border: none;
+  /* border-radius: 0.2rem;
+  margin-bottom: 0.5rem !important; */
+  padding: 0.3rem 0.6rem;
+}
+
+.error-msg button {
   background-color: #fc7c7c;
-  color:red;
+  /* color: red; */
 }
 
-.success-msg button{
+.success-msg button {
   background-color: #6cd663;
-  color: green;
+  /* color: green; */
 }
-
 
 .input-username-login-and-register {
   background: url(../assets/user-solid.svg) no-repeat;
@@ -137,7 +140,7 @@ body {
 #main-frame {
   display: flex;
   flex-direction: row;
-  position:relative;
+  position: relative;
 }
 
 .side-navbar {
@@ -216,6 +219,7 @@ body {
 .main-content {
   width: 100%;
   height: 100vh;
+  overflow: auto;
 }
 
 .friend-recommendation-section {
@@ -704,7 +708,8 @@ body {
   color: white;
 }
 
-#button-post:hover {
+#button-post:hover,
+.edit-profile-button:hover {
   box-shadow: 0 0 3px 0.5px black;
   color: black;
 }
@@ -888,8 +893,16 @@ body {
 
 .search-user-type {
   width: 90% !important;
+  /* border-radius: 10px; */
+}
+
+.col-user-search {
   border-radius: 10px;
 }
+/* 
+.search-user-form {
+  padding-left: 1.5rem;
+} */
 
 #button-explore {
   width: 35px;
@@ -1043,6 +1056,8 @@ body {
   right: 2rem;
   width: 8rem;
   height: 3rem;
+  background-color: #bdbdbd;
+  color: white;
 }
 
 .admin-user-control {
@@ -1102,6 +1117,10 @@ body {
   /* .side-navbar {
     padding-right: 10px !important;
   } */
+  .error-msg,
+  .success-msg {
+    width: 30vw;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1134,5 +1153,10 @@ body {
     width: 1rem;
     height: 1rem;
     margin: -5px 5px 0 2rem !important;
+  }
+
+  .error-msg,
+  .success-msg {
+    width: 40vw;
   }
 }

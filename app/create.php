@@ -41,21 +41,21 @@
             <?php 
                 if (isset($_GET['err'])){   
                     if ($_GET['err'] == 1){
-                        echo "         <div class='error-msg'>
-                        <p>Format gambar tidak valid</p>
-                        <button onclick='closeErrMsg()'>CLOSE</button>
+                        echo "         <div class='error-msg alert alert-danger'>
+                        <p>Format gambar tidak valid!</p>
+                        <button type='button' class='btn btn-danger' onclick='closeErrMsg()'>CLOSE</button>
                     </div> ";                        
                     }
                     else if ($_GET['err'] == 5){
-                        echo "         <div class='error-msg'>
-                        <p>Gagal memasukkan data.</p>
-                        <button onclick='closeErrMsg()'>CLOSE</button>
+                        echo "         <div class='error-msg alert alert-danger'>
+                        <p>Gagal memasukkan data!</p>
+                        <button type='button' class='btn btn-danger' onclick='closeErrMsg()'>CLOSE</button>
                     </div> ";                        
                     }                    
                     else if ($_GET['err'] == 'none'){
-                        echo "         <div class='success-msg'>
-                        <p>Post berhasil diunggah.</p>
-                        <button onclick='closeSuccessMsg()'>CLOSE</button>
+                        echo "         <div class='success-msg alert alert-success'>
+                        <p>Post berhasil diunggah!</p>
+                        <button type='button' class='btn btn-success' onclick='closeSuccessMsg()'>CLOSE</button>
                     </div> ";                        
                     }                      
                 }
