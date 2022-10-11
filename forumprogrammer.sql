@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 04:44 PM
+-- Generation Time: Oct 11, 2022 at 04:27 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -53,7 +53,8 @@ INSERT INTO `comment_post` (`ID_CommentPost`, `ID_Post`, `ID_User`, `Isi`) VALUE
 ('C-63442bae423ce6.77122643', 'P-63442b7b4bef67.63963301', 'U-634404d5e7aad1.52572028', 'Depannya jangan pake <?= , kalo = itu buat shorthandnya echo... = nya ganti echo bwang'),
 ('C-63442bba697738.39844661', 'P-63442b7b4bef67.63963301', 'U-634404be06a469.69537889', 'walah iya bener.. makasih ya hehe'),
 ('C-63442bf53f5642.81065472', 'P-63442b7b4bef67.63963301', 'U-6344048ca89813.67032277', 'di console gak ada error message kah?'),
-('C-63442f68b3cbd0.27927884', 'P-63440d6dbae768.02526895', 'U-6344048ca89813.67032277', 'gimana? udah bisa?');
+('C-63442f68b3cbd0.27927884', 'P-63440d6dbae768.02526895', 'U-6344048ca89813.67032277', 'gimana? udah bisa?'),
+('C-634537ae447be8.70580508', 'P-634415f5ab5992.63803616', 'U-6344048ca89813.67032277', 'saya juga awok awok');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,8 @@ INSERT INTO `gambar_postingan` (`ID_Post`, `nama_gambar`, `Urutan`) VALUES
 ('P-634415f5ab5992.63803616', 'G-634415f5ab1265.83411504.png', 1),
 ('P-63441a5c28fe85.68461347', 'G-63441a5c28d979.57784888.png', 1),
 ('P-634424c18d4950.24923988', 'G-634424c18cfa04.80717272.png', 1),
-('P-63442ab4a46f96.57164180', 'G-63442ab4a412f3.28219492.jpg', 1);
+('P-63442ab4a46f96.57164180', 'G-63442ab4a412f3.28219492.jpg', 1),
+('P-63457cc768c2d3.75480975', 'G-63457cc768c204.13639650.png', 1);
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,8 @@ INSERT INTO `like_comment` (`ID_Like`, `ID_Comment`, `ID_User`) VALUES
 ('LC63442baf74c7a1.82737856', 'C-63442bae423ce6.77122643', 'U-634404d5e7aad1.52572028'),
 ('LC63442bbf1263a3.83409947', 'C-63442bba697738.39844661', 'U-634404d5e7aad1.52572028'),
 ('LC63442bf7919a88.41212847', 'C-63442bf53f5642.81065472', 'U-6344048ca89813.67032277'),
-('LC63442f79b59316.66278354', 'C-63442f68b3cbd0.27927884', 'U-6344048ca89813.67032277');
+('LC63442f79b59316.66278354', 'C-63442f68b3cbd0.27927884', 'U-6344048ca89813.67032277'),
+('LC634537b0063e40.47942100', 'C-634537ae447be8.70580508', 'U-6344048ca89813.67032277');
 
 -- --------------------------------------------------------
 
@@ -137,14 +140,15 @@ INSERT INTO `like_post` (`ID_Like`, `ID_Post`, `ID_User`) VALUES
 ('L-63440e130174d2.54320257', 'P-63440ddf753c51.21056522', 'U-6344048ca89813.67032277'),
 ('L-63440dea6b6433.04653210', 'P-63440ddf753c51.21056522', 'U-6344049e0ac6e7.44316206'),
 ('L-63441eeebbfb22.34771648', 'P-63440f2b448c48.23779988', 'U-6344048ca89813.67032277'),
-('L-63441a6049a528.36853920', 'P-634415f5ab5992.63803616', 'U-6344048ca89813.67032277'),
+('L-634537a6a09b26.49558311', 'P-634415f5ab5992.63803616', 'U-6344048ca89813.67032277'),
 ('L-63441a5ebabe33.42660368', 'P-63441a5c28fe85.68461347', 'U-6344048ca89813.67032277'),
 ('L-63442b005745a7.05856540', 'P-634426323744e4.06723000', 'U-634404d5e7aad1.52572028'),
 ('L-63442ab8afae62.64411567', 'P-63442ab4a46f96.57164180', 'U-634404be06a469.69537889'),
 ('L-63442ac86042e6.38850463', 'P-63442ab4a46f96.57164180', 'U-634404d5e7aad1.52572028'),
 ('L-63442bda2e0b87.93559823', 'P-63442b7b4bef67.63963301', 'U-6344048ca89813.67032277'),
 ('L-63442bb31495e2.30211376', 'P-63442b7b4bef67.63963301', 'U-634404be06a469.69537889'),
-('L-63442b93e48969.02467919', 'P-63442b7b4bef67.63963301', 'U-634404d5e7aad1.52572028');
+('L-63442b93e48969.02467919', 'P-63442b7b4bef67.63963301', 'U-634404d5e7aad1.52572028'),
+('L-63457cd35bc046.07728655', 'P-63457cc768c2d3.75480975', 'U-6344048ca89813.67032277');
 
 -- --------------------------------------------------------
 
@@ -174,7 +178,8 @@ INSERT INTO `post` (`ID_Post`, `ID_User`, `waktu_post`, `KATEGORI`, `Isi`) VALUE
 ('P-6344259953efe4.83636391', 'U-6344048ca89813.67032277', '2022-10-10 21:00:57', 'Dart', 'ada yang bisa bantu ajarin dasar-dasar Dart ga ya.. lagi butuh bantuan :)'),
 ('P-634426323744e4.06723000', 'U-6344048ca89813.67032277', '2022-10-10 21:03:30', 'CPP', 'aduh C++ susah banget wkwkw'),
 ('P-63442ab4a46f96.57164180', 'U-634404be06a469.69537889', '2022-10-10 21:22:44', 'Python', 'monggo yang mao belajar python daftar... semoga bermanfaat'),
-('P-63442b7b4bef67.63963301', 'U-634404be06a469.69537889', '2022-10-10 21:26:03', 'PHP', '    <?=\r\n\r\n        if (isset($_GET[\'err\'])){\r\n            if ($_GET[\'err\'] == \'1\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Username unavailable\r\n              </div>\";\r\n            }\r\n            if ($_GET[\'err\'] == \'2\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Your email is already registered.\r\n              </div>\";\r\n            }\r\n            if ($_GET[\'err\'] == \'3\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Failed to insert data\r\n              </div>\";\r\n            }                        \r\n            if ($_GET[\'err\'] == \'4\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Invalid Password Confirmation\r\n              </div>\";\r\n            }                                    \r\n        }\r\n    ?>\r\n\r\n\r\nini kenapa ya... kok error ya.. tolong dong para suhu PHP');
+('P-63442b7b4bef67.63963301', 'U-634404be06a469.69537889', '2022-10-10 21:26:03', 'PHP', '    <?=\r\n\r\n        if (isset($_GET[\'err\'])){\r\n            if ($_GET[\'err\'] == \'1\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Username unavailable\r\n              </div>\";\r\n            }\r\n            if ($_GET[\'err\'] == \'2\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Your email is already registered.\r\n              </div>\";\r\n            }\r\n            if ($_GET[\'err\'] == \'3\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Failed to insert data\r\n              </div>\";\r\n            }                        \r\n            if ($_GET[\'err\'] == \'4\'){\r\n                echo \"<div class=\'alert alert-danger\' role=\'alert\'>\r\n                Invalid Password Confirmation\r\n              </div>\";\r\n            }                                    \r\n        }\r\n    ?>\r\n\r\n\r\nini kenapa ya... kok error ya.. tolong dong para suhu PHP'),
+('P-63457cc768c2d3.75480975', 'U-6344048ca89813.67032277', '2022-10-11 21:25:11', 'CPP', 'ada yang bisa bantu... keyword friend itu apa ya...');
 
 -- --------------------------------------------------------
 
@@ -199,7 +204,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_User`, `nama_lengkap`, `username`, `email`, `foto`, `isAdmin`, `isBanned`, `password`) VALUES
 ('A-12345678901234567890123', 'admin', 'admin', '-', NULL, b'1', b'0', '$2y$10$DCLT4NGWavvimM0LIpOLL.zu77nkH9uyK.Z3Y6QewejjgJQM/TdgS'),
-('U-6344048ca89813.67032277', 'Farrel Dinarta', 'farreldinarta', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665409793.png', b'0', b'0', '$2y$10$9QsnCsBM7ddp3wBhYRl5COplF9YNqTIs6k0wcdWKHs2zZDA.Ez7E.'),
+('U-6344048ca89813.67032277', 'Farrel Dinarta', 'farreldinarta', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665409793.png', b'0', b'0', '$2y$10$9/IwERsRer1M/H8iJ7jZxODYWEP2pdDLspBnZcN/WNuAvHREL/Eu.'),
 ('U-6344049e0ac6e7.44316206', 'Bryan Richie', 'bryanrichie', 'bryan.richie@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$UJQNjFv1uqb37Ysaa.ykOe0feSjYmOt54cBqTi3PpoiBd4ZtBKzEG'),
 ('U-634404be06a469.69537889', 'Nayasha Clarisasssss', 'nayashaclarisa', 'nayasha.clarisa@student.umn.ac.id', 'foto_user_1665407707.jpg', b'0', b'0', '$2y$10$LhZ.SfHT8XoSSoG13rpCYueTDSd4TVX1loA7.2dmMVV4jZ1KvAZ62'),
 ('U-634404d5e7aad1.52572028', 'Prudence Tendy', 'prudencetendy', 'prudence.tendy@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$vLMeo59hDHkJeAvHmX6oYeb5Slpui6dSQn15UybAlyRzvBnFgSUZ2');
