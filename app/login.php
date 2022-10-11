@@ -14,6 +14,12 @@
         $error_login = "<div class='alert alert-danger' role='alert'>
         Credentials and Password does not match!
       </div>"; 
+    }else if (isset($_GET['err'])){
+        if ($_GET['err'] == 'true'){
+            $error_login = "<div class='alert alert-danger' role='alert'>
+            Credentials and Password does not match!
+          </div>";            
+        }
     }
     
 ?>

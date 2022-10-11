@@ -10,19 +10,30 @@
     $fileAmount = count($uploadedFiles);
     
     $encryptedImageNames = [];
-    for ($index = 0; $index < $fileAmount; $index++){
-        $file_ext = explode('.', $uploadedFiles[$index]);
-        $file_ext = end($file_ext);
-        $file_ext = strtolower($file_ext);        
 
-        $newUniqueFileName = uniqid("G-", true);
-        $newUniqueFileName .= ".$file_ext";
+    if ($fileAmount){
+        for ($index = 0; $index < $fileAmount; $index++){
+            $file_ext = explode('.', $uploadedFiles[$index]);
+            $file_ext = end($file_ext);
+            $file_ext = strtolower($file_ext);        
+    
+            $newUniqueFileName = uniqid("G-", true);
+            $newUniqueFileName .= ".$file_ext";
+    
+            if ($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif'){        
+                array_push($encryptedImageNames, $newUniqueFileName);
+            } else {
+                    if (count($encryptedImageNames) > 0){
+                        header('location: ../../app/create.php?err=1');            
+                        die();
+                    }
 
-        if ($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif'){        
-            move_uploaded_file($tmp_file[$index], "../user_post_pictures/$newUniqueFileName"); 
-            array_push($encryptedImageNames, $newUniqueFileName);
-        } 
+          
+            }
+        }
     }
+
+
 
 
     // OTHER DETAILS PROCESSING
@@ -60,9 +71,14 @@
     // BUAT ROW BARU DI TABEL GAMBAR_POSTINGAN
 
     $statements = [];
+
+
     if ($fileAmount > 0){
         $insertPostImagesQuery = "INSERT INTO Gambar_Postingan VALUES";
         for ($index = 0; $index < $fileAmount;$index++){
+
+            move_uploaded_file($tmp_file[$index], "../user_post_pictures/".$encryptedImageNames[$index]); 
+
             if ($index != $fileAmount-1) $insertPostImagesQuery .= "(?, ?, ?),";
             else $insertPostImagesQuery .= "(?, ?, ?);";
             array_push($statements, 
