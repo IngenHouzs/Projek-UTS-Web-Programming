@@ -54,13 +54,13 @@
 
             <div class="row mb-4">
                 <div class="col text-center">
-                    <small><strong><a href="admin_login.php">Log in as Admin</a></strong> | <strong><a href="index.php">Log in as Guest</a></strong></small>
+                    <small><strong><a class="login-as-admin" href="admin_login.php">Log in as Admin</a></strong> | <strong><a class="login-as-guest" href="index.php">Log in as Guest</a></strong></small>
                 </div>
             </div> 
 
             <div class="row">
                 <div class="col text-center">
-                    <small>Already have an account? <strong><a href="login.php">Log in</a></strong> here.</small>
+                    <small>Already have an account? <strong><a class="login" href="login.php">Log in</a></strong> here.</small>
                 </div>
             </div>
 
@@ -86,7 +86,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-sm-3 col-3 m-auto">
-                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Verify</button>
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register button-bootstrap">Verify</button>
                             </div>
                         </div>                        
                     </form>
@@ -116,7 +116,7 @@
                         
                         <div class="row">
                             <div class="col-lg-2 col-sm-3 col-3 m-auto">
-                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Change Password</button>
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register button-bootstrap">Change Password</button>
                             </div>
                         </div>  
 

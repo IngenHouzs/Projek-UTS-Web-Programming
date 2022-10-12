@@ -66,7 +66,7 @@ if (isset($_SESSION['error'])){
             <div class="row">
                 <div class="col text-center">
                     <p>Admin Portal</p>
-                    <small><a href="login.php"><b>Log in as user</b></a></small>
+                    <small><a class="login-as-user" href="login.php"><b>Log in as user</b></a></small>
                 </div>
             </div>
             <div class="row">
@@ -85,7 +85,7 @@ if (isset($_SESSION['error'])){
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-sm-3 col-3 m-auto">
-                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register">Log In</button>
+                                <button id="button-register" class="btn btn-primary w-100 button-login-and-register button-bootstrap">Log In</button>
                             </div>
                         </div>                               
                     </form>

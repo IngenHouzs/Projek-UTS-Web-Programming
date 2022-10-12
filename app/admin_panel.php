@@ -35,7 +35,7 @@
                 </section>      
 
                 
-                 <button><a href="../src/includes/statistic.php">Export Post Statistics</a></button>
+                 <button class="btn button-bootstrap button-admin-panel" ><a class="export-post-statistic" href="../src/includes/statistic.php">Export Post Statistics</a></button>
 
        
         </div>
