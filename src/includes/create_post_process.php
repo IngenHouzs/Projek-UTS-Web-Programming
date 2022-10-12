@@ -11,6 +11,8 @@
     
     $encryptedImageNames = [];
 
+    $ERR = FALSE;
+
     if ($fileAmount){
         for ($index = 0; $index < $fileAmount; $index++){
             $file_ext = explode('.', $uploadedFiles[$index]);
@@ -22,7 +24,8 @@
     
             if ($file_ext == 'jpg' || $file_ext == 'png' || $file_ext == 'jpeg' || $file_ext == 'svg' || $file_ext == 'webp' || $file_ext == 'bmp' || $file_ext == 'gif'){        
                 array_push($encryptedImageNames, $newUniqueFileName);
-            } else {
+            } else { 
+                    $ERR = TRUE;
                     if (count($encryptedImageNames) > 0){
                         header('location: ../../app/create.php?err=1');            
                         die();
@@ -49,7 +52,12 @@
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     )  {
-      
+        
+        if ($ERR) {
+            header('location: ../../app/create.php?err=1');                    
+            die();
+        }
+
         $user_id = $_SESSION['ID_User'];
         date_default_timezone_set('Antarctica/Davis');        
         $date = date('Y-m-d H:i:s');        
@@ -73,7 +81,7 @@
     $statements = [];
 
 
-    if ($fileAmount > 0){
+    if ($fileAmount > 0 && !$ERR){
         $insertPostImagesQuery = "INSERT INTO Gambar_Postingan VALUES";
         for ($index = 0; $index < $fileAmount;$index++){
 
