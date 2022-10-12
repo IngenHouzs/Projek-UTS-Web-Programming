@@ -150,7 +150,7 @@
                         <p>Add Photo</p>
                     </label>
                     <input type="file" id="pictures" form="post_upload_form" onchange='showImagePreview();' name="foto[]" accept="image/png, image/gif, image/jpeg, image/svg, image/webp, image/bmp, image/gif" multiple hidden></input>
-                    <button class="btn btn-primary submit-button" type="submit" form="post_upload_form">Post</button>
+                    <button class="btn button-bootstrap submit-button" type="submit" form="post_upload_form">Post</button>
                 </div>
                 
 

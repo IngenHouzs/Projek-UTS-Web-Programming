@@ -10,11 +10,7 @@
       </div>";
     }
 
-    if (isset($_SESSION['error'])){
-        $error_login = "<div class='alert alert-danger' role='alert'>
-        Credentials and Password does not match!
-      </div>"; 
-    }else if (isset($_GET['err'])){
+    if (isset($_GET['err'])){
         if ($_GET['err'] == 'true'){
             $error_login = "<div class='alert alert-danger' role='alert'>
             Credentials and Password does not match!
@@ -53,7 +49,6 @@
                     ?>
                     <?php
                     echo $error_login ;
-                    unset($_SESSION['error']);
                     ?>
                 </div>
             </div>
@@ -86,13 +81,13 @@
 
             <div class="row mb-4">
                 <div class="col text-center">
-                    <small><strong><a href="admin_login.php">Log in as Admin</a></strong> | <strong><a href="index.php">Log in as Guest</a></strong></small>
+                    <small><strong><a class="login-as-admin" href="admin_login.php">Log in as Admin</a></strong> | <strong><a class="login-as-guest" href="index.php">Log in as Guest</a></strong></small>
                 </div>
             </div> 
 
             <div class="row">
                 <div class="col text-center">
-                    <small>Don't have account? <strong><a href="register.php">Sign up</a></strong> here.</small>
+                    <small>Don't have account? <strong><a class="sign-up" href="register.php">Sign up</a></strong> here.</small>
                 </div>
             </div>
 
@@ -116,10 +111,10 @@
                             <div class="col-lg-3 col-sm-6 col-8 m-auto">
                                 <div class="row">
                                     <div class="col">
-                                        <small id="forgot-password-login"><a href="forget_password.php">Forgot Password</a></small>
+                                        <small><a id="forgot-password-login" href="forget_password.php">Forgot Password</a></small>
                                     </div>
                                     <div class="col my-2">
-                                        <button id="button-login" class="btn btn-primary w-100 button-login-and-register">Log In</button>
+                                        <button id="button-login" class="btn btn-primary w-100 button-login-and-register button-bootstrap">Log In</button>
                                     </div>    
                                 </div>
                             </div>

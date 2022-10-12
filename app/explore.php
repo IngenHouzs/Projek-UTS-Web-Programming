@@ -117,14 +117,14 @@
                     <div class="profile-header">
                                 <?php if (isset($_SESSION['ADMIN'])){?>
                                     
-                                    <div class="admin-user-control-explore">
-                                        <button onclick="deleteUser('<?=$userID?>')">Delete User</button>
+                                    <div class="admin-user-control-explore mx-3">
+                                        <button  class="btn button-bootstrap" onclick="deleteUser('<?=$userID?>')">Delete User</button>
 
 
                                         <?php if (!$userInfo['isBanned']){?>
-                                            <button onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
+                                            <button class="btn button-bootstrap" onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
                                         <?php } else {?>
-                                            <button onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
+                                            <button class="btn button-bootstrap" onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
                                         <?php }?>
                                     </div>
 

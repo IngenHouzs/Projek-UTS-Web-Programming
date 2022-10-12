@@ -176,10 +176,6 @@
 </head>
 <body>
     <main id="main-frame">
-
-        
-
-
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
             <section class="main-content-wrapper dashboard-header">
@@ -205,13 +201,13 @@
                 <div class="container-fluid">
                     <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                         <div id="post-row" class="row">
-                            <div class="col">
+                            <div class="col ">
                                 <div class="post-wrapper m-auto">
 
                                     <?php if (isset($_SESSION['ADMIN'])){?>
                                     
                                         <div class="admin-user-control">
-                                            <button onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
+                                            <button class="btn button-bootstrap" onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
                                         </div>
 
                                     <?php }?>
@@ -328,9 +324,9 @@
                 <span id="reminder-text" class="mx-1">Prolangram</span>
                 <span class="mx-1"> | </span>
                 <small class="mx-1">Have an Account?</small>
-                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToLogin()">Log In</button>
+                <button class="btn btn-primary mx-1 reminder-button" onclick="goToLogin()">Log In</button>
                 <small class="mx-1">Don't have an Account?</small>
-                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToRegister()">Register</button>
+                <button class="btn btn-primary mx-1 reminder-button" onclick="goToRegister()">Register</button>
             </div>
         </div>
         

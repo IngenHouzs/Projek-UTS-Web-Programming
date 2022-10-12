@@ -175,7 +175,7 @@
                                         if ($_SESSION['ID_User'] == $postInfo['uid'] || isset($_SESSION['ADMIN'])){
                                     ?>
                                         <div class="admin-user-control">
-                                            <button onclick="deletePost('<?=$postInfo['id']?>')">Delete Post</button>
+                                            <button class="button-bootstrap btn" onclick="deletePost('<?=$postInfo['id']?>')">Delete Post</button>
                                         </div>                    
 
                                 <?php }}?>
@@ -278,7 +278,7 @@
                                         <input name="post_id" value="<?=htmlspecialchars($_GET['p'])?>" hidden form="add-comment"/>
                                         <textarea id="textarea-comment" type="text" name="comment" placeholder="Add comment" form="add-comment" required></textarea>
                                         <div class="col mt-1 text-end">
-                                            <button id="button-post" class="btn" type="submit" form="add-comment">Post</button> 
+                                            <button id="button-post" class="btn button-bootstrap" type="submit" form="add-comment">Post</button> 
                                         </div>
                                         
                                     </div>                                   

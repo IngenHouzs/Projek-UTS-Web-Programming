@@ -48,23 +48,23 @@
         <?php 
             if (isset($_GET['err'])){
               if ($_GET['err'] == 1){
-                echo "         <div class='error-msg'>
+                echo "         <div class='error-msg alert alert-danger'>
                 <p>Username sudah digunakan.</p>
                 <button onclick='closeErrMsg()'>CLOSE</button>
             </div> ";
               } else if ($_GET['err'] == 2){
-                echo "         <div class='error-msg'>
+                echo "         <div class='error-msg alert alert-danger'>
                 <p>Email sudah digunakan.</p>
                 <button onclick='closeErrMsg()'>CLOSE</button>
             </div> ";                
               } else if ($_GET['err'] == 3){
-                echo "         <div class='error-msg'>
+                echo "         <div class='error-msg alert alert-danger'>
                 <p>Format foto tidak valid.</p>
                 <button onclick='closeErrMsg()'>CLOSE</button>
             </div> ";                
               } 
               else if ($_GET['err'] == 'none'){
-                echo "         <div class='success-msg'>
+                echo "         <div class='success-msg alert alert-success'>
                 <p>Profil berhasil diubah.</p>
                 <button onclick='closeSuccessMsg()'>CLOSE</button>
             </div> ";                
@@ -78,12 +78,10 @@
                 <section class="main-content-wrapper dashboard-header">
                     <h1 class="dashboard-page-title">Edit Profile</h1>
                 </section>      
-
-        <br><br>
         
         <!-- ini yang baru -->
 
-        <div class="container">
+        <div class="container my-2">
              <!-- form untuk edit data  -->
             <form enctype="multipart/form-data" method="POST" action="../src/includes/edit_profile_process.php?uid=<?= $user_id ?>">
 
@@ -123,8 +121,8 @@
               </div>
 
               <hr>
-              <button type="submit" class="btn btn-block btn-success">Submit</button>
-              <a class="btn btn-block btn-danger" href="profile.php">Batal</a>
+              <button type="submit" class="btn btn-primary button-bootstrap">Submit</button>
+              <a class="btn btn-primary button-bootstrap" href="profile.php">Cancel</a>
             </form>
         </div>
 
