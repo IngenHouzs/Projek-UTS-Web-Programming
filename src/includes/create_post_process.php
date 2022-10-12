@@ -4,17 +4,20 @@
     require('db.php');
 
     // IMAGE POSTS PROCESSING
+
     $uploadedFiles = $_FILES["foto"]["name"];
     $tmp_file = $_FILES["foto"]["tmp_name"];
 
-    $fileAmount = count($uploadedFiles);
+    $fileAmount = count($uploadedFiles); 
+
     
     $encryptedImageNames = [];
 
     $ERR = FALSE;
 
+    $index = 0;
     if ($fileAmount){
-        for ($index = 0; $index < $fileAmount; $index++){
+        for ($index; $index < $fileAmount; $index++){
             $file_ext = explode('.', $uploadedFiles[$index]);
             $file_ext = end($file_ext);
             $file_ext = strtolower($file_ext);        
@@ -34,7 +37,8 @@
           
             }
         }
-    }
+    } 
+
 
 
 
@@ -53,7 +57,7 @@
         isset($_SESSION['email'])                        
     )  {
         
-        if ($ERR) {
+        if ($ERR && $_FILES['foto']['name'][0] != '') {
             header('location: ../../app/create.php?err=1');                    
             die();
         }
@@ -66,7 +70,11 @@
         $data = [$post_id, $user_id, $date, $tag, $caption];
         $queryExecution = $db->prepare($createPostQuery);
         try{
-            $queryExecution->execute($data);
+            $queryExecution->execute($data); 
+            if ($_FILES['foto']['name'][0] == ''){
+                header('location: ../../app/create.php?err=none');                    
+                die();                
+            }
         } catch(Exception $e){
             header('location: ../../app/create.php?err=5');            
             die();

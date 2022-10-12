@@ -27,7 +27,7 @@
         $user_name = $_GET['u'];
         
         // GET USER ID
-        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto, isBanned FROM User WHERE User.username = ?";
+        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto, isBanned FROM User WHERE User.username = ? AND User.username != 'admin'";
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
     
