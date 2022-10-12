@@ -59,7 +59,7 @@
                 (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS popularity                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User AND Post.KATEGORI = ?
-                ORDER BY popularity DESC";                
+                ORDER BY popularity DESC, Post.waktu_post ASC";                
             } else {
                 $getAllPostQuery = "SELECT User.username AS 'username', 
                 User.ID_User as 'user_id',        
@@ -121,7 +121,7 @@
                 (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS popularity                 
 
                 FROM Post, User WHERE Post.ID_User = User.ID_User 
-                ORDER BY popularity DESC";
+                ORDER BY popularity DESC, Post.waktu_post ASC";
             } else {
                 $getAllPostQuery = "SELECT User.username AS 'username', 
                 User.ID_User as 'user_id',
@@ -176,6 +176,10 @@
 </head>
 <body>
     <main id="main-frame">
+
+        
+
+
         <?php require('../src/includes/views/sideNavbar.php')?>
         <div class="main-content">
             <section class="main-content-wrapper dashboard-header">
@@ -183,14 +187,47 @@
                 <div class="post-sort">
 
                 <?php if (!isset($_GET['t'])){?>
-                    <button class="btn btn-sort" onclick="sortPostByTrend()">Trending</button>
-                    <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>                        
+
+                    <?php if(isset($_GET['key'])){?>
+
+                        <?php if ($_GET['key'] == 'trending'){?>
+
+                        <button class="btn btn-sort" onclick="sortPostByTrend()">Trending</button>
+                        <button class="btn btn-sort btn-unchosen" onclick="sortPostByRecentPost()">Recent</button>                        
+                        
+                        <?php }else{ ?>
+                            <button class="btn btn-sort btn-unchosen" onclick="sortPostByTrend()">Trending</button>
+                        <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>                           
+                        <?php }?>
+
+                    <?php }else{?>
+
+                        <button class="btn btn-sort btn-unchosen" onclick="sortPostByTrend()">Trending</button>
+                        <button class="btn btn-sort" onclick="sortPostByRecentPost()">Recent</button>     
+                    <?php }?>
 
                 <?php }else{
                     $key = $_GET['t'];
-                ?>
-                    <button class="btn btn-sort" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
-                    <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                                  
+                ?>  
+                    <?php if(isset($_GET['key'])){?>
+
+                            <?php if ($_GET['key'] == 'trending'){?>
+
+                            <button class="btn btn-sort" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                            <button class="btn btn-sort btn-unchosen" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                        
+
+                            <?php }else{ ?>
+                                <button class="btn btn-sort btn-unchosen" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                            <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')">Recent</button>                           
+                            <?php }?>
+
+                            <?php }else{?>
+
+                            <button class="btn btn-sort btn-unchosen" onclick="sortPostByTrendWithTag('<?=$key?>')">Trending</button>
+                            <button class="btn btn-sort" onclick="sortPostByRecentPostWithTag('<?=$key?>')"">Recent</button>     
+                            <?php }?>
+
+                                            
                 <?php }?>
                 </div>
             </section>      
@@ -201,13 +238,13 @@
                 <div class="container-fluid">
                     <?php while($post = $queryExecution->fetch(PDO::FETCH_ASSOC)) {?>
                         <div id="post-row" class="row">
-                            <div class="col ">
+                            <div class="col">
                                 <div class="post-wrapper m-auto">
 
                                     <?php if (isset($_SESSION['ADMIN'])){?>
                                     
                                         <div class="admin-user-control">
-                                            <button class="btn button-bootstrap" onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
+                                            <button onclick="deletePost('<?=$post['id']?>')">Delete Post</button>
                                         </div>
 
                                     <?php }?>
@@ -324,9 +361,9 @@
                 <span id="reminder-text" class="mx-1">Prolangram</span>
                 <span class="mx-1"> | </span>
                 <small class="mx-1">Have an Account?</small>
-                <button class="btn btn-primary mx-1 reminder-button" onclick="goToLogin()">Log In</button>
+                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToLogin()">Log In</button>
                 <small class="mx-1">Don't have an Account?</small>
-                <button class="btn btn-primary mx-1 reminder-button" onclick="goToRegister()">Register</button>
+                <button id="reminder-button" class="btn btn-light mx-1" onclick="goToRegister()">Register</button>
             </div>
         </div>
         

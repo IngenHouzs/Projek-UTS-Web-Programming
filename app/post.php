@@ -175,7 +175,7 @@
                                         if ($_SESSION['ID_User'] == $postInfo['uid'] || isset($_SESSION['ADMIN'])){
                                     ?>
                                         <div class="admin-user-control">
-                                            <button class="button-bootstrap btn" onclick="deletePost('<?=$postInfo['id']?>')">Delete Post</button>
+                                            <button class="btn-red" onclick="deletePost('<?=$postInfo['id']?>')">Delete Post</button>
                                         </div>                    
 
                                 <?php }}?>
@@ -238,7 +238,7 @@
                                                 <?php if(isset($_SESSION['ADMIN'])){?>
 
                                                 <div class="admin-delete-comment" onclick="deleteComment('<?=$comment['comment_id']?>')">
-                                                    <button>Delete Comment</button>                                                
+                                                    <button class="btn-red">Delete Comment</button>                                                
                                                 </div>
 
                                                 <?php }?>

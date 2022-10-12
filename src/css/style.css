@@ -582,7 +582,8 @@ a {
 
 .admin-delete-comment {
   position: absolute;
-  bottom: 0;
+  right:0;
+  top:.5rem;
 }
 
 .admin-delete-comment button {
@@ -615,6 +616,11 @@ a {
   color: white !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+}
+
+.btn-unchosen{
+  background-color: #65b2c9 !important;
+  color: black;
 }
 
 .btn-sort:hover,
@@ -955,6 +961,31 @@ a {
   right: 1rem;
   display: flex;
   flex-direction: row;
+}
+
+.admin-user-control button{
+  background-color: red;
+  color:white;
+  padding:0 .1rem;
+  border:none;
+  border-radius: 5px;
+}
+
+.btn-red{
+  background-color: red !important;
+  color:white;
+  padding:0 .1rem;
+  border:none;
+  border-radius: 5px;  
+}
+
+
+.btn-green{
+  background-color: green;
+  color:white;
+  padding:0 .1rem;
+  border:none;
+  border-radius: 5px;  
 }
 
 .admin-user-control-explore {
