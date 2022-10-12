@@ -118,13 +118,13 @@
                                 <?php if (isset($_SESSION['ADMIN'])){?>
                                     
                                     <div class="admin-user-control-explore mx-3">
-                                        <button  class="btn button-bootstrap" onclick="deleteUser('<?=$userID?>')">Delete User</button>
+                                        <button  class="btn-red" onclick="deleteUser('<?=$userID?>')">Delete User</button>
 
 
                                         <?php if (!$userInfo['isBanned']){?>
-                                            <button class="btn button-bootstrap" onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
+                                            <button class="btn-red" onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
                                         <?php } else {?>
-                                            <button class="btn button-bootstrap" onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
+                                            <button class="btn-green" onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
                                         <?php }?>
                                     </div>
 
@@ -156,7 +156,7 @@
                                 <img class="post-pict-preview" src="../src/user_post_pictures/<?=htmlspecialchars($post['nama_gambar'])?>"/>
                             <?php }?>
                             <div class="post-preview-desc">
-                                <h1>#<?=htmlspecialchars($post['tag'])?></h1>
+                                <h1><strong>#<?=htmlspecialchars($post['tag'])?></strong></h1>
                                 <p><?=htmlspecialchars($post['caption'])?></p>
                             </div>
                         </div>

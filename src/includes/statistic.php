@@ -69,7 +69,7 @@
 
 
 
-    $pdf->Output();        
+    $pdf->Output('D', 'Laporan Statistik Prolangram.pdf');        
 
 
     
