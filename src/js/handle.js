@@ -41,6 +41,16 @@ const likeComment = (user_id, comment_id) => {
 }
 
 
+function escapeInput(input) {
+  return String(input)
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+}
+
+
 const liveSearch = (query) => {
     const XMLHttp = new XMLHttpRequest();
     // response
@@ -57,14 +67,14 @@ const liveSearch = (query) => {
               oldWrapper.innerHTML += `
                 <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
                 <img src="../src/user_profile/${user.foto}"/>
-                <p>${user.username}</p>
+                <p>${escapeInput(user.username)}</p>
                 </div>             
                 `              
             } else {
               oldWrapper.innerHTML += `
                 <div class="result-search-box" onclick="autoAddInputValue('${user.username}');">
                 <img src="../src/user_profile/no-pfp.webp"/>
-                <p>${user.username}</p>
+                <p>${escapeInput(user.username)}</p>
                 </div>             
               `              
             }
