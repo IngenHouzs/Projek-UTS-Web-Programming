@@ -48,12 +48,13 @@
 
     $password = $_POST['password'];
 
+
     $query = "SELECT * FROM User WHERE email = ? OR username= ?";
     
     $data = [$identity, $identity];
     
     $queryExecution = $db->prepare($query);
-    $queryExecution->execute($data);
+    $queryExecution->execute($data);    
 
     $result = $queryExecution->fetch(PDO::FETCH_ASSOC);
 

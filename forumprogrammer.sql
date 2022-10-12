@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2022 at 08:57 AM
+-- Generation Time: Oct 12, 2022 at 12:23 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -54,7 +54,9 @@ INSERT INTO `comment_post` (`ID_CommentPost`, `ID_Post`, `ID_User`, `Isi`) VALUE
 ('C-63442bf53f5642.81065472', 'P-63442b7b4bef67.63963301', 'U-6344048ca89813.67032277', 'di console gak ada error message kah?'),
 ('C-63442f68b3cbd0.27927884', 'P-63440d6dbae768.02526895', 'U-6344048ca89813.67032277', 'gimana? udah bisa?'),
 ('C-634537ae447be8.70580508', 'P-634415f5ab5992.63803616', 'U-6344048ca89813.67032277', 'saya juga awok awok'),
-('C-63466106e9a746.29233506', 'P-63440ddf753c51.21056522', 'A-12345678901234567890123', 'hallo, test dari admin');
+('C-63466106e9a746.29233506', 'P-63440ddf753c51.21056522', 'A-12345678901234567890123', 'hallo, test dari admin'),
+('C-634681ebe781b5.21016766', 'P-63442ab4a46f96.57164180', 'U-6344048ca89813.67032277', 'mantap deck'),
+('C-6346821f0a1007.68325693', 'P-634426323744e4.06723000', 'U-6344048ca89813.67032277', 'aduh bos ada yang jago ga ajarin donk soalnya susah banget , saya bentar lagi mau ujian tengah semester ini gimana ya bang aduh tolongin :) nanti saya ga lulus');
 
 -- --------------------------------------------------------
 
@@ -107,17 +109,22 @@ INSERT INTO `like_comment` (`ID_Like`, `ID_Comment`, `ID_User`) VALUES
 ('LC63440e2cba84e2.62350630', 'C-63440e27b5b535.64195892', 'U-6344049e0ac6e7.44316206'),
 ('LC63440f00726933.09340827', 'C-63440efed79885.84476520', 'U-634404d5e7aad1.52572028'),
 ('LC63440f46d1d825.08441406', 'C-63440f45084d68.67676407', 'U-6344048ca89813.67032277'),
+('LC634681e377efc0.47432485', 'C-63442ad139fd83.18870889', 'U-6344048ca89813.67032277'),
 ('LC63442ad47c90a1.80831955', 'C-63442ad139fd83.18870889', 'U-634404be06a469.69537889'),
+('LC634681e41ccaa6.64567460', 'C-63442adc322b24.99426499', 'U-6344048ca89813.67032277'),
 ('LC63442add0db109.84573023', 'C-63442adc322b24.99426499', 'U-634404be06a469.69537889'),
 ('LC63442adfa4ab49.29817355', 'C-63442adc322b24.99426499', 'U-634404d5e7aad1.52572028'),
+('LC63468222675e67.70252853', 'C-63442b2504eda9.06742752', 'U-6344048ca89813.67032277'),
 ('LC63442b2d374a15.48299100', 'C-63442b2504eda9.06742752', 'U-634404be06a469.69537889'),
 ('LC63442b2652f537.97703075', 'C-63442b2504eda9.06742752', 'U-634404d5e7aad1.52572028'),
+('LC63468221ebe0d7.76031294', 'C-63442b38163192.58816802', 'U-6344048ca89813.67032277'),
 ('LC63442b3a661e09.91203878', 'C-63442b38163192.58816802', 'U-634404be06a469.69537889'),
 ('LC63442baf74c7a1.82737856', 'C-63442bae423ce6.77122643', 'U-634404d5e7aad1.52572028'),
 ('LC63442bbf1263a3.83409947', 'C-63442bba697738.39844661', 'U-634404d5e7aad1.52572028'),
 ('LC63442bf7919a88.41212847', 'C-63442bf53f5642.81065472', 'U-6344048ca89813.67032277'),
 ('LC63442f79b59316.66278354', 'C-63442f68b3cbd0.27927884', 'U-6344048ca89813.67032277'),
-('LC634537b0063e40.47942100', 'C-634537ae447be8.70580508', 'U-6344048ca89813.67032277');
+('LC634537b0063e40.47942100', 'C-634537ae447be8.70580508', 'U-6344048ca89813.67032277'),
+('LC6346822175ab50.92641125', 'C-6346821f0a1007.68325693', 'U-6344048ca89813.67032277');
 
 -- --------------------------------------------------------
 
@@ -207,9 +214,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_User`, `nama_lengkap`, `username`, `email`, `foto`, `isAdmin`, `isBanned`, `password`) VALUES
 ('A-12345678901234567890123', 'admin', 'admin', '-', NULL, b'1', b'0', '$2y$10$DCLT4NGWavvimM0LIpOLL.zu77nkH9uyK.Z3Y6QewejjgJQM/TdgS'),
-('U-6344048ca89813.67032277', 'Farrel Dinarta', 'farreldinarta', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665498619.png', b'0', b'0', '$2y$10$9/IwERsRer1M/H8iJ7jZxODYWEP2pdDLspBnZcN/WNuAvHREL/Eu.'),
+('U-6344048ca89813.67032277', 'Farrel Dinarta', '<h1>Farrel</h1>', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665498619.png', b'0', b'0', '$2y$10$v2aybH2MEAtZcdAxkqVCeerjAsXlLMayGEejM5DvtOZVJP2jcnzQa'),
 ('U-6344049e0ac6e7.44316206', 'Bryan Richie', 'bryanrichie', 'bryan.richie@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$UJQNjFv1uqb37Ysaa.ykOe0feSjYmOt54cBqTi3PpoiBd4ZtBKzEG'),
-('U-634404be06a469.69537889', 'Nayasha Clarisasssss', 'nayashaclarisa', 'nayasha.clarisa@student.umn.ac.id', 'foto_user_1665407707.jpg', b'0', b'0', '$2y$10$LhZ.SfHT8XoSSoG13rpCYueTDSd4TVX1loA7.2dmMVV4jZ1KvAZ62'),
+('U-634404be06a469.69537889', 'Nayasha Clarisasssss', 'nayashaclarisa', 'nayasha.clarisa@student.umn.ac.id', 'foto_user_1665407707.jpg', b'0', b'1', '$2y$10$LhZ.SfHT8XoSSoG13rpCYueTDSd4TVX1loA7.2dmMVV4jZ1KvAZ62'),
 ('U-634404d5e7aad1.52572028', 'Prudence Tendy', 'prudencetendy', 'prudence.tendy@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$vLMeo59hDHkJeAvHmX6oYeb5Slpui6dSQn15UybAlyRzvBnFgSUZ2');
 
 --
