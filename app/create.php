@@ -10,12 +10,12 @@
 
 
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     ){
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         $user_username = $_SESSION['username'];
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  

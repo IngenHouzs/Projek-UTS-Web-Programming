@@ -10,13 +10,13 @@
 
         // QUERY TO POST LIKE 
 
-        $checkIfLikedQuery = "SELECT * FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
+        $checkIfLikedQuery = "SELECT * FROM like_post WHERE id_post = ? AND id_user = ?";
         $checkIfLikedQueryParams = [$post_id, $user_id];
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
-        if (isset($exists['ID_Post'])){
-            $unlikeQuery = "DELETE FROM Like_Post WHERE ID_Post = ? AND ID_User = ?";
+        if (isset($exists['id_post'])){
+            $unlikeQuery = "DELETE FROM like_post WHERE id_post = ? AND id_user = ?";
             $unlikeQueryParams = [$post_id, $user_id];
             $executeUnlikeQuery = $db->prepare($unlikeQuery);
             try{
@@ -30,7 +30,7 @@
 
 
         $like_id = uniqid('L-', true);
-        $postLikeQuery = "INSERT INTO Like_Post VALUES (?, ?, ?)";
+        $postLikeQuery = "INSERT INTO like_post VALUES (?, ?, ?)";
 
         $preparedData = [$like_id, $post_id, $user_id];
         $queryExecution = $db->prepare($postLikeQuery);
@@ -57,14 +57,14 @@
 
         // LIKE COMMENT
         
-        $checkIfLikedQuery = "SELECT * FROM Like_Comment WHERE ID_Comment = ? AND ID_User = ?";
+        $checkIfLikedQuery = "SELECT * FROM like_comment WHERE id_comment = ? AND id_user = ?";
         $checkIfLikedQueryParams = [$comment_id, $user_id];
         $executecheckIfLikedQuery = $db->prepare($checkIfLikedQuery);
         $executecheckIfLikedQuery->execute($checkIfLikedQueryParams);
         $exists = $executecheckIfLikedQuery->fetch(PDO::FETCH_ASSOC);
 
-        if (isset($exists['ID_Comment'])){
-            $unlikeQuery = "DELETE FROM Like_Comment WHERE ID_Comment = ? AND ID_User = ?";
+        if (isset($exists['id_comment'])){
+            $unlikeQuery = "DELETE FROM like_comment WHERE id_comment = ? AND id_user = ?";
             $unlikeQueryParams = [$comment_id, $user_id];
             $executeUnlikeQuery = $db->prepare($unlikeQuery);
             try{
@@ -78,7 +78,7 @@
         
         
         $like_id = uniqid('LC', true);
-        $postLikeQuery = "INSERT INTO Like_Comment VALUES (?, ?, ?)";
+        $postLikeQuery = "INSERT INTO like_comment VALUES (?, ?, ?)";
 
         $preparedData = [$like_id, $comment_id, $user_id];
         $queryExecution = $db->prepare($postLikeQuery);
@@ -103,12 +103,12 @@
         $data = json_decode(file_get_contents("php://input"));      
         $post_id = $data->post_id;
 
-        $deletePostQuery = "DELETE FROM Post WHERE ID_Post = ?";
+        $deletePostQuery = "DELETE FROM post WHERE id_post = ?";
 
         try{
             $queryExecution = $db->prepare($deletePostQuery);
             $queryExecution->execute([$post_id]); 
-            $getOldPictures = "SELECT GROUP_CONCAT(gambar_postingan.nama_gambar) AS 'gambar' FROM gambar_postingan WHERE ? = gambar_postingan.ID_Post";            
+            $getOldPictures = "SELECT GROUP_CONCAT(gambar_postingan.nama_gambar) AS 'gambar' FROM gambar_postingan WHERE ? = gambar_postingan.id_post";            
 
             $exec = $db->prepare($getOldPictures);
             $exec->execute([$post_id]); 
@@ -137,7 +137,7 @@
         $data = json_decode(file_get_contents("php://input"));      
         $comment_id = $data->comment_id;
 
-        $deleteCommentQuery = "DELETE FROM Comment_Post WHERE ID_CommentPost = ?";
+        $deleteCommentQuery = "DELETE FROM comment_post WHERE id_commentpost = ?";
         try{
             $queryExecution = $db->prepare($deleteCommentQuery);
             $queryExecution->execute([$comment_id]); 

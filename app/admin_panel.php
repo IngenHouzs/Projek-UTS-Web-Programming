@@ -3,7 +3,7 @@
 
     if (
         isset($_SESSION['ADMIN'])){
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         $user_username = $_SESSION['username'];
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  

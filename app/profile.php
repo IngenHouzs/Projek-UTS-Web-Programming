@@ -45,7 +45,7 @@
 
             // ambil profile diri kita sendiri
 
-            $query = "SELECT * FROM user WHERE ID_User = ?";
+            $query = "SELECT * FROM User WHERE ID_User = ?";
             
             $data = [$_SESSION['ID_User']];
                         

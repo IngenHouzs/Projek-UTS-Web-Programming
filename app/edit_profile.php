@@ -7,21 +7,21 @@
     $dotenv->load();    
     require_once('../src/includes/db_external.php');   
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     ){
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         $user_username = $_SESSION['username'];
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
         $user_foto = $_SESSION['foto'];
     }
 
-    $query = "SELECT * FROM user WHERE ID_User = ?";
+    $query = "SELECT * FROM user WHERE id_user = ?";
             
-    $data = [$_SESSION['ID_User']];
+    $data = [$_SESSION['id_user']];
                         
     $query_call_profile = $db->prepare($query); // siapin query
     $query_call_profile->execute($data); // jalankan hasil query dan ambil data    
@@ -94,21 +94,21 @@
 
               <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" class="form-control" name="username" value="<?= $res['username'] ?>" required>
+                <input type="text" class="form-control" name="username" value="<?= htmlspecialchars($res['username'])?>" required>
               </div>
 
               <br>
 
               <div class="form-group">
                 <label for="">Full Name</label>
-                <input type="text" class="form-control" name="nama_lengkap" value="<?= $res['nama_lengkap'] ?>" required>
+                <input type="text" class="form-control" name="nama_lengkap" value="<?= htmlspecialchars($res['nama_lengkap'])?>" required>
               </div>
 
               <br>
 
               <div class="form-group">
                 <label for="">Email</label>
-                <input type="email" class="form-control" name="email" value="<?= $res['email'] ?>" required>
+                <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($res['email'])?>" required>
               </div>
 
               <hr>

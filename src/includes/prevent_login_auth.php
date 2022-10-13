@@ -1,5 +1,5 @@
 <?php 
-    if (isset($_SESSION['ID_User'])){
+    if (isset($_SESSION['id_user'])){
         header('location: index.php');
         die();
     }
