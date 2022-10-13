@@ -8,7 +8,7 @@
             die();
         }          
 
-        $query = "UPDATE User SET password = ? WHERE ? = User.ID_User";
+        $query = "UPDATE user SET password = ? WHERE ? = user.id_user";
 
         try{
             $exec = $db->prepare($query);

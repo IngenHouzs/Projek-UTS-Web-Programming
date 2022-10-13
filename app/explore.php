@@ -10,12 +10,12 @@
     require_once('../src/includes/check_ban.php');   
     $hidden = "";
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     ){
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         $user_username = $_SESSION['username'];
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
@@ -27,16 +27,19 @@
         $user_name = $_GET['u'];
         
         // GET USER ID
-        $getUIDQuery = "SELECT ID_User, username, nama_lengkap, foto, isBanned FROM User WHERE User.username = ? AND User.username != 'admin'";
+        $getUIDQuery = "SELECT id_user, username, nama_lengkap, foto, isbanned FROM user WHERE user.username = ? AND user.username != 'admin'";
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
+        
+        
     
         $userInfo = $getIDQueryExecution->fetch(PDO::FETCH_ASSOC); 
-        if (isset($userInfo['ID_User'])){
-            $userID = $userInfo['ID_User'];
+
+        if (isset($userInfo['id_user'])){
+            $userID = $userInfo['id_user'];
             // GET POSTS COUNT
     
-            $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM Post WHERE Post.ID_User = ?";
+            $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM post WHERE post.id_user = ?";
             $queryExecution = $db->prepare($postCountQuery);
             $queryExecution->execute([$userID]);
     
@@ -45,11 +48,11 @@
     
             // GET ALL POSTS
             $getAllPostQuery = "SELECT 
-            Post.KATEGORI AS 'tag',
-            Post.ISI AS 'caption',
-            Post.ID_Post AS 'id',
-            (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar              
-            FROM Post WHERE Post.ID_User = ?";
+            post.kategori AS 'tag',
+            post.isi AS 'caption',
+            post.id_post AS 'id',
+            (SELECT nama_gambar FROM gambar_postingan WHERE urutan = 1 AND gambar_postingan.id_post = post.id_post) AS nama_gambar              
+            FROM post WHERE post.id_user = ?";
     
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
             $getAllPostQueryExecution->execute([$userID]);            
@@ -109,7 +112,7 @@
                 </section>             
 
                 <?php 
-                    if (isset($_GET['u']) && isset($userInfo['ID_User'])){
+                    if (isset($_GET['u']) && isset($userInfo['id_user'])){
                     // kerjain view post disini ?>
 
                     <!-- HTML nya disini -->
@@ -121,9 +124,9 @@
                                         <button  class="btn-red" onclick="deleteUser('<?=$userID?>')">Delete User</button>
 
 
-                                        <?php if (!$userInfo['isBanned']){?>
+                                        <?php if (strlen($userInfo['isBanned']) == 0){?>
                                             <button class="btn-red" onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
-                                        <?php } else {?>
+                                        <?php } else if (strlen($userInfo['isBanned']) > 0) {?>
                                             <button class="btn-green" onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
                                         <?php }?>
                                     </div>
@@ -175,7 +178,7 @@
     </main>
 
 
-    <?php if (!isset($_SESSION['ID_User'])){?>
+    <?php if (!isset($_SESSION['id_user'])){?>
     
     <div id="notif-reminder" class=" fixed-bottom bg-secondary p-3" <?= $hidden ?>>
         <div class="row">

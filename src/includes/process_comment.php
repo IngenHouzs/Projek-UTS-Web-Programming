@@ -2,7 +2,7 @@
 
     session_start();
 
-    if (!isset($_SESSION['ID_User'])){
+    if (!isset($_SESSION['id_user'])){
         header('location: ../../app/login.php');
         die();
     }
@@ -12,18 +12,18 @@
     // ADD COMMENT TO POST 
 
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     ){
         
         $comment_id = uniqid('C-', true);   
-        $user_id = $_SESSION['ID_User']; 
+        $user_id = $_SESSION['id_user']; 
         $post_id = $_POST['post_id'];
         $comment = $_POST['comment'];
 
-        $addCommentQuery = "INSERT INTO Comment_Post VALUES(?, ?, ?, ?)";        
+        $addCommentQuery = "INSERT INTO comment_post VALUES(?, ?, ?, ?)";        
         $data = [$comment_id, $post_id, $user_id, $comment];
         $executeQuery = $db->prepare($addCommentQuery);
         try{

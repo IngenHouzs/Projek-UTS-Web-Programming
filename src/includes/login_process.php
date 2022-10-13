@@ -10,7 +10,7 @@
             $identity = $_POST['identity'];
             $password = $_POST['password'];
         
-            $query = "SELECT * FROM User WHERE nama_lengkap = ? AND isAdmin = 1";
+            $query = "SELECT * FROM user WHERE nama_lengkap = ? AND isadmin = 1";
             
             $data = [$identity];
             
@@ -22,7 +22,7 @@
             if ($result){
                 $verifyPassword = password_verify($password, $result['password']);
                 if ($verifyPassword){
-                    $_SESSION['ID_User'] = $result['ID_User'];
+                    $_SESSION['id_user'] = $result['id_user'];
                     $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
                     $_SESSION['username'] = $result['username'];
                     $_SESSION['email'] = '-';           
@@ -48,8 +48,7 @@
 
     $password = $_POST['password'];
 
-
-    $query = "SELECT * FROM User WHERE email = ? OR username= ?";
+    $query = "SELECT * FROM user WHERE email = ? OR username= ?";
     
     $data = [$identity, $identity];
     
@@ -58,17 +57,17 @@
 
     $result = $queryExecution->fetch(PDO::FETCH_ASSOC);
 
-    if ($result){
+    if ($result && $result['username'] != 'admin'){
         $verifyPassword = password_verify($password, $result['password']);
         if ($verifyPassword){
             
-            $isBanned = $result['isBanned'];
-            if ($isBanned){
-                header('location: ../../app/login.php?err=banned'); 
-                die();                
-            }
+            // $isBanned = $result['isBanned'];
+            // if ($isBanned){
+            //     header('location: ../../app/login.php?err=banned'); 
+            //     die();                
+            // }
 
-            $_SESSION['ID_User'] = $result['ID_User'];
+            $_SESSION['id_user'] = $result['id_user'];
             $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
             $_SESSION['username'] = $result['username'];
             $_SESSION['email'] = $result['email'];           

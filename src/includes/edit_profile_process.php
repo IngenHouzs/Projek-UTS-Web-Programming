@@ -9,7 +9,7 @@ $uid = $_GET['uid'];
 
 // query untuk cek di database apakah user ada / tidak
 
-$query = "SELECT * FROM user WHERE ID_User = ?";
+$query = "SELECT * FROM user WHERE id_user = ?";
             
 $data = [$uid];
             
@@ -29,7 +29,7 @@ else
 {
 
 	// cek apakah username yang diganti sudah ada di database
-	$cek_username = "SELECT * FROM user WHERE username = ? AND ID_User != ?";
+	$cek_username = "SELECT * FROM user WHERE username = ? AND id_user != ?";
 	$data_username = [$_POST['username'] , $uid];
 
 	$query_check_username = $db->prepare($cek_username);
@@ -45,7 +45,7 @@ else
 	}
 
 	// cek email juga
-	$cek_email = "SELECT * FROM user WHERE email = ? AND ID_User != ?";
+	$cek_email = "SELECT * FROM user WHERE email = ? AND id_user != ?";
 	$data_email = [$_POST['email'] , $uid];
 
 	$query_check_email = $db->prepare($cek_email);
@@ -67,7 +67,7 @@ else
 			$pass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 			
 			// update password user
-			$edit_password = "UPDATE user SET password = '$pass' WHERE ID_User = ?";
+			$edit_password = "UPDATE user SET password = '$pass' WHERE id_user = ?";
 			$data_password = [$uid];
 
 			$q_edit_password = $db->prepare($edit_password);
@@ -118,7 +118,7 @@ else
 
 			session_destroy();
 			session_start();
-			$_SESSION['ID_User'] = $uid;
+			$_SESSION['id_user'] = $uid;
 			$_SESSION['username'] = $username;					
 			$_SESSION['nama_lengkap'] = $nama_lengkap;				
 			$_SESSION['email'] = $email;	
@@ -126,7 +126,7 @@ else
 
 			// query
 
-			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE ID_User = ?";
+			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE id_user = ?";
 			$data_update = [$username,$nama_lengkap, $email,$target_file,$uid];
 
 			$q_update_data = $db->prepare($update);
@@ -186,7 +186,7 @@ else
 
 			session_destroy();
 			session_start();
-			$_SESSION['ID_User'] = $uid;
+			$_SESSION['id_user'] = $uid;
 			$_SESSION['username'] = $username;					
 			$_SESSION['nama_lengkap'] = $nama_lengkap;				
 			$_SESSION['email'] = $email;		
@@ -194,7 +194,7 @@ else
 
 			// query
 
-			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE ID_User = ?";
+			$update = "UPDATE user SET username = ? , nama_lengkap = ? , email = ? , foto = ? WHERE id_user = ?";
 			$data_update = [$username,$nama_lengkap,$email,$target_file,$uid];
 
 			$q_update_data = $db->prepare($update);

@@ -9,7 +9,7 @@
         $email = $_POST['email'];
 
 
-        $query = "SELECT ID_User FROM User WHERE ? = username AND ? = nama_lengkap AND ? = email";
+        $query = "SELECT id_user FROM user WHERE ? = username AND ? = nama_lengkap AND ? = email";
 
    
         try{
@@ -17,7 +17,7 @@
             $exec->execute([strtolower(join('',explode(' ', $username))), $fullname, $email]);
 
             $res = $exec->fetch(PDO::FETCH_ASSOC);
-            if ($res['ID_User']){
+            if ($res['id_user']){
     
             } else {
                 header('location: ../../app/forget_password.php?err=true');
@@ -46,7 +46,7 @@
 </head>
 <body>
     <form id="submitId"action="../../app/forget_password.php" method="POST">
-        <input type='text' value="<?=$res['ID_User']?>" name='id' hidden/>
+        <input type='text' value="<?=$res['id_user']?>" name='id' hidden/>
         <input type="submit" hidden/>
     </form>
 

@@ -13,7 +13,7 @@
 
     $id = uniqid('U-', true);
     $encrypted_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $query = "INSERT INTO User VALUES (?, ?, ?, ?, ?,?, ?,?)";
+    $query = "INSERT INTO user VALUES (?, ?, ?, ?, ?,?, ?,?)";
 
     $data = [$id, $fullname, strtolower(join('',explode(' ', $username))), $email, NULL,FALSE,FALSE,$encrypted_password];
 
@@ -29,8 +29,8 @@
         $_SESSION['success-register'] = 'success-register';
         header('location: ../../app/login.php');
     } catch (Exception $e){
-        $checkDuplicateUsername = "SELECT COUNT(*) AS 'Count' FROM User WHERE username = '$username'";        
-        $checkDuplicateEmail = "SELECT COUNT(*) AS 'Count' FROM User WHERE email = '$email'"; 
+        $checkDuplicateUsername = "SELECT COUNT(*) AS 'Count' FROM user WHERE username = '$username'";        
+        $checkDuplicateEmail = "SELECT COUNT(*) AS 'Count' FROM user WHERE email = '$email'"; 
 
         // Cek duplikat username
         $checkDuplicateUsernameExecution = $db->query($checkDuplicateUsername);

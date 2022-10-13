@@ -51,7 +51,7 @@
 
     $post_id = uniqid('P-', true);      
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
@@ -62,10 +62,10 @@
             die();
         }
 
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         date_default_timezone_set('Antarctica/Davis');        
         $date = date('Y-m-d H:i:s');        
-        $createPostQuery = "INSERT INTO Post VALUES (?, ?, ?, ?, ?)";
+        $createPostQuery = "INSERT INTO post VALUES (?, ?, ?, ?, ?)";
 
         $data = [$post_id, $user_id, $date, $tag, $caption];
         $queryExecution = $db->prepare($createPostQuery);
@@ -90,7 +90,7 @@
 
 
     if ($fileAmount > 0 && !$ERR){
-        $insertPostImagesQuery = "INSERT INTO Gambar_Postingan VALUES";
+        $insertPostImagesQuery = "INSERT INTO gambar_postingan VALUES";
         for ($index = 0; $index < $fileAmount;$index++){
 
             move_uploaded_file($tmp_file[$index], "../user_post_pictures/".$encryptedImageNames[$index]); 

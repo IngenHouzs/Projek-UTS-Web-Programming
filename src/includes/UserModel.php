@@ -4,7 +4,7 @@
 
     function getRandomUser(){
         global $db;
-        $fetchRandomUserQuery = "SELECT ID_User, username, foto FROM User ORDER BY RAND() LIMIT 5"; // WHERE (UNLESS DIRI SENDIRI)
+        $fetchRandomUserQuery = "SELECT id_user, username, foto FROM user WHERE username != 'admin' ORDER BY RAND() LIMIT 5"; // WHERE (UNLESS DIRI SENDIRI)
         $queryExecution = $db->query($fetchRandomUserQuery);
         $queryResult = [];
         while ($result = $queryExecution->fetch(PDO::FETCH_ASSOC)){
@@ -20,7 +20,7 @@
         $data = json_decode(file_get_contents("php://input"));            
         $query = '%'.$data->query.'%';
 
-        $findUserQuery = "SELECT ID_User, username, foto FROM User WHERE username LIKE ? AND username != 'admin'";
+        $findUserQuery = "SELECT id_user, username, foto FROM user WHERE username LIKE ? AND username != 'admin'";
         $queryExecution = $db->prepare($findUserQuery);
         $queryExecution->execute([$query]);
         
@@ -36,7 +36,7 @@
         $data = json_decode(file_get_contents("php://input"));      
         $user_id = $data->user_id;
 
-        $deleteUserQuery = "DELETE FROM User WHERE ID_User = ?";
+        $deleteUserQuery = "DELETE FROM user WHERE id_user = ?";
         try{
             $queryExecution = $db->prepare($deleteUserQuery);
             $queryExecution->execute([$user_id]); 
@@ -59,7 +59,7 @@
         $data = json_decode(file_get_contents("php://input"));      
         $user_id = $data->user_id;
 
-        $unbanUserQuery = "UPDATE User SET isBanned = 0 WHERE ID_User = ?";
+        $unbanUserQuery = "UPDATE user SET isbanned = 0 WHERE id_user = ?";
         try{
             $queryExecution = $db->prepare($unbanUserQuery);
             $queryExecution->execute([$user_id]); 
@@ -82,7 +82,7 @@
         $data = json_decode(file_get_contents("php://input"));      
         $user_id = $data->user_id;
 
-        $banUserQuery = "UPDATE User SET isBanned = 1 WHERE ID_User = ?";
+        $banUserQuery = "UPDATE user SET isbanned = 1 WHERE id_user = ?";
         try{
             $queryExecution = $db->prepare($banUserQuery);
             $queryExecution->execute([$user_id]); 
