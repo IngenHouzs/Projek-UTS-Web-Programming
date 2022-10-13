@@ -130,3 +130,183 @@ Stack trace:
 [12-Oct-2022 22:55:39 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
 [12-Oct-2022 22:55:40 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
 [12-Oct-2022 22:55:40 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:42:02 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:03 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:04 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:19 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:36 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:39 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:40 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:41 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:41 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:42 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:43 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:44 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:54 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:55 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:42:57 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:00 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:01 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:01 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:04 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:05 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:05 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:08 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:09 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:09 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:09 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:10 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:12 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:12 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:12 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:13 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:43:13 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:43:13 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:44:13 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:44:15 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:44:20 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:45:25 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:45:26 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:45:26 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:45:26 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 06:45:28 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:45:32 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:45:34 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:50:40 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 06:50:49 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 07:15:44 UTC] PHP Notice:  Undefined variable: user_username in /home/prolangr/public_html/src/includes/views/sideNavbar.php on line 23
+[13-Oct-2022 07:17:15 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:17:15 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:17:57 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:17:57 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:17:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:18:02 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:18:02 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:18:02 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:19:01 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:19:01 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:19:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:19:09 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:19:09 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:19:09 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:24:06 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:24:06 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:24:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:25:22 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:25:22 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:29:49 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:29:49 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:29:49 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:29:50 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:29:50 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:29:50 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:35 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:47 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:30:47 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:32:06 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:32:06 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:32:06 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:32:09 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:32:09 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:32:09 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:33:29 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:33:29 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:33:29 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:34:58 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 07:34:58 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:34:58 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:37:46 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:37:48 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:37:49 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:37:50 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:37:51 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:37:52 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:37 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:38 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:39 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:40 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:41 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:41:42 UTC] PHP Notice:  Undefined index: isBanned in /home/prolangr/public_html/app/explore.php on line 127
+[13-Oct-2022 07:48:23 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:48:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:48:36 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:48:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:01 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:05 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:05 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:59 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:49:59 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:50:07 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:50:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:50:19 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:50:19 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:51:19 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:51:19 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:51:28 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:51:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:54:23 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:54:23 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:55:20 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:55:20 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:48 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:48 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:53 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:53 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:59 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:56:59 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:57:04 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 07:57:04 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 08:00:14 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 08:00:14 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 08:01:01 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 08:01:01 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:44 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:44 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:52 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:52 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:55 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:55 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:57 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:21:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:08 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:08 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:18 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:36 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:36 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:52 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:22:52 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:23:07 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 09:23:07 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 10:51:58 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 10:51:58 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 10:51:58 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:28 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 11:31:28 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:28 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:43 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 11:31:43 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:57 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 11:31:57 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 11:31:57 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 14:29:18 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 14:29:18 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 14:29:18 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:20:30 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 15:20:30 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:20:30 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:26:00 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 15:26:00 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:26:00 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:26:11 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/app/post.php on line 213
+[13-Oct-2022 15:26:11 UTC] PHP Notice:  Undefined variable: post in /home/prolangr/public_html/app/post.php on line 221
+[13-Oct-2022 15:26:11 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/prolangr/public_html/app/post.php on line 221

@@ -47,7 +47,7 @@
                 post.kategori as 'kategori', 
                 post.isi as 'isi', 
                 post.id_Post as 'id', 
-                User.foto as 'foto',
+                user.foto as 'foto',
                 (SELECT like_post.id_post FROM like_post WHERE ? = like_post.id_user AND like_post.id_post = post.id_post) AS 'is_liked',
                 (SELECT COUNT(id_post) FROM like_post 
                 WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) AS 'like',
@@ -67,7 +67,7 @@
                 post.kategori as 'kategori', 
                 post.isi as 'isi', 
                 post.id_post as 'id', 
-                User.foto as 'foto',
+                user.foto as 'foto',
                 (SELECT like_post.id_post FROM like_post  WHERE ? = like_post.id_user AND like_post.id_post = post.id_post) AS 'is_liked',                
                 (SELECT COUNT(id_post) FROM like_post 
                 WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) AS 'like',
@@ -109,7 +109,7 @@
                 post.kategori as 'kategori', 
                 post.isi as 'isi', 
                 post.id_Post as 'id', 
-                User.foto as 'foto',
+                user.foto as 'foto',
                 (SELECT like_post.id_post FROM like_post WHERE ? = like_post.id_user AND like_post.id_post = post.id_post) AS 'is_liked',
                 (SELECT COUNT(id_post) FROM like_post 
                 WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) AS 'like',
@@ -129,7 +129,7 @@
                 post.kategori as 'kategori', 
                 post.isi as 'isi', 
                 post.id_post as 'id', 
-                User.foto as 'foto',
+                user.foto as 'foto',
                 (SELECT like_post.id_post FROM like_post  WHERE ? = like_post.id_user AND like_post.id_post = post.id_post) AS 'is_liked',                
                 (SELECT COUNT(id_post) FROM like_post 
                 WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) AS 'like',

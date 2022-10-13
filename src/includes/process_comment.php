@@ -7,6 +7,7 @@
         die();
     }
 
+
     require('db.php');    
 
     // ADD COMMENT TO POST 
@@ -32,10 +33,13 @@
                 header('location: ../../app/post.php?p='.$post_id);   
                 die();                
             }
-        } catch (err){
+        } catch (Exception $e){
             header('location: ../../app/post.php?p='.$post_id.'&err=1');   
             die();
         }
+    } else {
+        echo "??";
+        die();
     }
 
 
