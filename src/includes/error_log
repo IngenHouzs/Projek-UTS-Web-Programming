@@ -27,3 +27,25 @@ Stack trace:
 [12-Oct-2022 22:55:24 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
 [12-Oct-2022 22:55:36 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
 [13-Oct-2022 04:21:57 UTC] PHP Warning:  unlink(../user_profile/): Is a directory in /home/prolangr/public_html/src/includes/edit_profile_process.php on line 169
+[13-Oct-2022 06:42:18 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/src/includes/login_process.php on line 70
+[13-Oct-2022 06:45:25 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/src/includes/login_process.php on line 25
+[13-Oct-2022 06:50:49 UTC] PHP Notice:  Undefined index: id_user in /home/prolangr/public_html/src/includes/login_process.php on line 70
+[13-Oct-2022 07:16:01 UTC] PHP Warning:  unlink(../user_profile/): Is a directory in /home/prolangr/public_html/src/includes/edit_profile_process.php on line 169
+[13-Oct-2022 07:18:01 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:19:03 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:24:09 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:25:27 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:29:51 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:30:34 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:30:54 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:32:08 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/prolangr/public_html/src/includes/process_comment.php on line 35
+[13-Oct-2022 07:33:31 UTC] PHP Parse error:  syntax error, unexpected 'die' (T_EXIT), expecting ';' or ',' in /home/prolangr/public_html/src/includes/process_comment.php on line 11
+[13-Oct-2022 07:49:12 UTC] PHP Warning:  explode() expects parameter 2 to be string, array given in /home/prolangr/public_html/src/includes/PostModel.php on line 117
+[13-Oct-2022 07:49:12 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/prolangr/public_html/src/includes/PostModel.php on line 118
+[13-Oct-2022 07:51:00 UTC] PHP Warning:  unlink(../user_profile/): Is a directory in /home/prolangr/public_html/src/includes/edit_profile_process.php on line 169
+[13-Oct-2022 07:56:57 UTC] PHP Warning:  explode() expects parameter 2 to be string, array given in /home/prolangr/public_html/src/includes/PostModel.php on line 117
+[13-Oct-2022 07:56:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/prolangr/public_html/src/includes/PostModel.php on line 118
+[13-Oct-2022 07:57:00 UTC] PHP Warning:  explode() expects parameter 2 to be string, array given in /home/prolangr/public_html/src/includes/PostModel.php on line 117
+[13-Oct-2022 07:57:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/prolangr/public_html/src/includes/PostModel.php on line 118
+[13-Oct-2022 07:57:05 UTC] PHP Warning:  explode() expects parameter 2 to be string, array given in /home/prolangr/public_html/src/includes/PostModel.php on line 117
+[13-Oct-2022 07:57:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/prolangr/public_html/src/includes/PostModel.php on line 118

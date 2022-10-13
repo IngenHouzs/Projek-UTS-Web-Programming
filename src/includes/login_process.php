@@ -57,7 +57,7 @@
 
     $result = $queryExecution->fetch(PDO::FETCH_ASSOC);
 
-    if ($result && $result['username'] != 'admin'){
+    if ($result){
         $verifyPassword = password_verify($password, $result['password']);
         if ($verifyPassword){
             

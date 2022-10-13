@@ -31,9 +31,13 @@
         $getIDQueryExecution = $db->prepare($getUIDQuery);
         $getIDQueryExecution->execute([$user_name]);
         
+
         
     
         $userInfo = $getIDQueryExecution->fetch(PDO::FETCH_ASSOC); 
+
+
+        
 
         if (isset($userInfo['id_user'])){
             $userID = $userInfo['id_user'];
@@ -124,9 +128,9 @@
                                         <button  class="btn-red" onclick="deleteUser('<?=$userID?>')">Delete User</button>
 
 
-                                        <?php if (strlen($userInfo['isBanned']) == 0){?>
+                                        <?php if (!$userInfo['isbanned']){?>
                                             <button class="btn-red" onclick="banUserPermanently('<?=$userID?>')">Ban Permanent</button>                                        
-                                        <?php } else if (strlen($userInfo['isBanned']) > 0) {?>
+                                        <?php } else if ($userInfo['isbanned']) {?>
                                             <button class="btn-green" onclick="unbanUser('<?=$userID?>')">Unban User</button>                                              
                                         <?php }?>
                                     </div>
