@@ -93,9 +93,9 @@
             ORDER BY post.waktu_post DESC";      
         }
         $queryExecution = $db->prepare($getAllPostQuery);
-        if (!isset($_SESSION['ID_User'])){
+        if (!isset($_SESSION['id_user'])){
             $queryExecution->execute(['-', $postTag]);            
-        } else $queryExecution->execute([$_SESSION['ID_User'],$postTag]);
+        } else $queryExecution->execute([$_SESSION['id_user'],$postTag]);
 
 
     } else {   // WITHOUT TAG

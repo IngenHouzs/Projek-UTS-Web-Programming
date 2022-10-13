@@ -16,29 +16,29 @@
     // GET DATA 
 
 
-    $query = "SELECT User.username AS 'username', 
-    User.nama_lengkap AS 'nama_lengkap', 
-    User.email AS 'email',
-    User.ID_User as 'user_id',
-    Post.waktu_post as 'post_date', 
-    Post.KATEGORI as 'kategori', 
-    Post.Isi as 'isi', 
-    Post.ID_Post as 'id',
-    Post.waktu_post as 'waktu_post',
-    User.foto as 'foto',
-    (SELECT COUNT(ID_Post) FROM Like_Post 
-    WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) AS 'like',
-    (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar,
-    (SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) AS 'comments'       ,
+    $query = "SELECT user.username AS 'username', 
+    user.nama_lengkap AS 'nama_lengkap', 
+    user.email AS 'email',
+    user.id_user as 'user_id',
+    post.waktu_post as 'post_date', 
+    post.kategori as 'kategori', 
+    post.isi as 'isi', 
+    post.id_post as 'id',
+    post.waktu_post as 'waktu_post',
+    user.foto as 'foto',
+    (SELECT COUNT(id_post) FROM like_post 
+    WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) AS 'like',
+    (SELECT nama_gambar FROM gambar_postingan WHERE urutan = 1 AND gambar_postingan.id_post = post.id_post) AS nama_gambar,
+    (SELECT COUNT(id_commentpost) FROM comment_post WHERE comment_post.id_commentpost = id_commentpost AND comment_post.id_post = post.id_post) AS 'comments'       ,
 
-((SELECT COUNT(ID_Post) FROM Like_Post 
-    WHERE ID_Post = Like_Post.ID_Post AND Like_Post.ID_Post = Post.ID_Post) * 0.3 + 
-(SELECT COUNT(ID_CommentPost) FROM Comment_Post WHERE Comment_Post.ID_CommentPost = ID_CommentPost AND Comment_Post.ID_Post = Post.ID_Post) * 0.7) AS 'popularity', 
+((SELECT COUNT(id_post) FROM like_post 
+    WHERE id_post = like_post.id_post AND like_post.id_post = post.id_post) * 0.3 + 
+(SELECT COUNT(id_commentpost) FROM comment_post WHERE comment_post.id_commentpost = id_commentpost AND comment_post.id_post = post.id_post) * 0.7) AS 'popularity', 
 	
-	(SELECT GROUP_CONCAT(Gambar_Postingan.nama_gambar) FROM Gambar_Postingan WHERE Post.ID_Post = Gambar_Postingan.ID_Post) AS 'gambar'
+	(SELECT GROUP_CONCAT(gambar_postingan.nama_gambar) FROM gambar_postingan WHERE post.id_post = gambar_postingan.id_post) AS 'gambar'
 
-    FROM Post, User WHERE Post.ID_User = User.ID_User
-    ORDER BY Post.KATEGORI ASC, 'popularity' DESC"; 
+    FROM post, user WHERE post.id_user = user.id_user
+    ORDER BY post.kategori ASC, 'popularity' DESC"; 
 
 
     date_default_timezone_set('Antarctica/Davis');

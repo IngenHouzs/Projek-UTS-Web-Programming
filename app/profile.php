@@ -8,12 +8,12 @@
     require_once('../src/includes/db_external.php');      
 
     if (
-        isset($_SESSION['ID_User']) &&
+        isset($_SESSION['id_user']) &&
         isset($_SESSION['nama_lengkap']) &&
         isset($_SESSION['username']) &&
         isset($_SESSION['email'])                        
     ){
-        $user_id = $_SESSION['ID_User'];
+        $user_id = $_SESSION['id_user'];
         $user_username = $_SESSION['username'];
         $user_fullname = $_SESSION['nama_lengkap'];
         $user_email = $_SESSION['email'];  
@@ -21,11 +21,11 @@
     }
 
 
-        if (isset($_SESSION['ID_User'])){
+        if (isset($_SESSION['id_user'])){
    
             // GET POSTS COUNT
     
-            $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM Post WHERE Post.ID_User = ?";
+            $postCountQuery = "SELECT COUNT(*) AS 'jumlah_post' FROM post WHERE post.id_user = ?";
             $queryExecution = $db->prepare($postCountQuery);
             $queryExecution->execute([$user_id]);
     
@@ -33,11 +33,11 @@
             
             // GET ALL POSTS
             $getAllPostQuery = "SELECT 
-            Post.KATEGORI AS 'tag',
-            Post.ISI AS 'caption',
-            Post.ID_Post AS 'id', 
-            (SELECT nama_gambar FROM Gambar_Postingan WHERE Urutan = 1 AND Gambar_Postingan.ID_Post = Post.ID_Post) AS nama_gambar              
-            FROM Post WHERE Post.ID_User = ?";
+            post.kategori AS 'tag',
+            post.isi AS 'caption',
+            post.id_post AS 'id', 
+            (SELECT nama_gambar FROM gambar_postingan WHERE urutan = 1 AND gambar_postingan.id_post = post.id_post) AS nama_gambar              
+            FROM post WHERE post.id_user = ?";
     
             $getAllPostQueryExecution = $db->prepare($getAllPostQuery);
             $getAllPostQueryExecution->execute([$user_id]);        
@@ -45,9 +45,9 @@
 
             // ambil profile diri kita sendiri
 
-            $query = "SELECT * FROM User WHERE ID_User = ?";
+            $query = "SELECT * FROM user WHERE id_user = ?";
             
-            $data = [$_SESSION['ID_User']];
+            $data = [$_SESSION['id_user']];
                         
             $query_call_profile = $db->prepare($query); // siapin query
             $query_call_profile->execute($data); // jalankan hasil query dan ambil data    
