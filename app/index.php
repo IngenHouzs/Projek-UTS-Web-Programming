@@ -1,6 +1,9 @@
 <?php
     // require_once('../src/includes/auth.php')
-    session_start();
+    session_start(); 
+
+    // phpinfo();
+    // die();
   
     require_once("../vendor/autoload.php");
     $dotenv = Dotenv\Dotenv::createImmutable('../');

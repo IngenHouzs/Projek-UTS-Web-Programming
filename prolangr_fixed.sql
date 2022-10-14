@@ -206,8 +206,8 @@ CREATE TABLE `user` (
   `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `foto` varchar(50) DEFAULT NULL,
-  `isadmin` bit(1) DEFAULT NULL,
-  `isbanned` bit(1) DEFAULT NULL,
+  `isadmin` boolean DEFAULT NULL,
+  `isbanned` boolean DEFAULT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -216,15 +216,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `username`, `email`, `foto`, `isadmin`, `isbanned`, `password`) VALUES
-('A-12345678901234567890123', 'admin', 'admin', '-', NULL, b'1', b'0', '$2y$10$DCLT4NGWavvimM0LIpOLL.zu77nkH9uyK.Z3Y6QewejjgJQM/TdgS'),
-('U-6344048ca89813.67032277', 'Farrel Dinarta', '<h1>Farrel</h1>', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665498619.png', b'0', b'1', '$2y$10$v2aybH2MEAtZcdAxkqVCeerjAsXlLMayGEejM5DvtOZVJP2jcnzQa'),
-('U-6344049e0ac6e7.44316206', 'Bryan Richie', 'bryanrichie', 'bryan.richie@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$UJQNjFv1uqb37Ysaa.ykOe0feSjYmOt54cBqTi3PpoiBd4ZtBKzEG'),
-('U-634404be06a469.69537889', 'Nayasha Clarisasssss', 'nayashaclarisa', 'nayasha.clarisa@student.umn.ac.id', 'foto_user_1665407707.jpg', b'0', b'0', '$2y$10$LhZ.SfHT8XoSSoG13rpCYueTDSd4TVX1loA7.2dmMVV4jZ1KvAZ62'),
-('U-634404d5e7aad1.52572028', 'Prudence Tendy', 'prudencetendy', 'prudence.tendy@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$vLMeo59hDHkJeAvHmX6oYeb5Slpui6dSQn15UybAlyRzvBnFgSUZ2'),
-('U-6346e942d07d85.65639478', 'Axel Ferdinand', 'axelferdinand', 'axel@gmail.com', NULL, b'0', b'0', '$2y$10$LH7lCUcVLzUyRs.Q/SW2ceKaAnXp4nJV1umyggQQlg1RDvBy8NPsm'),
-('U-634745a8682dc1.37278517', 'missionx', 'missionx', 'missionx@gmail.com', NULL, b'0', b'0', '$2y$10$w4MlLlQnGT54Dcf1Chfqr.71d88MYdUG2nu5SzEKnjYwbzqM/ewle'),
-('U-634790ce2f1a10.26935709', 'Barbarian King', 'barbarianking', 'farreldinarta12@gmail.com', NULL, b'0', b'0', '$2y$10$TyRKdgpOSZAjqN4986cNQOeCsWUAbwjPgz8A9kXYuVfZl51tictRS'),
-('U-6347924d39ed52.91919827', 'mrbeas', 'misterbeast', 'farrel@student.umn.ac.id', NULL, b'0', b'0', '$2y$10$YwRMCxpoHyvDbIFw1Hf2H.zA0yGJNqriWyIf06nFb7B1ogTlsEye2');
+('A-12345678901234567890123', 'admin', 'admin', '-', NULL, 1, 0, '$2y$10$DCLT4NGWavvimM0LIpOLL.zu77nkH9uyK.Z3Y6QewejjgJQM/TdgS'),
+('U-6344048ca89813.67032277', 'Farrel Dinarta', '<h1>Farrel</h1>', 'farrel.dinarta@student.umn.ac.id', 'foto_user_1665498619.png', 0, 1, '$2y$10$v2aybH2MEAtZcdAxkqVCeerjAsXlLMayGEejM5DvtOZVJP2jcnzQa'),
+('U-6344049e0ac6e7.44316206', 'Bryan Richie', 'bryanrichie', 'bryan.richie@student.umn.ac.id', NULL, 0, 0, '$2y$10$UJQNjFv1uqb37Ysaa.ykOe0feSjYmOt54cBqTi3PpoiBd4ZtBKzEG'),
+('U-634404be06a469.69537889', 'Nayasha Clarisasssss', 'nayashaclarisa', 'nayasha.clarisa@student.umn.ac.id', 'foto_user_1665407707.jpg', 0, 1, '$2y$10$LhZ.SfHT8XoSSoG13rpCYueTDSd4TVX1loA7.2dmMVV4jZ1KvAZ62'),
+('U-634404d5e7aad1.52572028', 'Prudence Tendy', 'prudencetendy', 'prudence.tendy@student.umn.ac.id', NULL, 0, 0, '$2y$10$vLMeo59hDHkJeAvHmX6oYeb5Slpui6dSQn15UybAlyRzvBnFgSUZ2'),
+('U-6346e942d07d85.65639478', 'Axel Ferdinand', 'axelferdinand', 'axel@gmail.com', NULL, 0, 0, '$2y$10$LH7lCUcVLzUyRs.Q/SW2ceKaAnXp4nJV1umyggQQlg1RDvBy8NPsm'),
+('U-634745a8682dc1.37278517', 'missionx', 'missionx', 'missionx@gmail.com', NULL, 0, 0, '$2y$10$w4MlLlQnGT54Dcf1Chfqr.71d88MYdUG2nu5SzEKnjYwbzqM/ewle'),
+('U-634790ce2f1a10.26935709', 'Barbarian King', 'barbarianking', 'farreldinarta12@gmail.com', NULL, 0, 0, '$2y$10$TyRKdgpOSZAjqN4986cNQOeCsWUAbwjPgz8A9kXYuVfZl51tictRS'),
+('U-6347924d39ed52.91919827', 'mrbeas', 'misterbeast', 'farrel@student.umn.ac.id', NULL, 0, 0, '$2y$10$YwRMCxpoHyvDbIFw1Hf2H.zA0yGJNqriWyIf06nFb7B1ogTlsEye2');
 
 --
 -- Indexes for dumped tables
