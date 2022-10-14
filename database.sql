@@ -10,8 +10,8 @@ CREATE TABLE user (
     username VARCHAR(50) UNIQUE NOT NULL, 
     email VARCHAR(50) UNIQUE NOT NULL, 
     foto VARCHAR(50),
-    isadmin BIT,
-    isbanned BIT,
+    isadmin BOOLEAN,
+    isbanned BOOLEAN,
     password VARCHAR(100) NOT NULL
 );
 

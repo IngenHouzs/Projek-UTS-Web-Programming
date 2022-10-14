@@ -15,7 +15,12 @@
             $error_login = "<div class='alert alert-danger' role='alert'>
             Credentials and Password does not match!
           </div>";            
-        }
+        } 
+        else if ($_GET['err'] == 'banned'){
+            $error_login = "<div class='alert alert-danger' role='alert'>
+            Your account is banned!
+          </div>";            
+        }        
     }
     
 ?>

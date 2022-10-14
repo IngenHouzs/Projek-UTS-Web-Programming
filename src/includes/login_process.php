@@ -57,15 +57,15 @@
 
     $result = $queryExecution->fetch(PDO::FETCH_ASSOC);
 
-    if ($result){
+    if ($result && $result['username'] != 'admin'){
         $verifyPassword = password_verify($password, $result['password']);
         if ($verifyPassword){
             
-            // $isBanned = $result['isBanned'];
-            // if ($isBanned){
-            //     header('location: ../../app/login.php?err=banned'); 
-            //     die();                
-            // }
+            $isBanned = $result['isbanned'];
+            if ($isBanned){
+                header('location: ../../app/login.php?err=banned'); 
+                die();                
+            }
 
             $_SESSION['id_user'] = $result['id_user'];
             $_SESSION['nama_lengkap'] = $result['nama_lengkap'];
